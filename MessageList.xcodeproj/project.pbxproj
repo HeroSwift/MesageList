@@ -18,8 +18,10 @@
 		9D4350E32186E4C100084889 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350E22186E4C100084889 /* User.swift */; };
 		9D4350E52186E73400084889 /* TextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350E42186E73400084889 /* TextMessage.swift */; };
 		9D4350E82186E90700084889 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350E72186E90700084889 /* MessageList.swift */; };
-		9D4350EA2186EA4900084889 /* LeftTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350E92186EA4900084889 /* LeftTextMessage.swift */; };
+		9D4350EA2186EA4900084889 /* LeftTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350E92186EA4900084889 /* LeftTextMessageCell.swift */; };
 		9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350ED2186FBF400084889 /* MessageListConfiguration.swift */; };
+		9D4350F02187098700084889 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350EF2187098700084889 /* MessageCell.swift */; };
+		9D6C53CD219ABA7F000DD119 /* TextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +50,10 @@
 		9D4350E22186E4C100084889 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9D4350E42186E73400084889 /* TextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessage.swift; sourceTree = "<group>"; };
 		9D4350E72186E90700084889 /* MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
-		9D4350E92186EA4900084889 /* LeftTextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTextMessage.swift; sourceTree = "<group>"; };
+		9D4350E92186EA4900084889 /* LeftTextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTextMessageCell.swift; sourceTree = "<group>"; };
 		9D4350ED2186FBF400084889 /* MessageListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListConfiguration.swift; sourceTree = "<group>"; };
+		9D4350EF2187098700084889 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				9D4350E72186E90700084889 /* MessageList.swift */,
-				9D4350E92186EA4900084889 /* LeftTextMessage.swift */,
+				9D4350E92186EA4900084889 /* LeftTextMessageCell.swift */,
+				9D4350EF2187098700084889 /* MessageCell.swift */,
+				9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -255,11 +261,13 @@
 			files = (
 				9D4350E52186E73400084889 /* TextMessage.swift in Sources */,
 				9D4350E32186E4C100084889 /* User.swift in Sources */,
+				9D6C53CD219ABA7F000DD119 /* TextMessageCell.swift in Sources */,
 				9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */,
+				9D4350F02187098700084889 /* MessageCell.swift in Sources */,
 				9D4350E12186E42600084889 /* SoundMode.swift in Sources */,
 				9D4350DC2186E30500084889 /* Message.swift in Sources */,
 				9D4350DF2186E37200084889 /* MessageStatus.swift in Sources */,
-				9D4350EA2186EA4900084889 /* LeftTextMessage.swift in Sources */,
+				9D4350EA2186EA4900084889 /* LeftTextMessageCell.swift in Sources */,
 				9D4350E82186E90700084889 /* MessageList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

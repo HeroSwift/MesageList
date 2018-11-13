@@ -4,16 +4,19 @@ import UIKit
 public class MessageListConfiguration {
     
     // 消息的水平内间距
-    public var messagePaddingHorizontal = 10
+    public var messagePaddingHorizontal: CGFloat = 10
     
     // 消息的垂直内间距
-    public var messagePaddingVertical = 10
+    public var messagePaddingVertical: CGFloat = 10
     
     // 用户头像的宽度
     public var userAvatarWidth: CGFloat = 40
     
     // 用户头像的高度
     public var userAvatarHeight: CGFloat = 40
+    
+    // 左侧用户名称是否显示
+    public var leftUserNameVisible = true
     
     // 左侧用户名称 字体大小
     public var leftUserNameTextFont = UIFont.systemFont(ofSize: 13)
@@ -26,6 +29,9 @@ public class MessageListConfiguration {
     
     // 左侧用户名称与内容的距离
     public var leftUserNameMarginBottom: CGFloat = 10
+    
+    // 右侧用户名称是否显示
+    public var rightUserNameVisible = true
     
     // 右侧用户名称 字体大小
     public var rightUserNameTextFont = UIFont.systemFont(ofSize: 13)
@@ -51,5 +57,9 @@ public class MessageListConfiguration {
     
     
     public init() { }
+    
+    open func isRightMessage(message: Message) -> Bool {
+        return true
+    }
     
 }
