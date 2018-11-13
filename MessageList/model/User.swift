@@ -7,7 +7,7 @@ public class User {
     
     public var avatar: String
     
-    init(id: String, name: String, avatar: String) {
+    public init(id: String, name: String, avatar: String) {
         self.id = id
         self.name = name
         self.avatar = avatar

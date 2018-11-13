@@ -9,7 +9,7 @@ public class Message {
     
     public var timestamp: Int
     
-    init(id: String, user: User, status: MessageStatus, timestamp: Int) {
+    public init(id: String, user: User, status: MessageStatus, timestamp: Int) {
         self.id = id
         self.user = user
         self.status = status

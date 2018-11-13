@@ -5,12 +5,12 @@ class TextMessageCell: MessageCell {
     
     var nameView = UILabel()
     
-    var avatarView: UIImageView
+    var avatarView = UIImageView()
     
-    var textView: UILabel
+    var textView = UILabel()
     
-    convenience init() {
-        self.init()
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -19,43 +19,39 @@ class TextMessageCell: MessageCell {
     
     override func create(configuration: MessageListConfiguration) {
         
-        addClickHandler(view: contentView, selector: #selector(onMessageClick))
-        
         nameView.numberOfLines = 1
         nameView.lineBreakMode = .byTruncatingTail
         nameView.translatesAutoresizingMaskIntoConstraints = false
         
-        avatarView = UIImageView()
         avatarView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(avatarView)
+        contentView.addSubview(avatarView)
         
-        addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
-        
-        textView = UILabel()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(textView)
+        contentView.addSubview(textView)
         
+        addClickHandler(view: contentView, selector: #selector(onMessageClick))
+        addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: textView, selector: #selector(onContentClick))
         addLongPressHandler(view: textView, selector: #selector(onContentLongPress))
         
-        // 左侧、右侧消息自己负责布局
-        layout(configuration: configuration)
+        contentView.addConstraints([
+            NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.userAvatarWidth),
+            NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
+        ])
         
     }
     
-    override func update(message: Message) {
+    override func update(configuration: MessageListConfiguration, message: Message) {
         
         let textMessage = message as! TextMessage
         
         nameView.text = textMessage.user.name
         nameView.sizeToFit()
         
+        configuration.loadImage(imageView: avatarView, url: textMessage.user.avatar)
+        
         textView.text = textMessage.text
         textView.sizeToFit()
-        
-    }
-    
-    func layout(configuration: MessageListConfiguration) {
         
     }
     

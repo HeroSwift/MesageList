@@ -140,9 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				9D4350E72186E90700084889 /* MessageList.swift */,
-				9D4350E92186EA4900084889 /* LeftTextMessageCell.swift */,
 				9D4350EF2187098700084889 /* MessageCell.swift */,
 				9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */,
+				9D4350E92186EA4900084889 /* LeftTextMessageCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";

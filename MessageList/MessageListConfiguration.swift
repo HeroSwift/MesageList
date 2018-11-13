@@ -1,7 +1,7 @@
 
 import UIKit
 
-public class MessageListConfiguration {
+open class MessageListConfiguration {
     
     // 消息的水平内间距
     public var messagePaddingHorizontal: CGFloat = 10
@@ -59,7 +59,11 @@ public class MessageListConfiguration {
     public init() { }
     
     open func isRightMessage(message: Message) -> Bool {
-        return true
+        return false
+    }
+    
+    open func loadImage(imageView: UIImageView, url: String) {
+        
     }
     
 }

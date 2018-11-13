@@ -1,9 +1,9 @@
 
 import UIKit
 
-class MessageList: UITableView {
+public class MessageList: UITableView {
     
-    private let messageList = [Message]()
+    public var messageList = [Message]()
     
     private var configuration: MessageListConfiguration!
     
@@ -34,11 +34,11 @@ class MessageList: UITableView {
 
 extension MessageList: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var messageCell: MessageCell?
         
@@ -46,29 +46,14 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
         let isRight = configuration.isRightMessage(message: message)
         if message is TextMessage {
             if isRight {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "RightTextMessage")
-                if cell == nil {
-                    messageCell = LeftTextMessageCell()
-                    messageCell?.create(configuration: configuration)
-                }
-                else {
-                    messageCell = cell as? MessageCell
-                }
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftTextMessage") as? MessageCell
             }
             else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LeftTextMessage")
-                if cell == nil {
-                    messageCell = LeftTextMessageCell()
-                    messageCell?.create(configuration: configuration)
-                }
-                else {
-                    messageCell = cell as? MessageCell
-                }
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftTextMessage") as? MessageCell
             }
         }
 
-        
-        messageCell?.update(message: message)
+        messageCell?.setup(configuration: configuration, message: message)
         
         return messageCell!
         
