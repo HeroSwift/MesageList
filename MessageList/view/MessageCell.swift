@@ -19,6 +19,8 @@ class MessageCell: UITableViewCell {
         if !ready {
             ready = true
             selectionStyle = .none
+
+            contentView.backgroundColor = .gray
             create(configuration: configuration)
         }
         
@@ -57,23 +59,23 @@ class MessageCell: UITableViewCell {
     }
     
     @objc func onMessageClick() {
-        
+        print("onMessageClick")
     }
     
     @objc func onUserNameClick() {
-        
+        print("onUserNameClick")
     }
     
     @objc func onUserAvatarClick() {
-        
+        print("onUserAvatarClick")
     }
     
     @objc func onContentClick() {
-        
+        print("onContentClick")
     }
     
     @objc func onContentLongPress() {
-        
+        print("onContentLongPress")
     }
     
 }

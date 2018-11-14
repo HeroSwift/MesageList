@@ -22,11 +22,13 @@ class TextMessageCell: MessageCell {
         nameView.numberOfLines = 1
         nameView.lineBreakMode = .byTruncatingTail
         nameView.translatesAutoresizingMaskIntoConstraints = false
+        nameView.backgroundColor = .blue
         
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .blue
         contentView.addSubview(textView)
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))

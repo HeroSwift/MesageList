@@ -55,6 +55,9 @@ open class MessageListConfiguration {
     // 左侧文本消息的字体颜色
     public var leftTextMessageTextColor = UIColor(red: 160 / 255, green: 160 / 255, blue: 160 / 255, alpha: 1)
     
+    // 左侧文本消息到头像的距离
+    public var leftTextMessageMarginLeft: CGFloat = 10
+    
     
     public init() { }
     

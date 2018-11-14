@@ -10,16 +10,18 @@ public class MessageList: UITableView {
     public convenience init(configuration: MessageListConfiguration) {
         self.init()
         self.configuration = configuration
-        self.delegate = self
-        self.dataSource = self
-        self.separatorStyle = .none
-        self.showsVerticalScrollIndicator = false
-        self.rowHeight = UITableViewAutomaticDimension
-        self.register(LeftTextMessageCell.self, forCellReuseIdentifier: "LeftTextMessage")
     }
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
+        self.delegate = self
+        self.dataSource = self
+        self.separatorStyle = .none
+        self.showsVerticalScrollIndicator = false
+        self.estimatedRowHeight = 100
+        self.rowHeight = UITableViewAutomaticDimension
+        
+        self.register(LeftTextMessageCell.self, forCellReuseIdentifier: "LeftTextMessage")
     }
     
     public required init?(coder aDecoder: NSCoder) {

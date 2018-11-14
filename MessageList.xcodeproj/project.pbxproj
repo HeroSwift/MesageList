@@ -22,6 +22,7 @@
 		9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350ED2186FBF400084889 /* MessageListConfiguration.swift */; };
 		9D4350F02187098700084889 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350EF2187098700084889 /* MessageCell.swift */; };
 		9D6C53CD219ABA7F000DD119 /* TextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */; };
+		9DAC6E51219C152100F693B9 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC6E50219C152100F693B9 /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		9D4350ED2186FBF400084889 /* MessageListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListConfiguration.swift; sourceTree = "<group>"; };
 		9D4350EF2187098700084889 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageCell.swift; sourceTree = "<group>"; };
+		9DAC6E50219C152100F693B9 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DAC6E51219C152100F693B9 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +83,7 @@
 				9D4350B92186E20000084889 /* MessageList */,
 				9D4350C72186E21200084889 /* Example */,
 				9D4350B82186E20000084889 /* Products */,
+				9DAC6E4F219C152100F693B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +151,14 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		9DAC6E4F219C152100F693B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DAC6E50219C152100F693B9 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -185,6 +197,7 @@
 				9D4350C22186E21200084889 /* Sources */,
 				9D4350C32186E21200084889 /* Frameworks */,
 				9D4350C42186E21200084889 /* Resources */,
+				9DAC6E4E219C12AE00F693B9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +266,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9DAC6E4E219C12AE00F693B9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D4350B22186E20000084889 /* Sources */ = {
@@ -434,6 +464,7 @@
 		9D4350C02186E20000084889 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -462,6 +493,7 @@
 		9D4350C12186E20000084889 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -492,6 +524,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N276SVAZ33;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +547,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N276SVAZ33;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

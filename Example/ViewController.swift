@@ -9,8 +9,14 @@
 import UIKit
 
 import MessageList
+import Kingfisher
 
 class Configuration: MessageListConfiguration {
+    
+    override func loadImage(imageView: UIImageView, url: String) {
+        let url = URL(string: url)
+        imageView.kf.setImage(with: url)
+    }
     
     
 }
@@ -21,7 +27,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let messageList = MessageList(configuration: Configuration())
-        let user = User(id: "123", name: "哈哈哈", avatar: "")
+        let user = User(id: "123", name: "musicode", avatar: "https://img.finstao.com/7eb10748bd.jpg")
         let textMessage = TextMessage(id: "123", user: user, status: MessageStatus.sendSuccess, timestamp: 1542097801840, text: "123123213")
         messageList.messageList.append(textMessage)
         messageList.translatesAutoresizingMaskIntoConstraints = false
