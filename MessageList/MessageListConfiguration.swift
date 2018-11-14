@@ -49,14 +49,25 @@ open class MessageListConfiguration {
     // MARK: - 文本消息
     //
     
+    // 左侧文本消息背景图
+    public var leftTextMessageBubble = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(28, 10, 5, 5))
+    
     // 左侧文本消息的字体大小
     public var leftTextMessageTextFont = UIFont.systemFont(ofSize: 13)
     
     // 左侧文本消息的字体颜色
-    public var leftTextMessageTextColor = UIColor(red: 160 / 255, green: 160 / 255, blue: 160 / 255, alpha: 1)
+    public var leftTextMessageTextColor = UIColor(red: 60 / 255, green: 60 / 255, blue: 60 / 255, alpha: 1)
     
     // 左侧文本消息到头像的距离
     public var leftTextMessageMarginLeft: CGFloat = 10
+    
+    public var leftTextMessagePaddingLeft: CGFloat = 20
+    public var leftTextMessagePaddingRight: CGFloat = 10
+    public var leftTextMessagePaddingTop: CGFloat = 10
+    public var leftTextMessagePaddingBottom: CGFloat = 10
+    
+    // 右侧文本消息背景图
+    public var rightTextMessageBubble = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)
     
     // 右侧文本消息的字体大小
     public var rightTextMessageTextFont = UIFont.systemFont(ofSize: 13)

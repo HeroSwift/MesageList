@@ -7,6 +7,8 @@ class TextMessageCell: MessageCell {
     
     var avatarView = UIImageView()
     
+    var bubbleView = UIImageView()
+    
     var textView = UILabel()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -19,16 +21,23 @@ class TextMessageCell: MessageCell {
     
     override func create(configuration: MessageListConfiguration) {
         
+        // 头像
+        avatarView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(avatarView)
+        
+        // 昵称
         nameView.numberOfLines = 1
         nameView.lineBreakMode = .byTruncatingTail
         nameView.translatesAutoresizingMaskIntoConstraints = false
         nameView.backgroundColor = .gray
+
+        // 气泡
+        bubbleView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(bubbleView)
         
-        avatarView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(avatarView)
-        
+        // 不限定行数
+        textView.numberOfLines = 0
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .gray
         contentView.addSubview(textView)
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
