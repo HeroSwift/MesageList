@@ -18,6 +18,10 @@ class Configuration: MessageListConfiguration {
         imageView.kf.setImage(with: url)
     }
     
+    override func isRightMessage(message: Message) -> Bool {
+        return message.user.id == "1"
+    }
+    
     
 }
 
@@ -27,9 +31,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let messageList = MessageList(configuration: Configuration())
-        let user = User(id: "123", name: "musicode", avatar: "https://img.finstao.com/7eb10748bd.jpg")
-        let textMessage = TextMessage(id: "123", user: user, status: MessageStatus.sendSuccess, timestamp: 1542097801840, text: "123123213")
-        messageList.messageList.append(textMessage)
+
+        messageList.messageList.append(
+            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, timestamp: 1542097801840, text: "123123213")
+        )
+        messageList.messageList.append(
+            TextMessage(id: "123", user: User(id: "1", name: "musicode", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, timestamp: 1542097801840, text: "123123213")
+        )
+        
         messageList.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(messageList)

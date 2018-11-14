@@ -27,6 +27,7 @@ class LeftTextMessageCell: TextMessageCell {
             nameView.font = configuration.leftUserNameTextFont
             nameView.textColor = configuration.leftUserNameTextColor
             nameView.textAlignment = .left
+            
             contentView.addSubview(nameView)
             addClickHandler(view: nameView, selector: #selector(onUserNameClick))
             

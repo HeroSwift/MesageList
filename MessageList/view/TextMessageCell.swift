@@ -22,13 +22,13 @@ class TextMessageCell: MessageCell {
         nameView.numberOfLines = 1
         nameView.lineBreakMode = .byTruncatingTail
         nameView.translatesAutoresizingMaskIntoConstraints = false
-        nameView.backgroundColor = .blue
+        nameView.backgroundColor = .gray
         
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .blue
+        textView.backgroundColor = .gray
         contentView.addSubview(textView)
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
@@ -50,10 +50,13 @@ class TextMessageCell: MessageCell {
         nameView.text = textMessage.user.name
         nameView.sizeToFit()
         
-        configuration.loadImage(imageView: avatarView, url: textMessage.user.avatar)
-        
         textView.text = textMessage.text
         textView.sizeToFit()
+        
+        let avatar = textMessage.user.avatar
+        if avatar != "" {
+            configuration.loadImage(imageView: avatarView, url: avatar)
+        }
         
     }
     

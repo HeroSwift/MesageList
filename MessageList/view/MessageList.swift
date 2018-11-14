@@ -16,12 +16,13 @@ public class MessageList: UITableView {
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
-        self.separatorStyle = .none
+//        self.separatorStyle = .none
         self.showsVerticalScrollIndicator = false
         self.estimatedRowHeight = 100
         self.rowHeight = UITableViewAutomaticDimension
         
         self.register(LeftTextMessageCell.self, forCellReuseIdentifier: "LeftTextMessage")
+        self.register(RightTextMessageCell.self, forCellReuseIdentifier: "RightTextMessage")
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -37,7 +38,7 @@ public class MessageList: UITableView {
 extension MessageList: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return messageList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,7 +49,7 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
         let isRight = configuration.isRightMessage(message: message)
         if message is TextMessage {
             if isRight {
-                messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftTextMessage") as? MessageCell
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "RightTextMessage") as? MessageCell
             }
             else {
                 messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftTextMessage") as? MessageCell
