@@ -3,10 +3,10 @@ import UIKit
 
 class TextMessageCell: MessageCell {
     
-    var nameView = UILabel()
-    
     var avatarView = UIImageView()
     
+    var nameView = UILabel()
+
     var bubbleView = UIImageView()
     
     var textView = UILabel()
@@ -27,7 +27,6 @@ class TextMessageCell: MessageCell {
         
         // 昵称
         nameView.numberOfLines = 1
-        nameView.lineBreakMode = .byTruncatingTail
         nameView.translatesAutoresizingMaskIntoConstraints = false
 
         // 气泡
@@ -36,7 +35,7 @@ class TextMessageCell: MessageCell {
         
         // 不限定行数
         textView.numberOfLines = 0
-        
+        // 限定最大宽度
         let screenWidth = UIScreen.main.bounds.size.width
         textView.preferredMaxLayoutWidth = screenWidth - 2 * (configuration.messagePaddingHorizontal + configuration.userAvatarWidth) - configuration.leftUserNameMarginLeft - configuration.rightUserNameMarginRight
         textView.translatesAutoresizingMaskIntoConstraints = false
