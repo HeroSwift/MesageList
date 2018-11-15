@@ -93,10 +93,20 @@ class AudioMessageCell: MessageCell {
         durationView.sizeToFit()
         
         let durationRatio = Float(duration) / configuration.audioMessageMaxDuration
-        // 最大宽度的 2/3 吧
-        let maxWidth = 2 * getContentMaxWidth(configuration: configuration) / 3
         
-        let bubbleWidth = max(maxWidth * CGFloat(durationRatio), configuration.audioMessageBubbleMinWidth)
+        // 最大宽度的 4/5 吧
+        let maxWidth = 4 * getContentMaxWidth(configuration: configuration) / 5
+        let minWidth = configuration.audioMessageBubbleMinWidth
+        
+        var bubbleWidth = maxWidth * CGFloat(durationRatio)
+        
+        if bubbleWidth > maxWidth {
+            bubbleWidth = maxWidth
+        }
+        else if bubbleWidth < minWidth {
+            bubbleWidth = minWidth
+        }
+        
         if bubbleWidth != bubbleViewWidthConstraint.constant {
             bubbleViewWidthConstraint.constant = bubbleWidth
             setNeedsLayout()
