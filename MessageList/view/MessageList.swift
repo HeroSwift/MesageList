@@ -16,7 +16,7 @@ public class MessageList: UITableView {
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
-        self.separatorStyle = .none
+//        self.separatorStyle = .none
         self.showsVerticalScrollIndicator = false
         self.estimatedRowHeight = 100
         self.rowHeight = UITableViewAutomaticDimension
@@ -28,6 +28,7 @@ public class MessageList: UITableView {
         self.register(RightImageMessageCell.self, forCellReuseIdentifier: "RightImageMessage")
         
         self.register(LeftAudioMessageCell.self, forCellReuseIdentifier: "LeftAudioMessage")
+        self.register(RightAudioMessageCell.self, forCellReuseIdentifier: "RightAudioMessage")
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -70,7 +71,7 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
         }
         else if message is AudioMessage {
             if isRight {
-                messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftAudioMessage") as? MessageCell
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "RightAudioMessage") as? MessageCell
             }
             else {
                 messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftAudioMessage") as? MessageCell
