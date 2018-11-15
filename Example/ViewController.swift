@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         let messageList = MessageList(configuration: Configuration())
 
         messageList.messageList.append(
-            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, timestamp: 1542097801840, text: "你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头你妈的头")
+            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, timestamp: 1542097801840, text: "你妈的头你妈的")
         )
         messageList.messageList.append(
             TextMessage(id: "123", user: User(id: "1", name: "musicode", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, timestamp: 1542097801840, text: "123123213")

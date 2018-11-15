@@ -10,10 +10,10 @@ open class MessageListConfiguration {
     public var messagePaddingVertical: CGFloat = 10
     
     // 用户头像的宽度
-    public var userAvatarWidth: CGFloat = 36
+    public var userAvatarWidth: CGFloat = 40
     
     // 用户头像的高度
-    public var userAvatarHeight: CGFloat = 36
+    public var userAvatarHeight: CGFloat = 40
     
     // 左侧用户名称是否显示
     public var leftUserNameVisible = true
@@ -28,7 +28,7 @@ open class MessageListConfiguration {
     public var leftUserNameMarginLeft: CGFloat = 10
     
     // 左侧用户名称与内容的距离
-    public var leftUserNameMarginBottom: CGFloat = 6
+    public var leftUserNameMarginBottom: CGFloat = 4
     
     // 右侧用户名称是否显示
     public var rightUserNameVisible = true
@@ -43,41 +43,47 @@ open class MessageListConfiguration {
     public var rightUserNameMarginRight: CGFloat = 10
     
     // 右侧用户名称与内容的距离
-    public var rightUserNameMarginBottom: CGFloat = 6
+    public var rightUserNameMarginBottom: CGFloat = 4
     
     //
     // MARK: - 文本消息
     //
     
     // 左侧文本消息背景图
-    public var leftTextMessageBubble = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(28, 10, 5, 5))
+    public var leftTextMessageBubble = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(8, 8, 16, 8))
     
     // 左侧文本消息的字体大小
     public var leftTextMessageTextFont = UIFont.systemFont(ofSize: 13)
     
     // 左侧文本消息的字体颜色
-    public var leftTextMessageTextColor = UIColor(red: 60 / 255, green: 60 / 255, blue: 60 / 255, alpha: 1)
+    public var leftTextMessageTextColor = UIColor(red: 50 / 255, green: 50 / 255, blue: 50 / 255, alpha: 1)
     
     // 左侧文本消息到头像的距离
-    public var leftTextMessageMarginLeft: CGFloat = 10
+    public var leftTextMessageMarginLeft: CGFloat = 5
     
-    public var leftTextMessagePaddingLeft: CGFloat = 20
-    public var leftTextMessagePaddingRight: CGFloat = 10
-    public var leftTextMessagePaddingTop: CGFloat = 10
-    public var leftTextMessagePaddingBottom: CGFloat = 10
+    // 左侧文本消息的内边距
+    public var leftTextMessagePaddingLeft: CGFloat = 16
+    public var leftTextMessagePaddingRight: CGFloat = 8
+    public var leftTextMessagePaddingTop: CGFloat = 8
+    public var leftTextMessagePaddingBottom: CGFloat = 8
     
     // 右侧文本消息背景图
-    public var rightTextMessageBubble = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)
+    public var rightTextMessageBubble = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(8, 8, 8, 16))
     
     // 右侧文本消息的字体大小
     public var rightTextMessageTextFont = UIFont.systemFont(ofSize: 13)
     
     // 右侧文本消息的字体颜色
-    public var rightTextMessageTextColor = UIColor(red: 160 / 255, green: 160 / 255, blue: 160 / 255, alpha: 1)
+    public var rightTextMessageTextColor = UIColor(red: 50 / 255, green: 50 / 255, blue: 50 / 255, alpha: 1)
     
     // 右侧文本消息到头像的距离
-    public var rightTextMessageMarginRight: CGFloat = 10
+    public var rightTextMessageMarginRight: CGFloat = 5
     
+    // 右侧文本消息的内边距
+    public var rightTextMessagePaddingLeft: CGFloat = 8
+    public var rightTextMessagePaddingRight: CGFloat = 16
+    public var rightTextMessagePaddingTop: CGFloat = 8
+    public var rightTextMessagePaddingBottom: CGFloat = 8
     
     public init() { }
     

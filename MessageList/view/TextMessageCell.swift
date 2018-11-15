@@ -29,7 +29,6 @@ class TextMessageCell: MessageCell {
         nameView.numberOfLines = 1
         nameView.lineBreakMode = .byTruncatingTail
         nameView.translatesAutoresizingMaskIntoConstraints = false
-        nameView.backgroundColor = .gray
 
         // 气泡
         bubbleView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,6 +36,9 @@ class TextMessageCell: MessageCell {
         
         // 不限定行数
         textView.numberOfLines = 0
+        
+        let screenWidth = UIScreen.main.bounds.size.width
+        textView.preferredMaxLayoutWidth = screenWidth - 2 * (configuration.messagePaddingHorizontal + configuration.userAvatarWidth) - configuration.leftUserNameMarginLeft - configuration.rightUserNameMarginRight
         textView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(textView)
         
