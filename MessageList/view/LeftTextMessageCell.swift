@@ -19,7 +19,6 @@ class LeftTextMessageCell: TextMessageCell {
         
         textView.font = configuration.leftTextMessageTextFont
         textView.textColor = configuration.leftTextMessageTextColor
-        textView.textAlignment = .left
         
         if configuration.leftUserNameVisible {
             

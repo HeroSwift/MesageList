@@ -33,6 +33,8 @@ class TextMessageCell: MessageCell {
         bubbleView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(bubbleView)
         
+        // 居左对齐
+        textView.textAlignment = .left
         // 不限定行数
         textView.numberOfLines = 0
         // 限定最大宽度

@@ -19,7 +19,6 @@ class RightTextMessageCell: TextMessageCell {
         
         textView.font = configuration.rightTextMessageTextFont
         textView.textColor = configuration.rightTextMessageTextColor
-        textView.textAlignment = .right
         
         if configuration.rightUserNameVisible {
             
