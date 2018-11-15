@@ -9,7 +9,7 @@ class AudioMessageCell: MessageCell {
     
     var bubbleView = UIImageView()
     
-    var audioView = UIImageView()
+    var animationView = UIImageView()
     
     var durationView = UILabel()
     
@@ -46,11 +46,11 @@ class AudioMessageCell: MessageCell {
         contentView.addSubview(bubbleView)
         
         // 声波
-        audioView.translatesAutoresizingMaskIntoConstraints = false
-        audioView.animationDuration = 1
-        audioView.animationRepeatCount = 0
-        audioView.isUserInteractionEnabled = false
-        contentView.addSubview(audioView)
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.animationDuration = 1
+        animationView.animationRepeatCount = 0
+        animationView.isUserInteractionEnabled = false
+        contentView.addSubview(animationView)
         
         // 时长
         durationView.font = configuration.leftAudioMessageDurationTextFont
@@ -112,10 +112,10 @@ class AudioMessageCell: MessageCell {
     @objc func onAudioClick() {
         
         if isPlaying {
-            audioView.stopAnimating()
+            animationView.stopAnimating()
         }
         else {
-            audioView.startAnimating()
+            animationView.startAnimating()
         }
         
         isPlaying = !isPlaying
