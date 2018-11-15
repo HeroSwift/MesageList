@@ -22,7 +22,7 @@ open class MessageListConfiguration {
     
     
     // 左侧用户名称是否显示
-    public var leftUserNameVisible = false
+    public var leftUserNameVisible = true
     
     // 左侧用户名称 字体大小
     public var leftUserNameTextFont = UIFont.systemFont(ofSize: 13)
@@ -43,7 +43,7 @@ open class MessageListConfiguration {
     
     
     // 右侧用户名称是否显示
-    public var rightUserNameVisible = true
+    public var rightUserNameVisible = false
     
     // 右侧用户名称 字体大小
     public var rightUserNameTextFont = UIFont.systemFont(ofSize: 13)
