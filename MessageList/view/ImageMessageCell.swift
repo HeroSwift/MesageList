@@ -66,7 +66,7 @@ class ImageMessageCell: MessageCell {
             configuration.loadImage(imageView: photoView, url: url)
             photoViewWidthConstraint.constant = CGFloat(imageMessage.width)
             photoViewHeightConstraint.constant = CGFloat(imageMessage.height)
-            layoutIfNeeded()
+            setNeedsLayout()
         }
         
         let avatar = imageMessage.user.avatar
