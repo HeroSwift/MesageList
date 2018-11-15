@@ -34,6 +34,14 @@ class MessageCell: UITableViewCell {
         
     }
     
+    func getContentMaxWidth(configuration: MessageListConfiguration) -> CGFloat {
+        
+        let screenWidth = UIScreen.main.bounds.size.width
+        
+        return screenWidth - 2 * (configuration.messagePaddingHorizontal + configuration.userAvatarWidth) - configuration.leftUserNameMarginLeft - configuration.rightUserNameMarginRight
+        
+    }
+    
     func addClickHandler(view: UIView, selector: Selector) {
         
         view.isUserInteractionEnabled = true

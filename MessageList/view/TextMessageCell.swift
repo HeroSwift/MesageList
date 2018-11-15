@@ -36,8 +36,7 @@ class TextMessageCell: MessageCell {
         // 不限定行数
         textView.numberOfLines = 0
         // 限定最大宽度
-        let screenWidth = UIScreen.main.bounds.size.width
-        textView.preferredMaxLayoutWidth = screenWidth - 2 * (configuration.messagePaddingHorizontal + configuration.userAvatarWidth) - configuration.leftUserNameMarginLeft - configuration.rightUserNameMarginRight
+        textView.preferredMaxLayoutWidth = getContentMaxWidth(configuration: configuration)
         textView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(textView)
         
