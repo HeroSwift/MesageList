@@ -23,6 +23,9 @@ public class MessageList: UITableView {
         
         self.register(LeftTextMessageCell.self, forCellReuseIdentifier: "LeftTextMessage")
         self.register(RightTextMessageCell.self, forCellReuseIdentifier: "RightTextMessage")
+        
+        self.register(LeftImageMessageCell.self, forCellReuseIdentifier: "LeftImageMessage")
+        self.register(RightImageMessageCell.self, forCellReuseIdentifier: "RightImageMessage")
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -53,6 +56,14 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
             }
             else {
                 messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftTextMessage") as? MessageCell
+            }
+        }
+        else if message is ImageMessage {
+            if isRight {
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "RightImageMessage") as? MessageCell
+            }
+            else {
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftImageMessage") as? MessageCell
             }
         }
 

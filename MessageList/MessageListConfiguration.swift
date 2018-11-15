@@ -16,7 +16,7 @@ open class MessageListConfiguration {
     public var userAvatarHeight: CGFloat = 40
     
     // 左侧用户名称是否显示
-    public var leftUserNameVisible = true
+    public var leftUserNameVisible = false
     
     // 左侧用户名称 字体大小
     public var leftUserNameTextFont = UIFont.systemFont(ofSize: 13)
@@ -84,6 +84,17 @@ open class MessageListConfiguration {
     public var rightTextMessagePaddingRight: CGFloat = 16
     public var rightTextMessagePaddingTop: CGFloat = 8
     public var rightTextMessagePaddingBottom: CGFloat = 8
+    
+    //
+    // MARK: - 图片消息
+    //
+    
+    // 图片圆角
+    public var imageMessageBorderRadius: CGFloat = 4
+    
+    // 左侧文本消息到头像的距离
+    public var leftImageMessageMarginLeft: CGFloat = 10
+    
     
     public init() { }
     

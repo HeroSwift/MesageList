@@ -39,6 +39,14 @@ class ViewController: UIViewController {
             TextMessage(id: "123", user: User(id: "1", name: "musicode", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, timestamp: 1542097801840, text: "123123213")
         )
         
+        messageList.messageList.append(
+            ImageMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, timestamp: 1542097801840, url: "https://img.ui.cn/data/file/6/2/0/1839026.png?imageMogr2/auto-orient/format/jpg/strip/thumbnail/!1800%3E/quality/90/", width: 200, height: 140)
+        )
+        
+        messageList.messageList.append(
+            ImageMessage(id: "123", user: User(id: "1", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, timestamp: 1542097801840, url: "https://img.ui.cn/data/file/6/2/0/1839026.png?imageMogr2/auto-orient/format/jpg/strip/thumbnail/!1800%3E/quality/90/", width: 200, height: 140)
+        )
+        
         messageList.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(messageList)
