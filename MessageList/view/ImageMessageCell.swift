@@ -10,8 +10,12 @@ class ImageMessageCell: MessageCell {
     // imageView 被占用了
     var photoView = UIImageView()
     
-    var photoViewWidthConstraint: NSLayoutConstraint!
-    var photoViewHeightConstraint: NSLayoutConstraint!
+    var photoWidthConstraint: NSLayoutConstraint!
+    var photoHeightConstraint: NSLayoutConstraint!
+    
+    var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
+    var failureView = UIImageView()
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,19 +41,28 @@ class ImageMessageCell: MessageCell {
         photoView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(photoView)
         
+        // spinner icon
+        spinnerView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(spinnerView)
+        
+        // failure icon
+        failureView.translatesAutoresizingMaskIntoConstraints = false
+        failureView.image = configuration.messageFailureIcon
+        contentView.addSubview(failureView)
+        
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: photoView, selector: #selector(onContentClick))
+        addClickHandler(view: spinnerView, selector: #selector(onSpinnerIconClick))
+        addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
         addLongPressHandler(view: photoView, selector: #selector(onContentLongPress))
         
-        photoViewWidthConstraint = NSLayoutConstraint(item: photoView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
-        photoViewHeightConstraint = NSLayoutConstraint(item: photoView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+        photoWidthConstraint = NSLayoutConstraint(item: photoView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
+        photoHeightConstraint = NSLayoutConstraint(item: photoView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
-            NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.userAvatarWidth),
-            NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
-            photoViewWidthConstraint,
-            photoViewHeightConstraint
+            photoWidthConstraint,
+            photoHeightConstraint
         ])
         
     }
@@ -58,21 +71,30 @@ class ImageMessageCell: MessageCell {
         
         let imageMessage = message as! ImageMessage
         
+        let avatar = imageMessage.user.avatar
+        if avatar != "" {
+            configuration.loadImage(imageView: avatarView, url: avatar)
+        }
+        
         nameView.text = imageMessage.user.name
         nameView.sizeToFit()
         
         let url = imageMessage.url
         if url != "" {
             configuration.loadImage(imageView: photoView, url: url)
-            photoViewWidthConstraint.constant = CGFloat(imageMessage.width)
-            photoViewHeightConstraint.constant = CGFloat(imageMessage.height)
+            photoWidthConstraint.constant = CGFloat(imageMessage.width)
+            photoHeightConstraint.constant = CGFloat(imageMessage.height)
             setNeedsLayout()
         }
         
-        let avatar = imageMessage.user.avatar
-        if avatar != "" {
-            configuration.loadImage(imageView: avatarView, url: avatar)
+        if imageMessage.status == .sendIng {
+            spinnerView.startAnimating()
         }
+        else {
+            spinnerView.stopAnimating()
+        }
+        
+        failureView.isHidden = imageMessage.status != .sendFailure
         
     }
     

@@ -66,17 +66,17 @@ class TextMessageCell: MessageCell {
         
         let textMessage = message as! TextMessage
         
-        nameView.text = textMessage.user.name
-        nameView.sizeToFit()
-        
-        textView.text = textMessage.text
-        textView.sizeToFit()
-        
         let avatar = textMessage.user.avatar
         if avatar != "" {
             configuration.loadImage(imageView: avatarView, url: avatar)
         }
         
+        nameView.text = textMessage.user.name
+        nameView.sizeToFit()
+        
+        textView.text = textMessage.text
+        textView.sizeToFit()
+
         if textMessage.status == .sendIng {
             spinnerView.startAnimating()
         }
