@@ -91,7 +91,7 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
             }
         }
 
-        messageCell?.setup(configuration: configuration, message: message)
+        messageCell?.bind(configuration: configuration, message: message)
         
         return messageCell!
         

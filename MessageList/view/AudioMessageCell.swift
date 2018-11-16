@@ -83,7 +83,7 @@ class AudioMessageCell: MessageCell {
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: bubbleView, selector: #selector(onBubbleClick))
-        addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
+        addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: bubbleView, selector: #selector(onContentLongPress))
         
         bubbleWidthConstraint = NSLayoutConstraint(item: bubbleView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
@@ -94,7 +94,7 @@ class AudioMessageCell: MessageCell {
         
     }
     
-    override func update(configuration: MessageListConfiguration, message: Message) {
+    override func update(configuration: MessageListConfiguration) {
         
         let audioMessage = message as! AudioMessage
         

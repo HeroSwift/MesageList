@@ -54,7 +54,7 @@ class ImageMessageCell: MessageCell {
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: photoView, selector: #selector(onContentClick))
-        addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
+        addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: photoView, selector: #selector(onContentLongPress))
         
         photoWidthConstraint = NSLayoutConstraint(item: photoView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
@@ -67,7 +67,7 @@ class ImageMessageCell: MessageCell {
         
     }
     
-    override func update(configuration: MessageListConfiguration, message: Message) {
+    override func update(configuration: MessageListConfiguration) {
         
         let imageMessage = message as! ImageMessage
         

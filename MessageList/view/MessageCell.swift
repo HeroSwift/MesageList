@@ -4,7 +4,9 @@ import UIKit
 
 class MessageCell: UITableViewCell {
     
-    private var ready = false
+    var isReady = false
+    
+    var message: Message!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -14,16 +16,18 @@ class MessageCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(configuration: MessageListConfiguration, message: Message) {
+    func bind(configuration: MessageListConfiguration, message: Message) {
         
-        if !ready {
-            ready = true
+        self.message = message
+        
+        if !isReady {
+            isReady = true
             selectionStyle = .none
             backgroundColor = .clear
             create(configuration: configuration)
         }
         
-        update(configuration: configuration, message: message)
+        update(configuration: configuration)
         
     }
     
@@ -31,7 +35,7 @@ class MessageCell: UITableViewCell {
         
     }
     
-    func update(configuration: MessageListConfiguration, message: Message) {
+    func update(configuration: MessageListConfiguration) {
         
     }
     
@@ -85,8 +89,8 @@ class MessageCell: UITableViewCell {
         print("onContentLongPress")
     }
     
-    @objc func onFailureIconClick() {
-        print("onFailureIconClick")
+    @objc func onFailureClick() {
+        print("onFailureClick")
     }
     
 }

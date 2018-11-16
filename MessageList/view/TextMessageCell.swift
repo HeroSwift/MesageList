@@ -43,10 +43,11 @@ class TextMessageCell: MessageCell {
         // 文本内容
         textView.isEditable = false
         textView.textAlignment = .left
-        textView.backgroundColor = .gray
+        textView.backgroundColor = .clear
         textView.isScrollEnabled = false
-        textView.contentInset = UIEdgeInsetsMake(0, -5, 0, 0)
-        textView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        textView.isUserInteractionEnabled = true
+        textView.textContainerInset = UIEdgeInsets.zero
+        textView.textContainer.lineFragmentPadding = 0
         textView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(textView)
         
@@ -63,7 +64,7 @@ class TextMessageCell: MessageCell {
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: textView, selector: #selector(onContentClick))
-        addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
+        addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: textView, selector: #selector(onContentLongPress))
         
         textWidthConstraint = NSLayoutConstraint(item: textView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
@@ -76,7 +77,7 @@ class TextMessageCell: MessageCell {
         
     }
     
-    override func update(configuration: MessageListConfiguration, message: Message) {
+    override func update(configuration: MessageListConfiguration) {
         
         let textMessage = message as! TextMessage
         

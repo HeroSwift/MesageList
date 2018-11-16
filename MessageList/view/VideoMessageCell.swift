@@ -66,7 +66,7 @@ class VideoMessageCell: MessageCell {
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: thumbnailView, selector: #selector(onContentClick))
-        addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
+        addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: thumbnailView, selector: #selector(onContentLongPress))
         
         thumbnailWidthConstraint = NSLayoutConstraint(item: thumbnailView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
@@ -79,7 +79,7 @@ class VideoMessageCell: MessageCell {
         
     }
     
-    override func update(configuration: MessageListConfiguration, message: Message) {
+    override func update(configuration: MessageListConfiguration) {
         
         let videoMessage = message as! VideoMessage
         
