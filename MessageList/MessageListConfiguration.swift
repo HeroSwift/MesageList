@@ -3,6 +3,9 @@ import UIKit
 
 open class MessageListConfiguration {
     
+    // 背景色
+    public var backgroundColor = UIColor(red: 245 / 250, green: 245 / 250, blue: 245 / 250, alpha: 1)
+    
     // 消息的水平内间距
     public var messagePaddingHorizontal: CGFloat = 10
     
@@ -22,7 +25,7 @@ open class MessageListConfiguration {
     
     
     // 左侧用户名称是否显示
-    public var leftUserNameVisible = true
+    public var leftUserNameVisible = false
     
     // 左侧用户名称 字体大小
     public var leftUserNameTextFont = UIFont.systemFont(ofSize: 13)
@@ -43,7 +46,7 @@ open class MessageListConfiguration {
     
     
     // 右侧用户名称是否显示
-    public var rightUserNameVisible = true
+    public var rightUserNameVisible = false
     
     // 右侧用户名称 字体大小
     public var rightUserNameTextFont = UIFont.systemFont(ofSize: 13)

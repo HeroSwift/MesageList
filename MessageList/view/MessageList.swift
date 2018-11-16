@@ -10,13 +10,15 @@ public class MessageList: UITableView {
     public convenience init(configuration: MessageListConfiguration) {
         self.init()
         self.configuration = configuration
+        self.backgroundColor = configuration.backgroundColor
     }
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
+        
         self.delegate = self
         self.dataSource = self
-//        self.separatorStyle = .none
+        self.separatorStyle = .none
         self.showsVerticalScrollIndicator = false
         self.estimatedRowHeight = 100
         self.rowHeight = UITableViewAutomaticDimension

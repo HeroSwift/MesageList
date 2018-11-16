@@ -19,6 +19,7 @@ class MessageCell: UITableViewCell {
         if !ready {
             ready = true
             selectionStyle = .none
+            backgroundColor = .clear
             create(configuration: configuration)
         }
         
