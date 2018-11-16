@@ -15,7 +15,7 @@ class AudioMessageCell: MessageCell {
     
     var unitView = UILabel()
     
-    var bubbleViewWidthConstraint: NSLayoutConstraint!
+    var bubbleWidthConstraint: NSLayoutConstraint!
     
     // 当前音频的 Url
     private var url = ""
@@ -68,15 +68,13 @@ class AudioMessageCell: MessageCell {
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
-        addClickHandler(view: bubbleView, selector: #selector(onAudioClick))
+        addClickHandler(view: bubbleView, selector: #selector(onBubbleClick))
         addLongPressHandler(view: bubbleView, selector: #selector(onContentLongPress))
         
-        bubbleViewWidthConstraint = NSLayoutConstraint(item: bubbleView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
+        bubbleWidthConstraint = NSLayoutConstraint(item: bubbleView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
-            NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.userAvatarWidth),
-            NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
-            bubbleViewWidthConstraint
+            bubbleWidthConstraint
         ])
         
     }
@@ -107,8 +105,8 @@ class AudioMessageCell: MessageCell {
             bubbleWidth = minWidth
         }
         
-        if bubbleWidth != bubbleViewWidthConstraint.constant {
-            bubbleViewWidthConstraint.constant = bubbleWidth
+        if bubbleWidth != bubbleWidthConstraint.constant {
+            bubbleWidthConstraint.constant = bubbleWidth
             setNeedsLayout()
         }
 
@@ -119,7 +117,7 @@ class AudioMessageCell: MessageCell {
         
     }
     
-    @objc func onAudioClick() {
+    @objc func onBubbleClick() {
         
         if isPlaying {
             animationView.stopAnimating()

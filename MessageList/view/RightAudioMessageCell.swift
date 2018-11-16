@@ -24,6 +24,8 @@ class RightAudioMessageCell: AudioMessageCell {
             
             NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: configuration.messagePaddingVertical),
             NSLayoutConstraint(item: avatarView, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1, constant: -configuration.messagePaddingHorizontal),
+            NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.userAvatarWidth),
+            NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
             
             NSLayoutConstraint(item: bubbleView, attribute: .right, relatedBy: .equal, toItem: avatarView, attribute: .left, multiplier: 1, constant: -configuration.rightAudioMessageMarginRight),
             NSLayoutConstraint(item: bubbleView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messagePaddingVertical),
@@ -32,11 +34,11 @@ class RightAudioMessageCell: AudioMessageCell {
             NSLayoutConstraint(item: animationView, attribute: .centerY, relatedBy: .equal, toItem: bubbleView, attribute: .centerY, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: animationView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .right, multiplier: 1, constant: -configuration.rightAudioMessageWaveMarginRight),
             
-            NSLayoutConstraint(item: durationView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: -configuration.rightAudioMessageDurationMarginRight),
-            NSLayoutConstraint(item: durationView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.rightAudioMessageDurationMarginBottom),
+            NSLayoutConstraint(item: unitView, attribute: .centerY, relatedBy: .equal, toItem: durationView, attribute: .centerY, multiplier: 1, constant: configuration.audioMessageUnitCenterY),
+            NSLayoutConstraint(item: unitView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: -configuration.audioMessageDurationSpacing),
             
-            NSLayoutConstraint(item: unitView, attribute: .centerY, relatedBy: .equal, toItem: durationView, attribute: .centerY, multiplier: 1, constant: configuration.rightAudioMessageUnitCenterY),
-            NSLayoutConstraint(item: unitView, attribute: .right, relatedBy: .equal, toItem: durationView, attribute: .left, multiplier: 1, constant: -configuration.rightAudioMessageUnitMarginRight),
+            NSLayoutConstraint(item: durationView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.audioMessageDurationBottom),
+            NSLayoutConstraint(item: durationView, attribute: .right, relatedBy: .equal, toItem: unitView, attribute: .left, multiplier: 1, constant: -configuration.audioMessageUnitSpacing),
             
         ])
         

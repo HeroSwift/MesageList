@@ -157,6 +157,18 @@ open class MessageListConfiguration {
     // 语音消息的最大时长
     public var audioMessageMaxDuration: Float = 60
     
+    // 语音消息时长到气泡的距离
+    public var audioMessageDurationSpacing: CGFloat = 10
+    
+    // 语音消息时长到气泡底部的距离
+    public var audioMessageDurationBottom: CGFloat = 5
+    
+    // 语音消息单位到时长的距离
+    public var audioMessageUnitSpacing: CGFloat = 1
+    
+    // 语音消息单位垂直偏移量
+    public var audioMessageUnitCenterY: CGFloat = -1
+    
     
     
     
@@ -186,30 +198,18 @@ open class MessageListConfiguration {
     
     // 左侧语音消息时长的字体颜色
     public var leftAudioMessageDurationTextColor = UIColor(red: 150 / 255, green: 150 / 255, blue: 150 / 255, alpha: 1)
-    
-    // 左侧语音消息时长到气泡的距离
-    public var leftAudioMessageDurationMarginLeft: CGFloat = 10
-    
-    // 左侧语音消息时长到气泡底部的距离
-    public var leftAudioMessageDurationMarginBottom: CGFloat = 5
-    
+
     // 左侧语音消息单位的字体大小
     public var leftAudioMessageUnitTextFont = UIFont.systemFont(ofSize: 12)
     
     // 左侧语音消息单位的字体颜色
     public var leftAudioMessageUnitTextColor = UIColor(red: 150 / 255, green: 150 / 255, blue: 150 / 255, alpha: 1)
     
-    // 左侧语音消息单位到气泡的距离
-    public var leftAudioMessageUnitMarginLeft: CGFloat = 1
-    
-    // 左侧语音消息单位垂直偏移量
-    public var leftAudioMessageUnitCenterY: CGFloat = -1
-    
     
     
     
     // 右侧语音消息背景图
-    public var rightAudioMessageBubbleImage = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(30, 30, 30, 30))
+    public var rightAudioMessageBubbleImage = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(30, 26, 26, 26))
     
     // 右侧语音消息气泡高度
     public var rightAudioMessageBubbleHeight: CGFloat = 40
@@ -235,23 +235,11 @@ open class MessageListConfiguration {
     // 右侧语音消息时长的字体颜色
     public var rightAudioMessageDurationTextColor = UIColor(red: 150 / 255, green: 150 / 255, blue: 150 / 255, alpha: 1)
     
-    // 右侧语音消息时长到气泡的距离
-    public var rightAudioMessageDurationMarginRight: CGFloat = 10
-    
-    // 右侧语音消息时长到气泡底部的距离
-    public var rightAudioMessageDurationMarginBottom: CGFloat = 5
-    
     // 右侧语音消息单位的字体大小
     public var rightAudioMessageUnitTextFont = UIFont.systemFont(ofSize: 12)
     
     // 右侧语音消息单位的字体颜色
     public var rightAudioMessageUnitTextColor = UIColor(red: 150 / 255, green: 150 / 255, blue: 150 / 255, alpha: 1)
-    
-    // 右侧语音消息单位到气泡的距离
-    public var rightAudioMessageUnitMarginRight: CGFloat = 1
-    
-    // 右侧语音消息单位垂直偏移量
-    public var rightAudioMessageUnitCenterY: CGFloat = -1
     
     
     
