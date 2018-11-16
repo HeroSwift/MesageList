@@ -11,6 +11,10 @@ class TextMessageCell: MessageCell {
     
     var textView = UILabel()
     
+    var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
+    var failureView = UIImageView()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -37,20 +41,24 @@ class TextMessageCell: MessageCell {
         textView.textAlignment = .left
         // 不限定行数
         textView.numberOfLines = 0
-        // 限定最大宽度
-        textView.preferredMaxLayoutWidth = getContentMaxWidth(configuration: configuration)
         textView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(textView)
+        
+        // spinner icon
+        spinnerView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(spinnerView)
+        
+        // failure icon
+        failureView.translatesAutoresizingMaskIntoConstraints = false
+        failureView.image = configuration.messageFailureIcon
+        contentView.addSubview(failureView)
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: textView, selector: #selector(onContentClick))
+        addClickHandler(view: spinnerView, selector: #selector(onSpinnerIconClick))
+        addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
         addLongPressHandler(view: textView, selector: #selector(onContentLongPress))
-        
-        contentView.addConstraints([
-            NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.userAvatarWidth),
-            NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
-        ])
         
     }
     
@@ -68,6 +76,15 @@ class TextMessageCell: MessageCell {
         if avatar != "" {
             configuration.loadImage(imageView: avatarView, url: avatar)
         }
+        
+        if textMessage.status == .sendIng {
+            spinnerView.startAnimating()
+        }
+        else {
+            spinnerView.stopAnimating()
+        }
+        
+        failureView.isHidden = textMessage.status != .sendFailure
         
     }
     

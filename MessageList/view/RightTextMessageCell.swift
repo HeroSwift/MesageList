@@ -15,15 +15,20 @@ class RightTextMessageCell: TextMessageCell {
         
         super.create(configuration: configuration)
         
-        bubbleView.image = configuration.rightTextMessageBubble
+        bubbleView.image = configuration.rightTextMessageBubbleImage
         
         textView.font = configuration.rightTextMessageTextFont
         textView.textColor = configuration.rightTextMessageTextColor
+        
+        // 限定最大宽度
+        textView.preferredMaxLayoutWidth = getContentMaxWidth(configuration: configuration) - configuration.rightTextMessagePaddingLeft - configuration.rightTextMessagePaddingRight
         
         contentView.addConstraints([
             
             NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: configuration.messagePaddingVertical),
             NSLayoutConstraint(item: avatarView, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1, constant: -configuration.messagePaddingHorizontal),
+            NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.userAvatarWidth),
+            NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
             
             // 用 textView 确定气泡尺寸
             NSLayoutConstraint(item: textView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messagePaddingVertical - configuration.rightTextMessagePaddingBottom),
@@ -34,6 +39,12 @@ class RightTextMessageCell: TextMessageCell {
             NSLayoutConstraint(item: bubbleView, attribute: .bottom, relatedBy: .equal, toItem: textView, attribute: .bottom, multiplier: 1, constant: configuration.rightTextMessagePaddingBottom),
             NSLayoutConstraint(item: bubbleView, attribute: .left, relatedBy: .equal, toItem: textView, attribute: .left, multiplier: 1, constant: -configuration.rightTextMessagePaddingRight),
             NSLayoutConstraint(item: bubbleView, attribute: .right, relatedBy: .equal, toItem: textView, attribute: .right, multiplier: 1, constant: configuration.rightTextMessagePaddingRight),
+            
+            NSLayoutConstraint(item: spinnerView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: -configuration.leftStatusIconMarginLeft),
+            NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusIconMarginBottom),
+            
+            NSLayoutConstraint(item: failureView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: -configuration.leftStatusIconMarginLeft),
+            NSLayoutConstraint(item: failureView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusIconMarginBottom),
             
         ])
         

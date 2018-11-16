@@ -15,9 +15,8 @@ open class MessageListConfiguration {
     // 用户头像的高度
     public var userAvatarHeight: CGFloat = 40
     
-    
-    
-    
+    // 发送失败的图标
+    public var messageFailureIcon = UIImage(named: "failure", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
     
     
     
@@ -43,7 +42,7 @@ open class MessageListConfiguration {
     
     
     // 右侧用户名称是否显示
-    public var rightUserNameVisible = false
+    public var rightUserNameVisible = true
     
     // 右侧用户名称 字体大小
     public var rightUserNameTextFont = UIFont.systemFont(ofSize: 13)
@@ -61,6 +60,23 @@ open class MessageListConfiguration {
     
     
     
+    // 左侧状态图标到气泡的距离
+    public var leftStatusIconMarginLeft: CGFloat = 10
+    
+    // 左侧状态图标到气泡底部的距离
+    public var leftStatusIconMarginBottom: CGFloat = 5
+    
+    
+    
+    
+    // 右侧状态图标到气泡的距离
+    public var rightStatusIconMarginRight: CGFloat = 10
+    
+    // 右侧状态图标到气泡底部的距离
+    public var rightStatusIconMarginBottom: CGFloat = 5
+    
+    
+    
     
     
     //
@@ -70,7 +86,7 @@ open class MessageListConfiguration {
     
     
     // 左侧文本消息背景图
-    public var leftTextMessageBubble = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(8, 8, 16, 8))
+    public var leftTextMessageBubbleImage = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(30, 30, 30, 30))
     
     // 左侧文本消息的字体大小
     public var leftTextMessageTextFont = UIFont.systemFont(ofSize: 13)
@@ -86,14 +102,12 @@ open class MessageListConfiguration {
     public var leftTextMessagePaddingRight: CGFloat = 8
     public var leftTextMessagePaddingTop: CGFloat = 8
     public var leftTextMessagePaddingBottom: CGFloat = 8
-    
-    
-    
+
     
     
     
     // 右侧文本消息背景图
-    public var rightTextMessageBubble = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(8, 8, 8, 16))
+    public var rightTextMessageBubbleImage = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(30, 26, 26, 26))
     
     // 右侧文本消息的字体大小
     public var rightTextMessageTextFont = UIFont.systemFont(ofSize: 13)
@@ -147,7 +161,7 @@ open class MessageListConfiguration {
     
     
     // 左侧语音消息背景图
-    public var leftAudioMessageBubbleImage = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(8, 8, 16, 8))
+    public var leftAudioMessageBubbleImage = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(30, 30, 30, 30))
     
     // 左侧语音消息气泡高度
     public var leftAudioMessageBubbleHeight: CGFloat = 40
@@ -195,7 +209,7 @@ open class MessageListConfiguration {
     
     
     // 右侧语音消息背景图
-    public var rightAudioMessageBubbleImage = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(8, 8, 8, 16))
+    public var rightAudioMessageBubbleImage = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(30, 30, 30, 30))
     
     // 右侧语音消息气泡高度
     public var rightAudioMessageBubbleHeight: CGFloat = 40

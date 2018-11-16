@@ -84,4 +84,12 @@ class MessageCell: UITableViewCell {
         print("onContentLongPress")
     }
     
+    @objc func onFailureIconClick() {
+        print("onFailureIconClick")
+    }
+    
+    @objc func onSpinnerIconClick() {
+        print("onSpinnerIconClick")
+    }
+    
 }
