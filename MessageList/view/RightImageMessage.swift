@@ -22,7 +22,7 @@ class RightImageMessageCell: ImageMessageCell {
             NSLayoutConstraint(item: avatarView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.userAvatarWidth),
             NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
             
-            NSLayoutConstraint(item: photoView, attribute: .right, relatedBy: .equal, toItem: avatarView, attribute: .left, multiplier: 1, constant: -configuration.leftImageMessageMarginLeft),
+            NSLayoutConstraint(item: photoView, attribute: .right, relatedBy: .equal, toItem: avatarView, attribute: .left, multiplier: 1, constant: -configuration.rightImageMessageMarginRight),
             NSLayoutConstraint(item: photoView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messagePaddingVertical),
             
             NSLayoutConstraint(item: spinnerView, attribute: .right, relatedBy: .equal, toItem: photoView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusIconMarginRight),

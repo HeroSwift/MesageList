@@ -29,6 +29,9 @@ public class MessageList: UITableView {
         
         self.register(LeftAudioMessageCell.self, forCellReuseIdentifier: "LeftAudioMessage")
         self.register(RightAudioMessageCell.self, forCellReuseIdentifier: "RightAudioMessage")
+        
+        self.register(LeftVideoMessageCell.self, forCellReuseIdentifier: "LeftVideoMessage")
+        self.register(RightVideoMessageCell.self, forCellReuseIdentifier: "RightVideoMessage")
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -75,6 +78,14 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
             }
             else {
                 messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftAudioMessage") as? MessageCell
+            }
+        }
+        else if message is VideoMessage {
+            if isRight {
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "RightVideoMessage") as? MessageCell
+            }
+            else {
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftVideoMessage") as? MessageCell
             }
         }
 

@@ -15,6 +15,10 @@
 		9D08B66C219D43F3006904E5 /* AudioMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D08B66B219D43F3006904E5 /* AudioMessageCell.swift */; };
 		9D08B66E219D4B99006904E5 /* LeftAudioMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D08B66D219D4B99006904E5 /* LeftAudioMessageCell.swift */; };
 		9D08B670219DBDE5006904E5 /* RightAudioMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D08B66F219DBDE5006904E5 /* RightAudioMessageCell.swift */; };
+		9D12A61B219E9F3D00D5E5B4 /* VideoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12A61A219E9F3D00D5E5B4 /* VideoMessage.swift */; };
+		9D12A61D219E9FFF00D5E5B4 /* VideoMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12A61C219E9FFF00D5E5B4 /* VideoMessageCell.swift */; };
+		9D12A667219EAAA100D5E5B4 /* LeftVideoMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12A666219EAAA100D5E5B4 /* LeftVideoMessageCell.swift */; };
+		9D12A669219EB1BD00D5E5B4 /* RightVideoMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12A668219EB1BD00D5E5B4 /* RightVideoMessageCell.swift */; };
 		9D4350C92186E21200084889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350C82186E21200084889 /* AppDelegate.swift */; };
 		9D4350CB2186E21200084889 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350CA2186E21200084889 /* ViewController.swift */; };
 		9D4350CE2186E21200084889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4350CC2186E21200084889 /* Main.storyboard */; };
@@ -54,6 +58,10 @@
 		9D08B66B219D43F3006904E5 /* AudioMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMessageCell.swift; sourceTree = "<group>"; };
 		9D08B66D219D4B99006904E5 /* LeftAudioMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAudioMessageCell.swift; sourceTree = "<group>"; };
 		9D08B66F219DBDE5006904E5 /* RightAudioMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightAudioMessageCell.swift; sourceTree = "<group>"; };
+		9D12A61A219E9F3D00D5E5B4 /* VideoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMessage.swift; sourceTree = "<group>"; };
+		9D12A61C219E9FFF00D5E5B4 /* VideoMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMessageCell.swift; sourceTree = "<group>"; };
+		9D12A666219EAAA100D5E5B4 /* LeftVideoMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftVideoMessageCell.swift; sourceTree = "<group>"; };
+		9D12A668219EB1BD00D5E5B4 /* RightVideoMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightVideoMessageCell.swift; sourceTree = "<group>"; };
 		9D4350B72186E20000084889 /* MessageList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MessageList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4350BB2186E20000084889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D4350C62186E21200084889 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +158,7 @@
 				9D4350E42186E73400084889 /* TextMessage.swift */,
 				9D08B663219D229E006904E5 /* ImageMessage.swift */,
 				9D08B669219D43B6006904E5 /* AudioMessage.swift */,
+				9D12A61A219E9F3D00D5E5B4 /* VideoMessage.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -177,6 +186,9 @@
 				9D08B66B219D43F3006904E5 /* AudioMessageCell.swift */,
 				9D08B66D219D4B99006904E5 /* LeftAudioMessageCell.swift */,
 				9D08B66F219DBDE5006904E5 /* RightAudioMessageCell.swift */,
+				9D12A61C219E9FFF00D5E5B4 /* VideoMessageCell.swift */,
+				9D12A666219EAAA100D5E5B4 /* LeftVideoMessageCell.swift */,
+				9D12A668219EB1BD00D5E5B4 /* RightVideoMessageCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -321,9 +333,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4350E52186E73400084889 /* TextMessage.swift in Sources */,
+				9D12A61B219E9F3D00D5E5B4 /* VideoMessage.swift in Sources */,
 				9D08B662219D224B006904E5 /* ImageMessageCell.swift in Sources */,
+				9D12A61D219E9FFF00D5E5B4 /* VideoMessageCell.swift in Sources */,
 				9D4350E32186E4C100084889 /* User.swift in Sources */,
 				9D6C53CD219ABA7F000DD119 /* TextMessageCell.swift in Sources */,
+				9D12A667219EAAA100D5E5B4 /* LeftVideoMessageCell.swift in Sources */,
 				9D08B66A219D43B6006904E5 /* AudioMessage.swift in Sources */,
 				9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */,
 				9D4350F02187098700084889 /* MessageCell.swift in Sources */,
@@ -337,6 +352,7 @@
 				9D08B66C219D43F3006904E5 /* AudioMessageCell.swift in Sources */,
 				9D08B670219DBDE5006904E5 /* RightAudioMessageCell.swift in Sources */,
 				9D4350DF2186E37200084889 /* MessageStatus.swift in Sources */,
+				9D12A669219EB1BD00D5E5B4 /* RightVideoMessageCell.swift in Sources */,
 				9D4350EA2186EA4900084889 /* LeftTextMessageCell.swift in Sources */,
 				9D4350E82186E90700084889 /* MessageList.swift in Sources */,
 			);

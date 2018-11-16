@@ -66,25 +66,25 @@ class TextMessageCell: MessageCell {
         
         let textMessage = message as! TextMessage
         
-        let avatar = textMessage.user.avatar
+        let avatar = message.user.avatar
         if avatar != "" {
             configuration.loadImage(imageView: avatarView, url: avatar)
         }
         
-        nameView.text = textMessage.user.name
+        nameView.text = message.user.name
         nameView.sizeToFit()
         
         textView.text = textMessage.text
         textView.sizeToFit()
 
-        if textMessage.status == .sendIng {
+        if message.status == .sendIng {
             spinnerView.startAnimating()
         }
         else {
             spinnerView.stopAnimating()
         }
         
-        failureView.isHidden = textMessage.status != .sendFailure
+        failureView.isHidden = message.status != .sendFailure
         
     }
     

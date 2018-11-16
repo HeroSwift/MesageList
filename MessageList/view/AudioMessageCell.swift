@@ -98,12 +98,12 @@ class AudioMessageCell: MessageCell {
         
         let audioMessage = message as! AudioMessage
         
-        let avatar = audioMessage.user.avatar
+        let avatar = message.user.avatar
         if avatar != "" {
             configuration.loadImage(imageView: avatarView, url: avatar)
         }
         
-        nameView.text = audioMessage.user.name
+        nameView.text = message.user.name
         nameView.sizeToFit()
         
         let duration = audioMessage.duration
@@ -139,14 +139,14 @@ class AudioMessageCell: MessageCell {
             unitView.isHidden = true
         }
 
-        if audioMessage.status == .sendIng {
+        if message.status == .sendIng {
             spinnerView.startAnimating()
         }
         else {
             spinnerView.stopAnimating()
         }
         
-        failureView.isHidden = audioMessage.status != .sendFailure
+        failureView.isHidden = message.status != .sendFailure
         
     }
     

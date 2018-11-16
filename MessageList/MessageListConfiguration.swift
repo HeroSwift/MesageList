@@ -138,10 +138,11 @@ open class MessageListConfiguration {
     // 图片圆角
     public var imageMessageBorderRadius: CGFloat = 4
     
-    // 左侧文本消息到头像的距离
+    // 左侧图片消息到头像的距离
     public var leftImageMessageMarginLeft: CGFloat = 10
     
-    
+    // 右侧图片消息到头像的距离
+    public var rightImageMessageMarginRight: CGFloat = 10
     
     
     
@@ -241,6 +242,61 @@ open class MessageListConfiguration {
     // 右侧语音消息单位的字体颜色
     public var rightAudioMessageUnitTextColor = UIColor(red: 150 / 255, green: 150 / 255, blue: 150 / 255, alpha: 1)
     
+    
+    
+    
+    
+    
+    
+    
+    //
+    // MARK: - 视频消息
+    //
+    
+    // 视频缩略图圆角
+    public var videoMessageBorderRadius: CGFloat = 4
+    
+    // 视频播放图标
+    public var videoMessagePlayImage = UIImage(named: "play", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+    
+    // 视频时长到缩略图右侧的距离
+    public var videoMessageDurationMarginRight: CGFloat = 8
+    
+    // 视频时长到缩略图底部的距离
+    public var videoMessageDurationMarginBottom: CGFloat = 4
+    
+    
+    
+    // 左侧视频消息到头像的距离
+    public var leftVideoMessageMarginLeft: CGFloat = 10
+    
+    // 左侧视频消息时长的字体大小
+    public var leftVideoMessageDurationTextFont = UIFont.systemFont(ofSize: 12)
+    
+    // 左侧视频消息时长的字体颜色
+    public var leftVideoMessageDurationTextColor = UIColor.white
+    
+    // 左侧视频消息时长的字体阴影
+    public var leftVideoMessageDurationShadowColor = UIColor.black
+    public var leftVideoMessageDurationShadowOffset = CGSize.zero
+    public var leftVideoMessageDurationShadowOpacity: Float = 1
+    public var leftVideoMessageDurationShadowRadius: CGFloat = 4
+    
+    
+    // 右侧视频消息到头像的距离
+    public var rightVideoMessageMarginRight: CGFloat = 10
+    
+    // 右侧视频消息时长的字体大小
+    public var rightVideoMessageDurationTextFont = UIFont.systemFont(ofSize: 12)
+    
+    // 右侧视频消息时长的字体颜色
+    public var rightVideoMessageDurationTextColor = UIColor.white
+    
+    // 右侧视频消息时长的字体阴影
+    public var rightVideoMessageDurationShadowColor = UIColor.black
+    public var rightVideoMessageDurationShadowOffset = CGSize.zero
+    public var rightVideoMessageDurationShadowOpacity: Float = 1
+    public var rightVideoMessageDurationShadowRadius: CGFloat = 4
     
     
     

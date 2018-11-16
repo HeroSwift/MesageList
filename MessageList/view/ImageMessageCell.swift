@@ -71,12 +71,12 @@ class ImageMessageCell: MessageCell {
         
         let imageMessage = message as! ImageMessage
         
-        let avatar = imageMessage.user.avatar
+        let avatar = message.user.avatar
         if avatar != "" {
             configuration.loadImage(imageView: avatarView, url: avatar)
         }
         
-        nameView.text = imageMessage.user.name
+        nameView.text = message.user.name
         nameView.sizeToFit()
         
         let url = imageMessage.url
@@ -87,14 +87,14 @@ class ImageMessageCell: MessageCell {
             setNeedsLayout()
         }
         
-        if imageMessage.status == .sendIng {
+        if message.status == .sendIng {
             spinnerView.startAnimating()
         }
         else {
             spinnerView.stopAnimating()
         }
         
-        failureView.isHidden = imageMessage.status != .sendFailure
+        failureView.isHidden = message.status != .sendFailure
         
     }
     
