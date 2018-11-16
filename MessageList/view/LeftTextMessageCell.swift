@@ -20,9 +20,6 @@ class LeftTextMessageCell: TextMessageCell {
         textView.font = configuration.leftTextMessageTextFont
         textView.textColor = configuration.leftTextMessageTextColor
         
-        // 限定最大宽度
-        textView.preferredMaxLayoutWidth = getContentMaxWidth(configuration: configuration) - configuration.leftTextMessagePaddingLeft - configuration.leftTextMessagePaddingRight
-        
         contentView.addConstraints([
             
             NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: configuration.messagePaddingVertical),
@@ -75,6 +72,11 @@ class LeftTextMessageCell: TextMessageCell {
             ])
         }
         
+    }
+    
+    override func getContentMaxWidth(configuration: MessageListConfiguration) -> CGFloat {
+        let maxWidth = super.getContentMaxWidth(configuration: configuration)
+        return maxWidth - configuration.leftTextMessagePaddingLeft - configuration.leftTextMessagePaddingRight
     }
     
 }
