@@ -18,7 +18,7 @@ class VideoMessageCell: MessageCell {
     
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
-    var failureView = UIImageView()
+    var failureView = UIButton()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -59,13 +59,13 @@ class VideoMessageCell: MessageCell {
         
         // failure icon
         failureView.translatesAutoresizingMaskIntoConstraints = false
-        failureView.image = configuration.messageFailureIcon
+        failureView.setBackgroundImage(configuration.messageFailureIconNormal, for: .normal)
+        failureView.setBackgroundImage(configuration.messageFailureIconPressed, for: .highlighted)
         contentView.addSubview(failureView)
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: thumbnailView, selector: #selector(onContentClick))
-        addClickHandler(view: spinnerView, selector: #selector(onSpinnerIconClick))
         addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
         addLongPressHandler(view: thumbnailView, selector: #selector(onContentLongPress))
         

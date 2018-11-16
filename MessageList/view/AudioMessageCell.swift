@@ -19,7 +19,7 @@ class AudioMessageCell: MessageCell {
     
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
-    var failureView = UIImageView()
+    var failureView = UIButton()
     
     // 当前音频的 Url
     private var url = ""
@@ -76,13 +76,13 @@ class AudioMessageCell: MessageCell {
         
         // failure icon
         failureView.translatesAutoresizingMaskIntoConstraints = false
-        failureView.image = configuration.messageFailureIcon
+        failureView.setBackgroundImage(configuration.messageFailureIconNormal, for: .normal)
+        failureView.setBackgroundImage(configuration.messageFailureIconPressed, for: .highlighted)
         contentView.addSubview(failureView)
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: bubbleView, selector: #selector(onBubbleClick))
-        addClickHandler(view: spinnerView, selector: #selector(onSpinnerIconClick))
         addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
         addLongPressHandler(view: bubbleView, selector: #selector(onContentLongPress))
         

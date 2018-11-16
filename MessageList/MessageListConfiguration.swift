@@ -16,7 +16,8 @@ open class MessageListConfiguration {
     public var userAvatarHeight: CGFloat = 40
     
     // 发送失败的图标
-    public var messageFailureIcon = UIImage(named: "failure", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+    public var messageFailureIconNormal = UIImage(named: "failure_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+    public var messageFailureIconPressed = UIImage(named: "failure_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
     
     
     

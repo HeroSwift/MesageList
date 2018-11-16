@@ -88,8 +88,4 @@ class MessageCell: UITableViewCell {
         print("onFailureIconClick")
     }
     
-    @objc func onSpinnerIconClick() {
-        print("onSpinnerIconClick")
-    }
-    
 }
