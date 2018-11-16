@@ -40,6 +40,12 @@ class RightAudioMessageCell: AudioMessageCell {
             NSLayoutConstraint(item: durationView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.audioMessageDurationBottom),
             NSLayoutConstraint(item: durationView, attribute: .right, relatedBy: .equal, toItem: unitView, attribute: .left, multiplier: 1, constant: -configuration.audioMessageUnitSpacing),
             
+            NSLayoutConstraint(item: spinnerView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: -configuration.leftStatusIconMarginLeft),
+            NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusIconMarginBottom),
+            
+            NSLayoutConstraint(item: failureView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: -configuration.leftStatusIconMarginLeft),
+            NSLayoutConstraint(item: failureView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusIconMarginBottom),
+            
         ])
         
         if configuration.rightUserNameVisible {

@@ -17,6 +17,10 @@ class AudioMessageCell: MessageCell {
     
     var bubbleWidthConstraint: NSLayoutConstraint!
     
+    var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
+    var failureView = UIImageView()
+    
     // 当前音频的 Url
     private var url = ""
     
@@ -66,9 +70,20 @@ class AudioMessageCell: MessageCell {
         unitView.sizeToFit()
         contentView.addSubview(unitView)
         
+        // spinner icon
+        spinnerView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(spinnerView)
+        
+        // failure icon
+        failureView.translatesAutoresizingMaskIntoConstraints = false
+        failureView.image = configuration.messageFailureIcon
+        contentView.addSubview(failureView)
+        
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: bubbleView, selector: #selector(onBubbleClick))
+        addClickHandler(view: spinnerView, selector: #selector(onSpinnerIconClick))
+        addClickHandler(view: failureView, selector: #selector(onFailureIconClick))
         addLongPressHandler(view: bubbleView, selector: #selector(onContentLongPress))
         
         bubbleWidthConstraint = NSLayoutConstraint(item: bubbleView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
@@ -82,6 +97,11 @@ class AudioMessageCell: MessageCell {
     override func update(configuration: MessageListConfiguration, message: Message) {
         
         let audioMessage = message as! AudioMessage
+        
+        let avatar = audioMessage.user.avatar
+        if avatar != "" {
+            configuration.loadImage(imageView: avatarView, url: avatar)
+        }
         
         nameView.text = audioMessage.user.name
         nameView.sizeToFit()
@@ -109,11 +129,24 @@ class AudioMessageCell: MessageCell {
             bubbleWidthConstraint.constant = bubbleWidth
             setNeedsLayout()
         }
-
-        let avatar = audioMessage.user.avatar
-        if avatar != "" {
-            configuration.loadImage(imageView: avatarView, url: avatar)
+        
+        if message.status == .sendSuccess {
+            durationView.isHidden = false
+            unitView.isHidden = false
         }
+        else {
+            durationView.isHidden = true
+            unitView.isHidden = true
+        }
+
+        if audioMessage.status == .sendIng {
+            spinnerView.startAnimating()
+        }
+        else {
+            spinnerView.stopAnimating()
+        }
+        
+        failureView.isHidden = audioMessage.status != .sendFailure
         
     }
     
