@@ -71,30 +71,17 @@ class ImageMessageCell: MessageCell {
         
         let imageMessage = message as! ImageMessage
         
-        let avatar = message.user.avatar
-        if avatar != "" {
-            configuration.loadImage(imageView: avatarView, url: avatar)
-        }
+        configuration.loadImage(imageView: avatarView, url: message.user.avatar)
         
         nameView.text = message.user.name
         nameView.sizeToFit()
         
-        let url = imageMessage.url
-        if url != "" {
-            configuration.loadImage(imageView: photoView, url: url)
-            photoWidthConstraint.constant = CGFloat(imageMessage.width)
-            photoHeightConstraint.constant = CGFloat(imageMessage.height)
-            setNeedsLayout()
-        }
+        configuration.loadImage(imageView: photoView, url: imageMessage.url)
+        photoWidthConstraint.constant = CGFloat(imageMessage.width)
+        photoHeightConstraint.constant = CGFloat(imageMessage.height)
+        setNeedsLayout()
         
-        if message.status == .sendIng {
-            spinnerView.startAnimating()
-        }
-        else {
-            spinnerView.stopAnimating()
-        }
-        
-        failureView.isHidden = message.status != .sendFailure
+        showStatusView(spinnerView: spinnerView, failureView: failureView)
         
     }
     

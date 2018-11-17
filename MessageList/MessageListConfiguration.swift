@@ -310,6 +310,10 @@ open class MessageListConfiguration {
         return false
     }
     
+    open func formatText(textView: UITextView, text: String) {
+        
+    }
+    
     open func loadImage(imageView: UIImageView, url: String) {
         
     }

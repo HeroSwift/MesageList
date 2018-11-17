@@ -39,6 +39,19 @@ class MessageCell: UITableViewCell {
         
     }
     
+    func showStatusView(spinnerView: UIActivityIndicatorView, failureView: UIView) {
+        
+        if message.status == .sendIng {
+            spinnerView.startAnimating()
+        }
+        else {
+            spinnerView.stopAnimating()
+        }
+        
+        failureView.isHidden = message.status != .sendFailure
+        
+    }
+    
     func getContentMaxWidth(configuration: MessageListConfiguration) -> CGFloat {
         
         let screenWidth = UIScreen.main.bounds.size.width

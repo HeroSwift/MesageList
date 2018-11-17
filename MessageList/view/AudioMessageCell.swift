@@ -98,10 +98,7 @@ class AudioMessageCell: MessageCell {
         
         let audioMessage = message as! AudioMessage
         
-        let avatar = message.user.avatar
-        if avatar != "" {
-            configuration.loadImage(imageView: avatarView, url: avatar)
-        }
+        configuration.loadImage(imageView: avatarView, url: message.user.avatar)
         
         nameView.text = message.user.name
         nameView.sizeToFit()
@@ -139,14 +136,7 @@ class AudioMessageCell: MessageCell {
             unitView.isHidden = true
         }
 
-        if message.status == .sendIng {
-            spinnerView.startAnimating()
-        }
-        else {
-            spinnerView.stopAnimating()
-        }
-        
-        failureView.isHidden = message.status != .sendFailure
+        showStatusView(spinnerView: spinnerView, failureView: failureView)
         
     }
     
