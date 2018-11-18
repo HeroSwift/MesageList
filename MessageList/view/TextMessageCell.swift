@@ -29,6 +29,10 @@ class TextMessageCell: MessageCell {
     override func create(configuration: MessageListConfiguration) {
         
         // 头像
+        if configuration.userAvatarBorderRadius > 0 {
+            avatarView.clipsToBounds = true
+            avatarView.layer.cornerRadius = configuration.userAvatarBorderRadius
+        }
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
@@ -87,13 +91,13 @@ class TextMessageCell: MessageCell {
         nameView.text = message.user.name
         nameView.sizeToFit()
 
-        autoTextSize(configuration: configuration)
+        updateContentSize(configuration: configuration)
 
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
     }
     
-    private func autoTextSize(configuration: MessageListConfiguration) {
+    private func updateContentSize(configuration: MessageListConfiguration) {
         
         let fixedWidth = textView.frame.size.width
         var newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))

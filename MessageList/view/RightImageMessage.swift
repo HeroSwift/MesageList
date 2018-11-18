@@ -25,11 +25,11 @@ class RightImageMessageCell: ImageMessageCell {
             NSLayoutConstraint(item: photoView, attribute: .right, relatedBy: .equal, toItem: avatarView, attribute: .left, multiplier: 1, constant: -configuration.rightImageMessageMarginRight),
             NSLayoutConstraint(item: photoView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messagePaddingVertical),
             
-            NSLayoutConstraint(item: spinnerView, attribute: .right, relatedBy: .equal, toItem: photoView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusIconMarginRight),
-            NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusIconMarginBottom),
+            NSLayoutConstraint(item: spinnerView, attribute: .right, relatedBy: .equal, toItem: photoView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusViewMarginRight),
+            NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusViewMarginBottom),
             
-            NSLayoutConstraint(item: failureView, attribute: .right, relatedBy: .equal, toItem: photoView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusIconMarginRight),
-            NSLayoutConstraint(item: failureView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusIconMarginBottom),
+            NSLayoutConstraint(item: failureView, attribute: .right, relatedBy: .equal, toItem: photoView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusViewMarginRight),
+            NSLayoutConstraint(item: failureView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusViewMarginBottom),
             
         ])
         

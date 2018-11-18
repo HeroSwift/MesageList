@@ -28,6 +28,10 @@ class ImageMessageCell: MessageCell {
     override func create(configuration: MessageListConfiguration) {
         
         // 头像
+        if configuration.userAvatarBorderRadius > 0 {
+            avatarView.clipsToBounds = true
+            avatarView.layer.cornerRadius = configuration.userAvatarBorderRadius
+        }
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         

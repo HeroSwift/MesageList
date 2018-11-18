@@ -18,6 +18,9 @@ open class MessageListConfiguration {
     // 用户头像的高度
     public var userAvatarHeight: CGFloat = 40
     
+    // 用户头像的圆角
+    public var userAvatarBorderRadius: CGFloat = 4
+    
     // 发送失败的图标
     public var messageFailureIconNormal = UIImage(named: "failure_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
     public var messageFailureIconPressed = UIImage(named: "failure_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
@@ -65,19 +68,19 @@ open class MessageListConfiguration {
     
     
     // 左侧状态图标到气泡的距离
-    public var leftStatusIconMarginLeft: CGFloat = 10
+    public var leftStatusViewMarginLeft: CGFloat = 10
     
     // 左侧状态图标到气泡底部的距离
-    public var leftStatusIconMarginBottom: CGFloat = 5
+    public var leftStatusViewMarginBottom: CGFloat = 5
     
     
     
     
     // 右侧状态图标到气泡的距离
-    public var rightStatusIconMarginRight: CGFloat = 10
+    public var rightStatusViewMarginRight: CGFloat = 10
     
     // 右侧状态图标到气泡底部的距离
-    public var rightStatusIconMarginBottom: CGFloat = 5
+    public var rightStatusViewMarginBottom: CGFloat = 5
     
     
     
@@ -162,6 +165,9 @@ open class MessageListConfiguration {
     // 语音消息的最大时长
     public var audioMessageMaxDuration: Float = 60
     
+    // 语音消息占据内容宽度的最大比例
+    public var audioMessageMaxRatio: CGFloat = 4 / 5
+    
     // 语音消息时长到气泡的距离
     public var audioMessageDurationSpacing: CGFloat = 10
     
@@ -172,7 +178,7 @@ open class MessageListConfiguration {
     public var audioMessageUnitSpacing: CGFloat = 1
     
     // 语音消息单位垂直偏移量
-    public var audioMessageUnitCenterY: CGFloat = -1
+    public var audioMessageUnitBottom: CGFloat = 6
     
     
     

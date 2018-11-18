@@ -25,11 +25,11 @@ class LeftImageMessageCell: ImageMessageCell {
             NSLayoutConstraint(item: photoView, attribute: .left, relatedBy: .equal, toItem: avatarView, attribute: .right, multiplier: 1, constant: configuration.leftImageMessageMarginLeft),
             NSLayoutConstraint(item: photoView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messagePaddingVertical),
             
-            NSLayoutConstraint(item: spinnerView, attribute: .left, relatedBy: .equal, toItem: photoView, attribute: .right, multiplier: 1, constant: configuration.leftStatusIconMarginLeft),
-            NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusIconMarginBottom),
+            NSLayoutConstraint(item: spinnerView, attribute: .left, relatedBy: .equal, toItem: photoView, attribute: .right, multiplier: 1, constant: configuration.leftStatusViewMarginLeft),
+            NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusViewMarginBottom),
             
-            NSLayoutConstraint(item: failureView, attribute: .left, relatedBy: .equal, toItem: photoView, attribute: .right, multiplier: 1, constant: configuration.leftStatusIconMarginLeft),
-            NSLayoutConstraint(item: failureView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusIconMarginBottom),
+            NSLayoutConstraint(item: failureView, attribute: .left, relatedBy: .equal, toItem: photoView, attribute: .right, multiplier: 1, constant: configuration.leftStatusViewMarginLeft),
+            NSLayoutConstraint(item: failureView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusViewMarginBottom),
             
         ])
         

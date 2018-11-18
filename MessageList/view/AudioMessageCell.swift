@@ -38,6 +38,10 @@ class AudioMessageCell: MessageCell {
     override func create(configuration: MessageListConfiguration) {
         
         // 头像
+        if configuration.userAvatarBorderRadius > 0 {
+            avatarView.clipsToBounds = true
+            avatarView.layer.cornerRadius = configuration.userAvatarBorderRadius
+        }
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
@@ -103,14 +107,29 @@ class AudioMessageCell: MessageCell {
         nameView.text = message.user.name
         nameView.sizeToFit()
         
-        let duration = audioMessage.duration
-        durationView.text = "\(duration)"
-        durationView.sizeToFit()
+        updateContentSize(configuration: configuration, duration: audioMessage.duration)
+        
+        if message.status == .sendSuccess {
+            durationView.text = "\(audioMessage.duration)"
+            durationView.sizeToFit()
+            
+            durationView.isHidden = false
+            unitView.isHidden = false
+        }
+        else {
+            durationView.isHidden = true
+            unitView.isHidden = true
+        }
+
+        showStatusView(spinnerView: spinnerView, failureView: failureView)
+        
+    }
+    
+    private func updateContentSize(configuration: MessageListConfiguration, duration: Int) {
         
         let durationRatio = Float(duration) / configuration.audioMessageMaxDuration
         
-        // 最大宽度的 4/5 吧
-        let maxWidth = 4 * getContentMaxWidth(configuration: configuration) / 5
+        let maxWidth = configuration.audioMessageMaxRatio * getContentMaxWidth(configuration: configuration)
         let minWidth = configuration.audioMessageBubbleMinWidth
         
         var bubbleWidth = maxWidth * CGFloat(durationRatio)
@@ -127,30 +146,25 @@ class AudioMessageCell: MessageCell {
             setNeedsLayout()
         }
         
-        if message.status == .sendSuccess {
-            durationView.isHidden = false
-            unitView.isHidden = false
-        }
-        else {
-            durationView.isHidden = true
-            unitView.isHidden = true
-        }
-
-        showStatusView(spinnerView: spinnerView, failureView: failureView)
-        
+    }
+    
+    private func playAnimation() {
+        animationView.startAnimating()
+        isPlaying = true
+    }
+    
+    private func stopAnimation() {
+        animationView.stopAnimating()
+        isPlaying = false
     }
     
     @objc func onBubbleClick() {
-        
         if isPlaying {
-            animationView.stopAnimating()
+            stopAnimation()
         }
         else {
-            animationView.startAnimating()
+            playAnimation()
         }
-        
-        isPlaying = !isPlaying
-        
     }
     
 }

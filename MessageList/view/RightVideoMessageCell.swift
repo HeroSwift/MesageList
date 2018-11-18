@@ -39,11 +39,11 @@ class RightVideoMessageCell: VideoMessageCell {
             NSLayoutConstraint(item: durationView, attribute: .right, relatedBy: .equal, toItem: thumbnailView, attribute: .right, multiplier: 1, constant: -configuration.videoMessageDurationMarginRight),
             NSLayoutConstraint(item: durationView, attribute: .bottom, relatedBy: .equal, toItem: thumbnailView, attribute: .bottom, multiplier: 1, constant: -configuration.videoMessageDurationMarginBottom),
             
-            NSLayoutConstraint(item: spinnerView, attribute: .right, relatedBy: .equal, toItem: thumbnailView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusIconMarginRight),
-            NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: thumbnailView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusIconMarginBottom),
+            NSLayoutConstraint(item: spinnerView, attribute: .right, relatedBy: .equal, toItem: thumbnailView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusViewMarginRight),
+            NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: thumbnailView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusViewMarginBottom),
             
-            NSLayoutConstraint(item: failureView, attribute: .right, relatedBy: .equal, toItem: thumbnailView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusIconMarginRight),
-            NSLayoutConstraint(item: failureView, attribute: .bottom, relatedBy: .equal, toItem: thumbnailView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusIconMarginBottom),
+            NSLayoutConstraint(item: failureView, attribute: .right, relatedBy: .equal, toItem: thumbnailView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusViewMarginRight),
+            NSLayoutConstraint(item: failureView, attribute: .bottom, relatedBy: .equal, toItem: thumbnailView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusViewMarginBottom),
             
         ])
         
