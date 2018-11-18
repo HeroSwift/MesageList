@@ -95,15 +95,28 @@ class VideoMessageCell: MessageCell {
         durationView.text = formatDuration(videoMessage.duration)
         durationView.sizeToFit()
         
-        let thumbnail = videoMessage.thumbnail
-        if thumbnail != "" {
-            configuration.loadImage(imageView: thumbnailView, url: thumbnail)
-            thumbnailWidthConstraint.constant = CGFloat(videoMessage.width)
-            thumbnailHeightConstraint.constant = CGFloat(videoMessage.height)
-            setNeedsLayout()
+        configuration.loadImage(imageView: thumbnailView, url: videoMessage.thumbnail)        
+        updateContentSize(configuration: configuration, width: videoMessage.width, height: videoMessage.height)
+
+        showStatusView(spinnerView: spinnerView, failureView: failureView)
+        
+    }
+    
+    private func updateContentSize(configuration: MessageListConfiguration, width: Int, height: Int) {
+        
+        var imageWidth = CGFloat(width)
+        var imageHeight = CGFloat(height)
+        let maxWidth = getContentMaxWidth(configuration: configuration)
+        
+        if imageWidth > maxWidth {
+            let ratio = imageHeight / imageWidth
+            imageWidth = maxWidth
+            imageHeight = imageWidth * ratio
         }
         
-        showStatusView(spinnerView: spinnerView, failureView: failureView)
+        thumbnailWidthConstraint.constant = imageWidth
+        thumbnailHeightConstraint.constant = imageHeight
+        setNeedsLayout()
         
     }
     

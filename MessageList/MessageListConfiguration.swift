@@ -160,7 +160,7 @@ open class MessageListConfiguration {
     
     
     // 语音消息气泡的最小宽度
-    public var audioMessageBubbleMinWidth: CGFloat = 60
+    public var audioMessageBubbleMinWidth: CGFloat = 80
     
     // 语音消息的最大时长
     public var audioMessageMaxDuration: Float = 60
