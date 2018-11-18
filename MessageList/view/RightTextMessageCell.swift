@@ -80,10 +80,5 @@ class RightTextMessageCell: TextMessageCell {
         }
         
     }
-    
-    override func getContentMaxWidth(configuration: MessageListConfiguration) -> CGFloat {
-        let maxWidth = super.getContentMaxWidth(configuration: configuration)
-        return maxWidth - configuration.rightTextMessagePaddingLeft - configuration.rightTextMessagePaddingRight
-    }
-    
+
 }
