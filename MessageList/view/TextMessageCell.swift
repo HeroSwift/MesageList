@@ -50,7 +50,6 @@ class TextMessageCell: MessageCell {
         textView.backgroundColor = .clear
         textView.isScrollEnabled = false
         textView.isUserInteractionEnabled = true
-        textView.textContainerInset = UIEdgeInsets.zero
         textView.textContainer.lineFragmentPadding = 0
         textView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(textView)
@@ -103,9 +102,13 @@ class TextMessageCell: MessageCell {
         var newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         
         // 算出自适应后的宽度
-        let maxWidth = getContentMaxWidth(configuration: configuration)
-        let width = min(maxWidth, max(newSize.width, fixedWidth))
+        let charWidth = configuration.leftTextMessageTextFont.pointSize
+        // 加了 0.5 右侧就正好没有空白
+        let numberOfChars = floor(getContentMaxWidth(configuration: configuration) / charWidth) + 0.5
+        let maxWidth = charWidth * numberOfChars
         
+        let width = min(maxWidth, max(newSize.width, fixedWidth))
+
         newSize = textView.sizeThatFits(CGSize(width: width, height: CGFloat.greatestFiniteMagnitude))
         
         textWidthConstraint.constant = width
