@@ -7,13 +7,13 @@ public class Message {
     
     public var status: MessageStatus
     
-    public var timestamp: Int
+    public var time: String
     
-    public init(id: String, user: User, status: MessageStatus, timestamp: Int) {
+    public init(id: String, user: User, status: MessageStatus, time: String) {
         self.id = id
         self.user = user
         self.status = status
-        self.timestamp = timestamp
+        self.time = time
     }
     
 }
