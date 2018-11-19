@@ -44,9 +44,6 @@ open class MessageListConfiguration {
     // 时间 字体颜色
     public var timeTextColor = UIColor.white
     
-    // 时间 到下面内容的距离
-    public var timeMarginBottom: CGFloat = 10
-    
     
     
     // 左侧用户名称是否显示
