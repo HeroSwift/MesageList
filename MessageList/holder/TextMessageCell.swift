@@ -16,6 +16,8 @@ class TextMessageCell: MessageCell {
     var textWidthConstraint: NSLayoutConstraint!
     var textHeightConstraint: NSLayoutConstraint!
     
+    var avatarTopConstraint: NSLayoutConstraint!
+    
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     var failureView = UIButton()
@@ -31,6 +33,7 @@ class TextMessageCell: MessageCell {
     override func create(configuration: MessageListConfiguration) {
         
         // 时间
+        timeView.isHidden = true
         timeView.numberOfLines = 1
         timeView.textAlignment = .center
         timeView.font = configuration.timeTextFont
@@ -93,10 +96,12 @@ class TextMessageCell: MessageCell {
         
         textWidthConstraint = NSLayoutConstraint(item: textView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
         textHeightConstraint = NSLayoutConstraint(item: textView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+        avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
             textWidthConstraint,
-            textHeightConstraint
+            textHeightConstraint,
+            avatarTopConstraint
         ])
         
     }
@@ -113,8 +118,9 @@ class TextMessageCell: MessageCell {
 
         updateContentSize(configuration: configuration)
 
-        showTimeView(timeView: timeView, time: message.time)
         showStatusView(spinnerView: spinnerView, failureView: failureView)
+        
+        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messagePaddingVertical)
         
     }
     

@@ -19,6 +19,8 @@ class AudioMessageCell: MessageCell {
     
     var bubbleWidthConstraint: NSLayoutConstraint!
     
+    var avatarTopConstraint: NSLayoutConstraint!
+    
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     var failureView = UIButton()
@@ -40,6 +42,7 @@ class AudioMessageCell: MessageCell {
     override func create(configuration: MessageListConfiguration) {
         
         // 时间
+        timeView.isHidden = true
         timeView.numberOfLines = 1
         timeView.textAlignment = .center
         timeView.font = configuration.timeTextFont
@@ -112,9 +115,11 @@ class AudioMessageCell: MessageCell {
         addLongPressHandler(view: bubbleView, selector: #selector(onContentLongPress))
         
         bubbleWidthConstraint = NSLayoutConstraint(item: bubbleView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
+        avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
-            bubbleWidthConstraint
+            bubbleWidthConstraint,
+            avatarTopConstraint,
         ])
         
     }
@@ -142,8 +147,9 @@ class AudioMessageCell: MessageCell {
             unitView.isHidden = true
         }
 
-        showTimeView(timeView: timeView, time: message.time)
         showStatusView(spinnerView: spinnerView, failureView: failureView)
+        
+        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messagePaddingVertical)
         
     }
     

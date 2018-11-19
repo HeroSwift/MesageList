@@ -39,7 +39,9 @@ class MessageCell: UITableViewCell {
         
     }
     
-    func showTimeView(timeView: UILabel, time: String) {
+    func showTimeView(timeView: UILabel, time: String, avatarView: UIView, avatarTopConstraint: NSLayoutConstraint, marginTop: CGFloat) -> NSLayoutConstraint {
+        
+        let isHidden = timeView.isHidden
         
         if time != "" {
             timeView.text = time
@@ -49,6 +51,23 @@ class MessageCell: UITableViewCell {
         else {
             timeView.isHidden = true
         }
+        
+        // 更新头像的 top
+        // 当没有时间时，头像置顶
+        var constraint = avatarTopConstraint
+        
+        if isHidden != timeView.isHidden {
+            contentView.removeConstraint(constraint)
+            if isHidden {
+                constraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: timeView, attribute: .bottom, multiplier: 1, constant: marginTop)
+            }
+            else {
+                constraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+            }
+            contentView.addConstraint(constraint)
+        }
+        
+        return constraint
         
     }
     

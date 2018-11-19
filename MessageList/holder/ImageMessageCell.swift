@@ -15,6 +15,8 @@ class ImageMessageCell: MessageCell {
     var photoWidthConstraint: NSLayoutConstraint!
     var photoHeightConstraint: NSLayoutConstraint!
     
+    var avatarTopConstraint: NSLayoutConstraint!
+    
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     var failureView = UIButton()
@@ -30,6 +32,7 @@ class ImageMessageCell: MessageCell {
     override func create(configuration: MessageListConfiguration) {
         
         // 时间
+        timeView.isHidden = true
         timeView.numberOfLines = 1
         timeView.textAlignment = .center
         timeView.font = configuration.timeTextFont
@@ -84,10 +87,12 @@ class ImageMessageCell: MessageCell {
         
         photoWidthConstraint = NSLayoutConstraint(item: photoView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
         photoHeightConstraint = NSLayoutConstraint(item: photoView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+        avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
             photoWidthConstraint,
-            photoHeightConstraint
+            photoHeightConstraint,
+            avatarTopConstraint,
         ])
         
     }
@@ -104,8 +109,9 @@ class ImageMessageCell: MessageCell {
         configuration.loadImage(imageView: photoView, url: imageMessage.url)
         updateContentSize(configuration: configuration, width: imageMessage.width, height: imageMessage.height)
         
-        showTimeView(timeView: timeView, time: message.time)
         showStatusView(spinnerView: spinnerView, failureView: failureView)
+        
+        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messagePaddingVertical)
         
     }
     
