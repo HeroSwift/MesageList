@@ -20,6 +20,8 @@ class AudioMessageCell: MessageCell {
     var bubbleWidthConstraint: NSLayoutConstraint!
     var avatarTopConstraint: NSLayoutConstraint!
     
+    var loadingView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     var failureView = UIButton()
@@ -92,6 +94,11 @@ class AudioMessageCell: MessageCell {
         unitView.translatesAutoresizingMaskIntoConstraints = false
         unitView.sizeToFit()
         contentView.addSubview(unitView)
+        
+        // loading icon
+        loadingView.isHidden = true
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(loadingView)
         
         // spinner icon
         spinnerView.translatesAutoresizingMaskIntoConstraints = false
@@ -206,17 +213,22 @@ class AudioMessageCell: MessageCell {
 extension AudioMessageCell: AudioPlayerDelegate {
     
     func audioPlayerDidLoad(url: String) {
-        print("loading")
+        loadingView.isHidden = false
+        animationView.isHidden = true
     }
     
     func audioPlayerDidPlay(url: String) {
         if url == self.url {
+            loadingView.isHidden = true
+            animationView.isHidden = false
             playAnimation()
         }
     }
     
     func audioPlayerDidStop(url: String) {
         if url == self.url {
+            loadingView.isHidden = true
+            animationView.isHidden = false
             stopAnimation()
         }
     }

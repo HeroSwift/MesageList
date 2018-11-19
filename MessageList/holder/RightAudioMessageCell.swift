@@ -36,6 +36,9 @@ class RightAudioMessageCell: AudioMessageCell {
             NSLayoutConstraint(item: animationView, attribute: .centerY, relatedBy: .equal, toItem: bubbleView, attribute: .centerY, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: animationView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .right, multiplier: 1, constant: -configuration.rightAudioMessageWaveMarginRight),
             
+            NSLayoutConstraint(item: loadingView, attribute: .centerY, relatedBy: .equal, toItem: bubbleView, attribute: .centerY, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: loadingView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .right, multiplier: 1, constant: -configuration.rightAudioMessageWaveMarginRight),
+            
             NSLayoutConstraint(item: unitView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.audioMessageUnitBottom),
             NSLayoutConstraint(item: unitView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: -configuration.audioMessageDurationSpacing),
             
