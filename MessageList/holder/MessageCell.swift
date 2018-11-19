@@ -39,6 +39,19 @@ class MessageCell: UITableViewCell {
         
     }
     
+    func showTimeView(timeView: UILabel, time: String) {
+        
+        if time != "" {
+            timeView.text = time
+            timeView.sizeToFit()
+            timeView.isHidden = false
+        }
+        else {
+            timeView.isHidden = true
+        }
+        
+    }
+    
     func showStatusView(spinnerView: UIActivityIndicatorView, failureView: UIView) {
         
         if message.status == .sendIng {

@@ -10,7 +10,7 @@ open class MessageListConfiguration {
     public var messagePaddingHorizontal: CGFloat = 10
     
     // 消息的垂直内间距
-    public var messagePaddingVertical: CGFloat = 10
+    public var messagePaddingVertical: CGFloat = 14
     
     // 用户头像的宽度
     public var userAvatarWidth: CGFloat = 40
@@ -24,6 +24,28 @@ open class MessageListConfiguration {
     // 发送失败的图标
     public var messageFailureIconNormal = UIImage(named: "failure_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
     public var messageFailureIconPressed = UIImage(named: "failure_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+    
+    
+    // 时间 背景色
+    public var timeBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
+    
+    // 时间 圆角
+    public var timeBorderRadius: CGFloat = 4
+    
+    // 时间 水平内间距
+    public var timePaddingHorizontal: CGFloat = 6
+    
+    // 时间 垂直内间距
+    public var timePaddingVertical: CGFloat = 4
+    
+    // 时间 字体大小
+    public var timeTextFont = UIFont.systemFont(ofSize: 10)
+    
+    // 时间 字体颜色
+    public var timeTextColor = UIColor.white
+    
+    // 时间 到下面内容的距离
+    public var timeMarginBottom: CGFloat = 10
     
     
     

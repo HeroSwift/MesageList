@@ -1,25 +1,24 @@
 
 import UIKit
 
-class VideoMessageCell: MessageCell {
+class ImageMessageCell: MessageCell {
+    
+    var timeView = TimeLabel()
     
     var avatarView = UIImageView()
     
     var nameView = UILabel()
     
-    var thumbnailView = UIImageView()
+    // imageView 被占用了
+    var photoView = UIImageView()
     
-    var thumbnailWidthConstraint: NSLayoutConstraint!
-    var thumbnailHeightConstraint: NSLayoutConstraint!
-    
-    var playView = UIImageView()
-    
-    var durationView = UILabel()
+    var photoWidthConstraint: NSLayoutConstraint!
+    var photoHeightConstraint: NSLayoutConstraint!
     
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     var failureView = UIButton()
-    
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -29,6 +28,20 @@ class VideoMessageCell: MessageCell {
     }
     
     override func create(configuration: MessageListConfiguration) {
+        
+        // 时间
+        timeView.font = configuration.timeTextFont
+        timeView.textColor = configuration.timeTextColor
+        timeView.numberOfLines = 1
+        timeView.textAlignment = .center
+        timeView.contentInsets = UIEdgeInsetsMake(configuration.timePaddingVertical, configuration.timePaddingHorizontal, configuration.timePaddingVertical, configuration.timePaddingHorizontal)
+        timeView.backgroundColor = configuration.timeBackgroundColor
+        if configuration.timeBorderRadius > 0 {
+            timeView.clipsToBounds = true
+            timeView.layer.cornerRadius = configuration.timeBorderRadius
+        }
+        timeView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(timeView)
         
         // 头像
         if configuration.userAvatarBorderRadius > 0 {
@@ -42,20 +55,11 @@ class VideoMessageCell: MessageCell {
         nameView.numberOfLines = 1
         nameView.translatesAutoresizingMaskIntoConstraints = false
         
-        // 视频缩略图
-        thumbnailView.clipsToBounds = true
-        thumbnailView.layer.cornerRadius = configuration.videoMessageBorderRadius
-        thumbnailView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(thumbnailView)
-        
-        // 播放按钮
-        playView.image = configuration.videoMessagePlayImage
-        playView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(playView)
-        
-        // 视频时长
-        durationView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(durationView)
+        // 图片
+        photoView.clipsToBounds = true
+        photoView.layer.cornerRadius = configuration.imageMessageBorderRadius
+        photoView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(photoView)
         
         // spinner icon
         spinnerView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,35 +73,33 @@ class VideoMessageCell: MessageCell {
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
-        addClickHandler(view: thumbnailView, selector: #selector(onContentClick))
+        addClickHandler(view: photoView, selector: #selector(onContentClick))
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
-        addLongPressHandler(view: thumbnailView, selector: #selector(onContentLongPress))
+        addLongPressHandler(view: photoView, selector: #selector(onContentLongPress))
         
-        thumbnailWidthConstraint = NSLayoutConstraint(item: thumbnailView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
-        thumbnailHeightConstraint = NSLayoutConstraint(item: thumbnailView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+        photoWidthConstraint = NSLayoutConstraint(item: photoView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
+        photoHeightConstraint = NSLayoutConstraint(item: photoView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
-            thumbnailWidthConstraint,
-            thumbnailHeightConstraint
+            photoWidthConstraint,
+            photoHeightConstraint
         ])
         
     }
     
     override func update(configuration: MessageListConfiguration) {
         
-        let videoMessage = message as! VideoMessage
+        let imageMessage = message as! ImageMessage
         
         configuration.loadImage(imageView: avatarView, url: message.user.avatar)
         
         nameView.text = message.user.name
         nameView.sizeToFit()
         
-        durationView.text = formatDuration(videoMessage.duration)
-        durationView.sizeToFit()
+        configuration.loadImage(imageView: photoView, url: imageMessage.url)
+        updateContentSize(configuration: configuration, width: imageMessage.width, height: imageMessage.height)
         
-        configuration.loadImage(imageView: thumbnailView, url: videoMessage.thumbnail)        
-        updateContentSize(configuration: configuration, width: videoMessage.width, height: videoMessage.height)
-
+        showTimeView(timeView: timeView, time: message.time)
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
     }
@@ -114,41 +116,10 @@ class VideoMessageCell: MessageCell {
             imageHeight = imageWidth * ratio
         }
         
-        thumbnailWidthConstraint.constant = imageWidth
-        thumbnailHeightConstraint.constant = imageHeight
+        photoWidthConstraint.constant = imageWidth
+        photoHeightConstraint.constant = imageHeight
         setNeedsLayout()
         
-    }
-    
-    private func formatDuration(_ duration: Int) -> String {
-    
-        let MINUTE = 60
-        let HOUR = MINUTE * 60
-        
-        var seconds = duration
-        let hours = seconds / HOUR
-        
-        seconds -= hours * HOUR
-        
-        let minutes = seconds / MINUTE
-        
-        seconds -= minutes * MINUTE
-        
-        var result = lpad(minutes) + ":" + lpad(seconds)
-        
-        if hours > 0 {
-            result = lpad(hours) + ":" + result
-        }
-        
-        return result
-    
-    }
-    
-    private func lpad(_ value: Int) -> String {
-        if value > 9 {
-            return "\(value)"
-        }
-        return "0\(value)"
     }
     
 }

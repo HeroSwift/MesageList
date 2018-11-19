@@ -3,6 +3,8 @@ import UIKit
 
 class AudioMessageCell: MessageCell {
     
+    var timeView = TimeLabel()
+    
     var avatarView = UIImageView()
     
     var nameView = UILabel()
@@ -36,6 +38,20 @@ class AudioMessageCell: MessageCell {
     }
     
     override func create(configuration: MessageListConfiguration) {
+        
+        // 时间
+        timeView.font = configuration.timeTextFont
+        timeView.textColor = configuration.timeTextColor
+        timeView.numberOfLines = 1
+        timeView.textAlignment = .center
+        timeView.contentInsets = UIEdgeInsetsMake(configuration.timePaddingVertical, configuration.timePaddingHorizontal, configuration.timePaddingVertical, configuration.timePaddingHorizontal)
+        timeView.backgroundColor = configuration.timeBackgroundColor
+        if configuration.timeBorderRadius > 0 {
+            timeView.clipsToBounds = true
+            timeView.layer.cornerRadius = configuration.timeBorderRadius
+        }
+        timeView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(timeView)
         
         // 头像
         if configuration.userAvatarBorderRadius > 0 {
@@ -121,6 +137,7 @@ class AudioMessageCell: MessageCell {
             unitView.isHidden = true
         }
 
+        showTimeView(timeView: timeView, time: message.time)
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
     }
