@@ -37,6 +37,8 @@
 		9D9B4DB921A24F1D006110EE /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DB821A24F1D006110EE /* InsetLabel.swift */; };
 		9D9B4DBE21A29580006110EE /* EventMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DBD21A29580006110EE /* EventMessage.swift */; };
 		9D9B4DC021A2964D006110EE /* EventMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DBF21A2964D006110EE /* EventMessageCell.swift */; };
+		9D9B4DC221A2AD7A006110EE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DC121A2AD7A006110EE /* AudioPlayer.swift */; };
+		9D9B4DC521A2BB0E006110EE /* AudioPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DC421A2BB0E006110EE /* AudioPlayerDelegate.swift */; };
 		9DAC6E51219C152100F693B9 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC6E50219C152100F693B9 /* Kingfisher.framework */; };
 		9DAC6E53219C619300F693B9 /* RightTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */; };
 		9DAC6E55219C690C00F693B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC6E54219C690C00F693B9 /* Assets.xcassets */; };
@@ -87,6 +89,8 @@
 		9D9B4DB821A24F1D006110EE /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
 		9D9B4DBD21A29580006110EE /* EventMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMessage.swift; sourceTree = "<group>"; };
 		9D9B4DBF21A2964D006110EE /* EventMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMessageCell.swift; sourceTree = "<group>"; };
+		9D9B4DC121A2AD7A006110EE /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		9D9B4DC421A2BB0E006110EE /* AudioPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerDelegate.swift; sourceTree = "<group>"; };
 		9DAC6E50219C152100F693B9 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTextMessageCell.swift; sourceTree = "<group>"; };
 		9DAC6E54219C690C00F693B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		9D4350B92186E20000084889 /* MessageList */ = {
 			isa = PBXGroup;
 			children = (
+				9D9B4DC321A2B167006110EE /* util */,
 				9D9B4DB721A24F0D006110EE /* view */,
 				9D4350E62186E81000084889 /* holder */,
 				9D4350DD2186E35D00084889 /* enum */,
@@ -208,6 +213,15 @@
 				9D9B4DB821A24F1D006110EE /* InsetLabel.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		9D9B4DC321A2B167006110EE /* util */ = {
+			isa = PBXGroup;
+			children = (
+				9D9B4DC121A2AD7A006110EE /* AudioPlayer.swift */,
+				9D9B4DC421A2BB0E006110EE /* AudioPlayerDelegate.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		9DAC6E4F219C152100F693B9 /* Frameworks */ = {
@@ -351,6 +365,7 @@
 			files = (
 				9D4350E52186E73400084889 /* TextMessage.swift in Sources */,
 				9D9B4DB921A24F1D006110EE /* InsetLabel.swift in Sources */,
+				9D9B4DC221A2AD7A006110EE /* AudioPlayer.swift in Sources */,
 				9D9B4DC021A2964D006110EE /* EventMessageCell.swift in Sources */,
 				9D12A61B219E9F3D00D5E5B4 /* VideoMessage.swift in Sources */,
 				9D08B662219D224B006904E5 /* ImageMessageCell.swift in Sources */,
@@ -374,6 +389,7 @@
 				9D4350DF2186E37200084889 /* MessageStatus.swift in Sources */,
 				9D12A669219EB1BD00D5E5B4 /* RightVideoMessageCell.swift in Sources */,
 				9D4350EA2186EA4900084889 /* LeftTextMessageCell.swift in Sources */,
+				9D9B4DC521A2BB0E006110EE /* AudioPlayerDelegate.swift in Sources */,
 				9D4350E82186E90700084889 /* MessageList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

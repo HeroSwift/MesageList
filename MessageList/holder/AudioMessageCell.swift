@@ -24,11 +24,7 @@ class AudioMessageCell: MessageCell {
     
     var failureView = UIButton()
     
-    // 当前音频的 Url
     private var url = ""
-    
-    // 是否正在播放
-    private var isPlaying = false
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -121,12 +117,14 @@ class AudioMessageCell: MessageCell {
             avatarTopConstraint,
         ])
         
+        AudioPlayer.sharedInstance.addListener(listener: self)
+        
     }
     
     override func update(configuration: MessageListConfiguration) {
         
         let audioMessage = message as! AudioMessage
-        
+
         configuration.loadImage(imageView: avatarView, url: message.user.avatar)
         
         nameView.text = message.user.name
@@ -149,6 +147,16 @@ class AudioMessageCell: MessageCell {
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
         avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messagePaddingVertical)
+        
+        url = audioMessage.url
+        
+        // 把动画状态同步回来
+        if AudioPlayer.sharedInstance.isPlaying(url: url) {
+            playAnimation()
+        }
+        else {
+            stopAnimation()
+        }
         
     }
     
@@ -177,21 +185,41 @@ class AudioMessageCell: MessageCell {
     
     private func playAnimation() {
         animationView.startAnimating()
-        isPlaying = true
     }
     
     private func stopAnimation() {
         animationView.stopAnimating()
-        isPlaying = false
     }
     
     @objc func onBubbleClick() {
-        if isPlaying {
-            stopAnimation()
+        let player = AudioPlayer.sharedInstance
+        if player.isPlaying(url: url) {
+            player.stop()
         }
         else {
-            playAnimation()
+            player.play(url: url)
         }
     }
     
 }
+
+extension AudioMessageCell: AudioPlayerDelegate {
+    
+    func audioPlayerDidLoad(url: String) {
+        print("loading")
+    }
+    
+    func audioPlayerDidPlay(url: String) {
+        if url == self.url {
+            playAnimation()
+        }
+    }
+    
+    func audioPlayerDidStop(url: String) {
+        if url == self.url {
+            stopAnimation()
+        }
+    }
+    
+}
+
