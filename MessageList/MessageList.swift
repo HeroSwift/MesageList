@@ -18,7 +18,7 @@ public class MessageList: UITableView {
         
         self.delegate = self
         self.dataSource = self
-//        self.separatorStyle = .none
+        self.separatorStyle = .none
         self.showsVerticalScrollIndicator = false
         self.estimatedRowHeight = 100
         self.rowHeight = UITableViewAutomaticDimension

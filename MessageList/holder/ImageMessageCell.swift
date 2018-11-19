@@ -14,7 +14,6 @@ class ImageMessageCell: MessageCell {
     
     var photoWidthConstraint: NSLayoutConstraint!
     var photoHeightConstraint: NSLayoutConstraint!
-    
     var avatarTopConstraint: NSLayoutConstraint!
     
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)

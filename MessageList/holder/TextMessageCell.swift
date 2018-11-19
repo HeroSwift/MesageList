@@ -15,7 +15,6 @@ class TextMessageCell: MessageCell {
     
     var textWidthConstraint: NSLayoutConstraint!
     var textHeightConstraint: NSLayoutConstraint!
-    
     var avatarTopConstraint: NSLayoutConstraint!
     
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)

@@ -13,7 +13,6 @@ class VideoMessageCell: MessageCell {
     
     var thumbnailWidthConstraint: NSLayoutConstraint!
     var thumbnailHeightConstraint: NSLayoutConstraint!
-    
     var avatarTopConstraint: NSLayoutConstraint!
     
     var playView = UIImageView()

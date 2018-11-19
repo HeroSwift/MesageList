@@ -18,7 +18,6 @@ class AudioMessageCell: MessageCell {
     var unitView = UILabel()
     
     var bubbleWidthConstraint: NSLayoutConstraint!
-    
     var avatarTopConstraint: NSLayoutConstraint!
     
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
