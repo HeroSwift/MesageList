@@ -18,7 +18,7 @@ public class MessageList: UITableView {
         
         self.delegate = self
         self.dataSource = self
-        self.separatorStyle = .none
+//        self.separatorStyle = .none
         self.showsVerticalScrollIndicator = false
         self.estimatedRowHeight = 100
         self.rowHeight = UITableViewAutomaticDimension
@@ -34,6 +34,8 @@ public class MessageList: UITableView {
         
         self.register(LeftVideoMessageCell.self, forCellReuseIdentifier: "LeftVideoMessage")
         self.register(RightVideoMessageCell.self, forCellReuseIdentifier: "RightVideoMessage")
+        
+        self.register(EventMessageCell.self, forCellReuseIdentifier: "EventMessage")
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -89,6 +91,9 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
             else {
                 messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftVideoMessage") as? MessageCell
             }
+        }
+        else if message is EventMessage {
+            messageCell = tableView.dequeueReusableCell(withIdentifier: "EventMessage") as? MessageCell
         }
 
         messageCell?.bind(configuration: configuration, message: message)

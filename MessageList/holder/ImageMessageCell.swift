@@ -3,7 +3,7 @@ import UIKit
 
 class ImageMessageCell: MessageCell {
     
-    var timeView = TimeLabel()
+    var timeView = InsetLabel()
     
     var avatarView = UIImageView()
     
@@ -30,12 +30,17 @@ class ImageMessageCell: MessageCell {
     override func create(configuration: MessageListConfiguration) {
         
         // 时间
-        timeView.font = configuration.timeTextFont
-        timeView.textColor = configuration.timeTextColor
         timeView.numberOfLines = 1
         timeView.textAlignment = .center
-        timeView.contentInsets = UIEdgeInsetsMake(configuration.timePaddingVertical, configuration.timePaddingHorizontal, configuration.timePaddingVertical, configuration.timePaddingHorizontal)
+        timeView.font = configuration.timeTextFont
+        timeView.textColor = configuration.timeTextColor
         timeView.backgroundColor = configuration.timeBackgroundColor
+        timeView.contentInsets = UIEdgeInsetsMake(
+            configuration.timePaddingVertical,
+            configuration.timePaddingHorizontal,
+            configuration.timePaddingVertical,
+            configuration.timePaddingHorizontal
+        )
         if configuration.timeBorderRadius > 0 {
             timeView.clipsToBounds = true
             timeView.layer.cornerRadius = configuration.timeBorderRadius

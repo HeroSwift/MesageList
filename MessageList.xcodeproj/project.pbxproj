@@ -34,7 +34,9 @@
 		9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350ED2186FBF400084889 /* MessageListConfiguration.swift */; };
 		9D4350F02187098700084889 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350EF2187098700084889 /* MessageCell.swift */; };
 		9D6C53CD219ABA7F000DD119 /* TextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */; };
-		9D9B4DB921A24F1D006110EE /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DB821A24F1D006110EE /* TimeLabel.swift */; };
+		9D9B4DB921A24F1D006110EE /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DB821A24F1D006110EE /* InsetLabel.swift */; };
+		9D9B4DBE21A29580006110EE /* EventMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DBD21A29580006110EE /* EventMessage.swift */; };
+		9D9B4DC021A2964D006110EE /* EventMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DBF21A2964D006110EE /* EventMessageCell.swift */; };
 		9DAC6E51219C152100F693B9 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC6E50219C152100F693B9 /* Kingfisher.framework */; };
 		9DAC6E53219C619300F693B9 /* RightTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */; };
 		9DAC6E55219C690C00F693B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC6E54219C690C00F693B9 /* Assets.xcassets */; };
@@ -82,7 +84,9 @@
 		9D4350ED2186FBF400084889 /* MessageListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListConfiguration.swift; sourceTree = "<group>"; };
 		9D4350EF2187098700084889 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageCell.swift; sourceTree = "<group>"; };
-		9D9B4DB821A24F1D006110EE /* TimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
+		9D9B4DB821A24F1D006110EE /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
+		9D9B4DBD21A29580006110EE /* EventMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMessage.swift; sourceTree = "<group>"; };
+		9D9B4DBF21A2964D006110EE /* EventMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMessageCell.swift; sourceTree = "<group>"; };
 		9DAC6E50219C152100F693B9 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTextMessageCell.swift; sourceTree = "<group>"; };
 		9DAC6E54219C690C00F693B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				9D08B663219D229E006904E5 /* ImageMessage.swift */,
 				9D08B669219D43B6006904E5 /* AudioMessage.swift */,
 				9D12A61A219E9F3D00D5E5B4 /* VideoMessage.swift */,
+				9D9B4DBD21A29580006110EE /* EventMessage.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				9D12A61C219E9FFF00D5E5B4 /* VideoMessageCell.swift */,
 				9D12A666219EAAA100D5E5B4 /* LeftVideoMessageCell.swift */,
 				9D12A668219EB1BD00D5E5B4 /* RightVideoMessageCell.swift */,
+				9D9B4DBF21A2964D006110EE /* EventMessageCell.swift */,
 			);
 			path = holder;
 			sourceTree = "<group>";
@@ -199,7 +205,7 @@
 		9D9B4DB721A24F0D006110EE /* view */ = {
 			isa = PBXGroup;
 			children = (
-				9D9B4DB821A24F1D006110EE /* TimeLabel.swift */,
+				9D9B4DB821A24F1D006110EE /* InsetLabel.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -344,7 +350,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4350E52186E73400084889 /* TextMessage.swift in Sources */,
-				9D9B4DB921A24F1D006110EE /* TimeLabel.swift in Sources */,
+				9D9B4DB921A24F1D006110EE /* InsetLabel.swift in Sources */,
+				9D9B4DC021A2964D006110EE /* EventMessageCell.swift in Sources */,
 				9D12A61B219E9F3D00D5E5B4 /* VideoMessage.swift in Sources */,
 				9D08B662219D224B006904E5 /* ImageMessageCell.swift in Sources */,
 				9D12A61D219E9FFF00D5E5B4 /* VideoMessageCell.swift in Sources */,
@@ -357,6 +364,7 @@
 				9D08B668219D2D40006904E5 /* RightImageMessage.swift in Sources */,
 				9D08B664219D229E006904E5 /* ImageMessage.swift in Sources */,
 				9D4350E12186E42600084889 /* SoundMode.swift in Sources */,
+				9D9B4DBE21A29580006110EE /* EventMessage.swift in Sources */,
 				9D08B666219D23F3006904E5 /* LeftImageMessageCell.swift in Sources */,
 				9D08B66E219D4B99006904E5 /* LeftAudioMessageCell.swift in Sources */,
 				9DAC6E53219C619300F693B9 /* RightTextMessageCell.swift in Sources */,

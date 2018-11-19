@@ -26,6 +26,10 @@ class Configuration: MessageListConfiguration {
         textView.text = text
     }
     
+    override func formatEvent(textView: UILabel, event: String) {
+        textView.text = event
+    }
+    
 }
 
 class ViewController: UIViewController {
@@ -35,6 +39,14 @@ class ViewController: UIViewController {
         
         let messageList = MessageList(configuration: Configuration())
 
+        messageList.messageList.append(
+            EventMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "", event: "哈哈哈哈123ABCabc")
+        )
+        
+        messageList.messageList.append(
+            EventMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "", event: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈")
+        )
+        
         messageList.messageList.append(
             TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "星期二", text: "哈哈哈哈123ABCabc")
         )

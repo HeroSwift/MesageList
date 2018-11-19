@@ -46,6 +46,27 @@ open class MessageListConfiguration {
     
     
     
+    
+    // 事件 背景色
+    public var eventBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
+    
+    // 事件 圆角
+    public var eventBorderRadius: CGFloat = 4
+    
+    // 事件 水平内间距
+    public var eventPaddingHorizontal: CGFloat = 6
+    
+    // 事件 垂直内间距
+    public var eventPaddingVertical: CGFloat = 4
+    
+    // 事件 字体大小
+    public var eventTextFont = UIFont.systemFont(ofSize: 10)
+    
+    // 事件 字体颜色
+    public var eventTextColor = UIColor.white
+    
+    
+    
     // 左侧用户名称是否显示
     public var leftUserNameVisible = false
     
@@ -336,6 +357,10 @@ open class MessageListConfiguration {
     }
     
     open func formatText(textView: UITextView, text: String) {
+        
+    }
+    
+    open func formatEvent(textView: UILabel, event: String) {
         
     }
     

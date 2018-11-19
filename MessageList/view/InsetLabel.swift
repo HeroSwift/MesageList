@@ -1,7 +1,7 @@
 
 import UIKit
 
-class TimeLabel: UILabel {
+class InsetLabel: UILabel {
     
     var contentInsets: UIEdgeInsets!
     
