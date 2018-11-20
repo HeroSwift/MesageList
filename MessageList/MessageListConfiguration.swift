@@ -526,6 +526,9 @@ open class MessageListConfiguration {
     // MARK: - 文章消息
     //
     
+    // 文章消息的气泡宽度
+    public var postMessageBubbleWidth: CGFloat = 230
+    
     // 文章消息的缩略图圆角
     public var postMessageThumbnailBorderRadius: CGFloat = 0
     
@@ -541,9 +544,6 @@ open class MessageListConfiguration {
     
     // 左侧文章消息的气泡图片
     public var leftPostMessageBubbleImage = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
-    
-    // 左侧文章消息的气泡宽度
-    public var leftPostMessageBubbleWidth: CGFloat = 230
     
     // 左侧文章消息的标题字体大小
     public var leftPostMessageTitleTextFont = UIFont.systemFont(ofSize: 14)
@@ -625,9 +625,6 @@ open class MessageListConfiguration {
     
     // 右侧文章消息的气泡图片
     public var rightPostMessageBubbleImage = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
-    
-    // 右侧文章消息的气泡宽度
-    public var rightPostMessageBubbleWidth: CGFloat = 230
     
     // 右侧文章消息的标题字体大小
     public var rightPostMessageTitleTextFont = UIFont.systemFont(ofSize: 14)
