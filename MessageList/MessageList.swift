@@ -38,6 +38,9 @@ public class MessageList: UITableView {
         self.register(LeftCardMessageCell.self, forCellReuseIdentifier: "LeftCardMessage")
         self.register(RightCardMessageCell.self, forCellReuseIdentifier: "RightCardMessage")
         
+        self.register(LeftPostMessageCell.self, forCellReuseIdentifier: "LeftPostMessage")
+        self.register(RightPostMessageCell.self, forCellReuseIdentifier: "RightPostMessage")
+        
         self.register(EventMessageCell.self, forCellReuseIdentifier: "EventMessage")
     }
     
@@ -101,6 +104,14 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
             }
             else {
                 messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftCardMessage") as? MessageCell
+            }
+        }
+        else if message is PostMessage {
+            if isRight {
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "RightPostMessage") as? MessageCell
+            }
+            else {
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftPostMessage") as? MessageCell
             }
         }
         else if message is EventMessage {

@@ -43,6 +43,10 @@
 		9D9B4DC921A39D02006110EE /* CardMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DC821A39D02006110EE /* CardMessageCell.swift */; };
 		9D9B4DCB21A3A1D0006110EE /* LeftCardMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DCA21A3A1D0006110EE /* LeftCardMessageCell.swift */; };
 		9D9B4E1521A3C164006110EE /* RightCardMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E1421A3C164006110EE /* RightCardMessageCell.swift */; };
+		9D9B4E1721A3DAAC006110EE /* PostMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E1621A3DAAC006110EE /* PostMessage.swift */; };
+		9D9B4E1921A3DB0D006110EE /* PostMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E1821A3DB0D006110EE /* PostMessageCell.swift */; };
+		9D9B4E1B21A3DC20006110EE /* LeftPostMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E1A21A3DC20006110EE /* LeftPostMessageCell.swift */; };
+		9D9B4E1D21A3E722006110EE /* RightPostMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E1C21A3E722006110EE /* RightPostMessageCell.swift */; };
 		9DAC6E51219C152100F693B9 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC6E50219C152100F693B9 /* Kingfisher.framework */; };
 		9DAC6E53219C619300F693B9 /* RightTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */; };
 		9DAC6E55219C690C00F693B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC6E54219C690C00F693B9 /* Assets.xcassets */; };
@@ -99,6 +103,10 @@
 		9D9B4DC821A39D02006110EE /* CardMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMessageCell.swift; sourceTree = "<group>"; };
 		9D9B4DCA21A3A1D0006110EE /* LeftCardMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftCardMessageCell.swift; sourceTree = "<group>"; };
 		9D9B4E1421A3C164006110EE /* RightCardMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightCardMessageCell.swift; sourceTree = "<group>"; };
+		9D9B4E1621A3DAAC006110EE /* PostMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessage.swift; sourceTree = "<group>"; };
+		9D9B4E1821A3DB0D006110EE /* PostMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMessageCell.swift; sourceTree = "<group>"; };
+		9D9B4E1A21A3DC20006110EE /* LeftPostMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPostMessageCell.swift; sourceTree = "<group>"; };
+		9D9B4E1C21A3E722006110EE /* RightPostMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightPostMessageCell.swift; sourceTree = "<group>"; };
 		9DAC6E50219C152100F693B9 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTextMessageCell.swift; sourceTree = "<group>"; };
 		9DAC6E54219C690C00F693B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +190,7 @@
 				9D12A61A219E9F3D00D5E5B4 /* VideoMessage.swift */,
 				9D9B4DBD21A29580006110EE /* EventMessage.swift */,
 				9D9B4DC621A39C79006110EE /* CardMessage.swift */,
+				9D9B4E1621A3DAAC006110EE /* PostMessage.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -215,6 +224,9 @@
 				9D9B4DC821A39D02006110EE /* CardMessageCell.swift */,
 				9D9B4DCA21A3A1D0006110EE /* LeftCardMessageCell.swift */,
 				9D9B4E1421A3C164006110EE /* RightCardMessageCell.swift */,
+				9D9B4E1821A3DB0D006110EE /* PostMessageCell.swift */,
+				9D9B4E1A21A3DC20006110EE /* LeftPostMessageCell.swift */,
+				9D9B4E1C21A3E722006110EE /* RightPostMessageCell.swift */,
 			);
 			path = holder;
 			sourceTree = "<group>";
@@ -376,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4350E52186E73400084889 /* TextMessage.swift in Sources */,
+				9D9B4E1921A3DB0D006110EE /* PostMessageCell.swift in Sources */,
 				9D9B4DC921A39D02006110EE /* CardMessageCell.swift in Sources */,
 				9D9B4DB921A24F1D006110EE /* InsetLabel.swift in Sources */,
 				9D9B4DC221A2AD7A006110EE /* AudioPlayer.swift in Sources */,
@@ -386,6 +399,7 @@
 				9D4350E32186E4C100084889 /* User.swift in Sources */,
 				9D6C53CD219ABA7F000DD119 /* TextMessageCell.swift in Sources */,
 				9D12A667219EAAA100D5E5B4 /* LeftVideoMessageCell.swift in Sources */,
+				9D9B4E1721A3DAAC006110EE /* PostMessage.swift in Sources */,
 				9D08B66A219D43B6006904E5 /* AudioMessage.swift in Sources */,
 				9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */,
 				9D4350F02187098700084889 /* MessageCell.swift in Sources */,
@@ -395,6 +409,7 @@
 				9D9B4DC721A39C79006110EE /* CardMessage.swift in Sources */,
 				9D9B4E1521A3C164006110EE /* RightCardMessageCell.swift in Sources */,
 				9D9B4DBE21A29580006110EE /* EventMessage.swift in Sources */,
+				9D9B4E1D21A3E722006110EE /* RightPostMessageCell.swift in Sources */,
 				9D08B666219D23F3006904E5 /* LeftImageMessageCell.swift in Sources */,
 				9D08B66E219D4B99006904E5 /* LeftAudioMessageCell.swift in Sources */,
 				9DAC6E53219C619300F693B9 /* RightTextMessageCell.swift in Sources */,
@@ -402,6 +417,7 @@
 				9D08B66C219D43F3006904E5 /* AudioMessageCell.swift in Sources */,
 				9D08B670219DBDE5006904E5 /* RightAudioMessageCell.swift in Sources */,
 				9D4350DF2186E37200084889 /* MessageStatus.swift in Sources */,
+				9D9B4E1B21A3DC20006110EE /* LeftPostMessageCell.swift in Sources */,
 				9D12A669219EB1BD00D5E5B4 /* RightVideoMessageCell.swift in Sources */,
 				9D4350EA2186EA4900084889 /* LeftTextMessageCell.swift in Sources */,
 				9D9B4DCB21A3A1D0006110EE /* LeftCardMessageCell.swift in Sources */,
