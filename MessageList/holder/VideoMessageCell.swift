@@ -120,30 +120,13 @@ class VideoMessageCell: MessageCell {
         durationView.text = formatDuration(videoMessage.duration)
         durationView.sizeToFit()
         
-        configuration.loadImage(imageView: thumbnailView, url: videoMessage.thumbnail)        
-        updateContentSize(configuration: configuration, width: videoMessage.width, height: videoMessage.height)
+        configuration.loadImage(imageView: thumbnailView, url: videoMessage.thumbnail)
+        
+        updateImageSize(configuration: configuration, width: videoMessage.width, height: videoMessage.height, widthConstraint: thumbnailWidthConstraint, heightConstraint: thumbnailHeightConstraint)
 
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
         avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messagePaddingVertical)
-        
-    }
-    
-    private func updateContentSize(configuration: MessageListConfiguration, width: Int, height: Int) {
-        
-        var imageWidth = CGFloat(width)
-        var imageHeight = CGFloat(height)
-        let maxWidth = getContentMaxWidth(configuration: configuration)
-        
-        if imageWidth > maxWidth {
-            let ratio = imageHeight / imageWidth
-            imageWidth = maxWidth
-            imageHeight = imageWidth * ratio
-        }
-        
-        thumbnailWidthConstraint.constant = imageWidth
-        thumbnailHeightConstraint.constant = imageHeight
-        setNeedsLayout()
         
     }
     

@@ -198,6 +198,16 @@ class AudioMessageCell: MessageCell {
         animationView.stopAnimating()
     }
     
+    private func showLoading() {
+        loadingView.isHidden = false
+        animationView.isHidden = true
+    }
+    
+    private func hideLoading() {
+        loadingView.isHidden = true
+        animationView.isHidden = false
+    }
+    
     @objc func onBubbleClick() {
         let player = AudioPlayer.sharedInstance
         if player.isPlaying(url: url) {
@@ -213,22 +223,19 @@ class AudioMessageCell: MessageCell {
 extension AudioMessageCell: AudioPlayerDelegate {
     
     func audioPlayerDidLoad(url: String) {
-        loadingView.isHidden = false
-        animationView.isHidden = true
+        showLoading()
     }
     
     func audioPlayerDidPlay(url: String) {
         if url == self.url {
-            loadingView.isHidden = true
-            animationView.isHidden = false
+            hideLoading()
             playAnimation()
         }
     }
     
     func audioPlayerDidStop(url: String) {
         if url == self.url {
-            loadingView.isHidden = true
-            animationView.isHidden = false
+            hideLoading()
             stopAnimation()
         }
     }

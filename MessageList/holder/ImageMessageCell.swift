@@ -106,29 +106,12 @@ class ImageMessageCell: MessageCell {
         nameView.sizeToFit()
         
         configuration.loadImage(imageView: photoView, url: imageMessage.url)
-        updateContentSize(configuration: configuration, width: imageMessage.width, height: imageMessage.height)
+        
+        updateImageSize(configuration: configuration, width: imageMessage.width, height: imageMessage.height, widthConstraint: photoWidthConstraint, heightConstraint: photoHeightConstraint)
         
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
         avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messagePaddingVertical)
-        
-    }
-    
-    private func updateContentSize(configuration: MessageListConfiguration, width: Int, height: Int) {
-        
-        var imageWidth = CGFloat(width)
-        var imageHeight = CGFloat(height)
-        let maxWidth = getContentMaxWidth(configuration: configuration)
-        
-        if imageWidth > maxWidth {
-            let ratio = imageHeight / imageWidth
-            imageWidth = maxWidth
-            imageHeight = imageWidth * ratio
-        }
-        
-        photoWidthConstraint.constant = imageWidth
-        photoHeightConstraint.constant = imageHeight
-        setNeedsLayout()
         
     }
     

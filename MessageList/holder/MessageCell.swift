@@ -39,6 +39,34 @@ class MessageCell: UITableViewCell {
         
     }
     
+    func updateImageSize(configuration: MessageListConfiguration, width: Int, height: Int, widthConstraint: NSLayoutConstraint, heightConstraint: NSLayoutConstraint) {
+        
+        var imageWidth = CGFloat(width)
+        var imageHeight = CGFloat(height)
+        let imageRatio = imageWidth / imageHeight
+        
+        // 简单限制下最大和最小尺寸
+        // 剩下的外部自由发挥
+        let maxWidth = getContentMaxWidth(configuration: configuration)
+
+        if imageWidth > maxWidth {
+            imageWidth = maxWidth
+            imageHeight = imageWidth / imageRatio
+        }
+        
+        if imageHeight < configuration.userAvatarHeight {
+            imageHeight = configuration.userAvatarHeight
+            imageWidth = imageHeight * imageRatio
+        }
+        
+        widthConstraint.constant = imageWidth
+        heightConstraint.constant = imageHeight
+        
+        setNeedsLayout()
+        
+        
+    }
+    
     func showTimeView(timeView: UILabel, time: String, avatarView: UIView, avatarTopConstraint: NSLayoutConstraint, marginTop: CGFloat) -> NSLayoutConstraint {
         
         let isHidden = timeView.isHidden
