@@ -354,6 +354,15 @@ open class MessageListConfiguration {
     // MARK: - 名片消息
     //
     
+    // 名片消息的气泡宽度
+    public var cardMessageBubbleWidth: CGFloat = 230
+    
+    // 名片消息的缩略图宽度
+    public var cardMessageThumbnailWidth: CGFloat = 42
+    
+    // 名片消息的缩略图高度
+    public var cardMessageThumbnailHeight: CGFloat = 42
+    
     // 名片消息的缩略图圆角
     public var cardMessageThumbnailBorderRadius: CGFloat = 0
     
@@ -366,15 +375,6 @@ open class MessageListConfiguration {
     
     // 左侧名片消息的气泡图片
     public var leftCardMessageBubbleImage = UIImage(named: "bubble_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
-    
-    // 左侧名片消息的气泡宽度
-    public var leftCardMessageBubbleWidth: CGFloat = 230
-    
-    // 左侧名片消息的缩略图宽度
-    public var leftCardMessageThumbnailWidth: CGFloat = 42
-    
-    // 左侧名片消息的缩略图高度
-    public var leftCardMessageThumbnailHeight: CGFloat = 42
     
     // 左侧名片消息的缩略图到气泡左侧的距离
     public var leftCardMessageThumbnailMarginLeft: CGFloat = 16
@@ -431,7 +431,10 @@ open class MessageListConfiguration {
     public var leftCardMessageTypeTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
     // 左侧名片消息的类型到分割线的距离
-    public var leftCardMessageTypeMarginVertical: CGFloat = 4
+    public var leftCardMessageTypeMarginTop: CGFloat = 4
+    
+    // 左侧名片消息的类型到气泡底部的距离
+    public var leftCardMessageTypeMarginBottom: CGFloat = 4
     
     // 左侧名片消息的类型到气泡左侧的距离
     public var leftCardMessageTypeMarginLeft: CGFloat = 16
@@ -448,15 +451,6 @@ open class MessageListConfiguration {
     
     // 右侧名片消息的气泡图片
     public var rightCardMessageBubbleImage = UIImage(named: "bubble_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
-    
-    // 右侧名片消息的气泡宽度
-    public var rightCardMessageBubbleWidth: CGFloat = 230
-    
-    // 右侧名片消息的缩略图宽度
-    public var rightCardMessageThumbnailWidth: CGFloat = 42
-    
-    // 右侧名片消息的缩略图高度
-    public var rightCardMessageThumbnailHeight: CGFloat = 42
     
     // 右侧名片消息的缩略图到气泡右侧的距离
     public var rightCardMessageThumbnailMarginLeft: CGFloat = 10
@@ -513,7 +507,10 @@ open class MessageListConfiguration {
     public var rightCardMessageTypeTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
     // 右侧名片消息的类型到分割线的距离
-    public var rightCardMessageTypeMarginVertical: CGFloat = 4
+    public var rightCardMessageTypeMarginTop: CGFloat = 4
+    
+    // 右侧名片消息的类型到气泡底部的距离
+    public var rightCardMessageTypeMarginBottom: CGFloat = 4
     
     // 右侧名片消息的类型到气泡左侧的距离
     public var rightCardMessageTypeMarginLeft: CGFloat = 10
@@ -609,7 +606,10 @@ open class MessageListConfiguration {
     public var leftPostMessageBrandTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
     // 左侧文章消息的品牌到分割线的距离
-    public var leftPostMessageBrandMarginVertical: CGFloat = 4
+    public var leftPostMessageBrandMarginTop: CGFloat = 4
+    
+    // 左侧文章消息的品牌到气泡底部的距离
+    public var leftPostMessageBrandMarginBottom: CGFloat = 4
     
     // 左侧文章消息的品牌到气泡左侧的距离
     public var leftPostMessageBrandMarginLeft: CGFloat = 16
@@ -690,7 +690,10 @@ open class MessageListConfiguration {
     public var rightPostMessageBrandTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
     // 右侧文章消息的品牌到分割线的距离
-    public var rightPostMessageBrandMarginVertical: CGFloat = 4
+    public var rightPostMessageBrandMarginTop: CGFloat = 4
+    
+    // 右侧文章消息的品牌到气泡底部的距离
+    public var rightPostMessageBrandMarginBottom: CGFloat = 4
     
     // 右侧文章消息的品牌到气泡左侧的距离
     public var rightPostMessageBrandMarginLeft: CGFloat = 10
