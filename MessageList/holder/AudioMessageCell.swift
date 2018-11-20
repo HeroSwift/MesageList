@@ -9,7 +9,7 @@ class AudioMessageCell: MessageCell {
     
     var nameView = UILabel()
     
-    var bubbleView = UIImageView()
+    var bubbleView = UIButton()
     
     var animationView = UIImageView()
     

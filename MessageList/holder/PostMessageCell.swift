@@ -9,7 +9,7 @@ class PostMessageCell: MessageCell {
     
     var nameView = UILabel()
     
-    var bubbleView = UIImageView()
+    var bubbleView = UIButton()
     
     var thumbnailView = UIImageView()
     var titleView = UILabel()
@@ -118,7 +118,7 @@ class PostMessageCell: MessageCell {
         
         contentView.addConstraints([
             avatarTopConstraint
-            ])
+        ])
         
     }
     

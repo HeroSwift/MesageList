@@ -15,7 +15,8 @@ class RightCardMessageCell: CardMessageCell {
         
         super.create(configuration: configuration)
         
-        bubbleView.image = configuration.rightCardMessageBubbleImage
+        bubbleView.setBackgroundImage(configuration.rightCardMessageBubbleImageNormal, for: .normal)
+        bubbleView.setBackgroundImage(configuration.rightCardMessageBubbleImagePressed, for: .highlighted)
         
         titleView.font = configuration.rightCardMessageTitleTextFont
         titleView.textColor = configuration.rightCardMessageTitleTextColor

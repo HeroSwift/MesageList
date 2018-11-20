@@ -15,7 +15,8 @@ class RightAudioMessageCell: AudioMessageCell {
         
         super.create(configuration: configuration)
         
-        bubbleView.image = configuration.rightAudioMessageBubbleImage
+        bubbleView.setBackgroundImage(configuration.rightAudioMessageBubbleImageNormal, for: .normal)
+        bubbleView.setBackgroundImage(configuration.rightAudioMessageBubbleImagePressed, for: .highlighted)
         
         animationView.image = configuration.rightAudioMessageWave
         animationView.animationImages = configuration.rightAudioMessageWaves

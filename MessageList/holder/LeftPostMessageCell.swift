@@ -15,7 +15,8 @@ class LeftPostMessageCell: PostMessageCell {
         
         super.create(configuration: configuration)
         
-        bubbleView.image = configuration.leftPostMessageBubbleImage
+        bubbleView.setBackgroundImage(configuration.leftPostMessageBubbleImageNormal, for: .normal)
+        bubbleView.setBackgroundImage(configuration.leftPostMessageBubbleImagePressed, for: .highlighted)
         
         titleView.font = configuration.leftPostMessageTitleTextFont
         titleView.textColor = configuration.leftPostMessageTitleTextColor

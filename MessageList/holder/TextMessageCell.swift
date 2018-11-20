@@ -71,6 +71,7 @@ class TextMessageCell: MessageCell {
         textView.isEditable = false
         textView.textAlignment = .left
         textView.backgroundColor = .clear
+        textView.tintColor = configuration.textMessageTintColor
         textView.isScrollEnabled = false
         textView.isUserInteractionEnabled = true
         textView.textContainer.lineFragmentPadding = 0
