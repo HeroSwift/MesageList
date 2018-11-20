@@ -35,6 +35,9 @@ public class MessageList: UITableView {
         self.register(LeftVideoMessageCell.self, forCellReuseIdentifier: "LeftVideoMessage")
         self.register(RightVideoMessageCell.self, forCellReuseIdentifier: "RightVideoMessage")
         
+        self.register(LeftCardMessageCell.self, forCellReuseIdentifier: "LeftCardMessage")
+        self.register(RightCardMessageCell.self, forCellReuseIdentifier: "RightCardMessage")
+        
         self.register(EventMessageCell.self, forCellReuseIdentifier: "EventMessage")
     }
     
@@ -90,6 +93,14 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
             }
             else {
                 messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftVideoMessage") as? MessageCell
+            }
+        }
+        else if message is CardMessage {
+            if isRight {
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "RightCardMessage") as? MessageCell
+            }
+            else {
+                messageCell = tableView.dequeueReusableCell(withIdentifier: "LeftCardMessage") as? MessageCell
             }
         }
         else if message is EventMessage {
