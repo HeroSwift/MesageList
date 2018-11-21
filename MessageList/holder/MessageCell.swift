@@ -6,8 +6,29 @@ class MessageCell: UITableViewCell {
     
     var isReady = false
     
+    var configuration: MessageListConfiguration!
     var delegate: MessageListDelegate!
     var message: Message!
+    
+    var topConstraint: NSLayoutConstraint!
+    var bottomConstraint: NSLayoutConstraint!
+    
+    var count = 0
+    
+    var index = -1 {
+        didSet {
+            if index == 0 {
+                topConstraint.constant = configuration.paddingVertical
+            }
+            else {
+                topConstraint.constant = configuration.messageMarginTop
+                if index == count - 1 {
+                    bottomConstraint.constant = configuration.paddingVertical
+                }
+            }
+            setNeedsLayout()
+        }
+    }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -17,31 +38,40 @@ class MessageCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(configuration: MessageListConfiguration, delegate: MessageListDelegate, message: Message) {
+    func bind(configuration: MessageListConfiguration, delegate: MessageListDelegate, message: Message, index: Int, count: Int) {
         
-        self.delegate = delegate
         self.message = message
         
         if !isReady {
+            
             isReady = true
+            
+            self.configuration = configuration
+            self.delegate = delegate
+            
             selectionStyle = .none
             backgroundColor = .clear
-            create(configuration: configuration)
+            
+            create()
+            
         }
         
-        update(configuration: configuration)
+        self.count = count
+        self.index = index
+        
+        update()
         
     }
     
-    func create(configuration: MessageListConfiguration) {
+    func create() {
         
     }
     
-    func update(configuration: MessageListConfiguration) {
+    func update() {
         
     }
     
-    func updateImageSize(configuration: MessageListConfiguration, width: Int, height: Int, widthConstraint: NSLayoutConstraint, heightConstraint: NSLayoutConstraint) {
+    func updateImageSize(width: Int, height: Int, widthConstraint: NSLayoutConstraint, heightConstraint: NSLayoutConstraint) {
         
         var imageWidth = CGFloat(width)
         var imageHeight = CGFloat(height)
@@ -49,7 +79,7 @@ class MessageCell: UITableViewCell {
         
         // 简单限制下最大和最小尺寸
         // 剩下的外部自由发挥
-        let maxWidth = getContentMaxWidth(configuration: configuration)
+        let maxWidth = getContentMaxWidth()
 
         if imageWidth > maxWidth {
             imageWidth = maxWidth
@@ -69,7 +99,7 @@ class MessageCell: UITableViewCell {
         
     }
     
-    func showTimeView(timeView: UILabel, time: String, avatarView: UIView, avatarTopConstraint: NSLayoutConstraint, marginTop: CGFloat) -> NSLayoutConstraint {
+    func showTimeView(timeView: UILabel, time: String, avatarView: UIView, avatarTopConstraint: NSLayoutConstraint) -> NSLayoutConstraint {
         
         let isHidden = timeView.isHidden
         
@@ -89,7 +119,7 @@ class MessageCell: UITableViewCell {
         if isHidden != timeView.isHidden {
             contentView.removeConstraint(constraint)
             if isHidden {
-                constraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: timeView, attribute: .bottom, multiplier: 1, constant: marginTop)
+                constraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: timeView, attribute: .bottom, multiplier: 1, constant: configuration.messageMarginTop)
             }
             else {
                 constraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
@@ -114,7 +144,7 @@ class MessageCell: UITableViewCell {
         
     }
     
-    func getContentMaxWidth(configuration: MessageListConfiguration) -> CGFloat {
+    func getContentMaxWidth() -> CGFloat {
         
         let screenWidth = UIScreen.main.bounds.size.width
         

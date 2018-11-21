@@ -28,7 +28,7 @@ class ImageMessageCell: MessageCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func create(configuration: MessageListConfiguration) {
+    override func create() {
         
         // 时间
         timeView.isHidden = true
@@ -94,11 +94,16 @@ class ImageMessageCell: MessageCell {
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: photoView, selector: #selector(onContentLongPress))
         
+        topConstraint = NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+        bottomConstraint = NSLayoutConstraint(item: photoView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
+        
         photoWidthConstraint = NSLayoutConstraint(item: photoView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
         photoHeightConstraint = NSLayoutConstraint(item: photoView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
         avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
+            topConstraint,
+            bottomConstraint,
             photoWidthConstraint,
             photoHeightConstraint,
             avatarTopConstraint,
@@ -106,7 +111,7 @@ class ImageMessageCell: MessageCell {
         
     }
     
-    override func update(configuration: MessageListConfiguration) {
+    override func update() {
         
         let imageMessage = message as! ImageMessage
         
@@ -117,11 +122,11 @@ class ImageMessageCell: MessageCell {
         
         configuration.loadImage(imageView: photoView, url: imageMessage.url)
         
-        updateImageSize(configuration: configuration, width: imageMessage.width, height: imageMessage.height, widthConstraint: photoWidthConstraint, heightConstraint: photoHeightConstraint)
+        updateImageSize(width: imageMessage.width, height: imageMessage.height, widthConstraint: photoWidthConstraint, heightConstraint: photoHeightConstraint)
         
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
-        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messageMarginTop)
+        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint)
         
     }
     

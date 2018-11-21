@@ -13,7 +13,7 @@ class EventMessageCell: MessageCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func create(configuration: MessageListConfiguration) {
+    override func create() {
         
         eventView.numberOfLines = 0
         eventView.textAlignment = .left
@@ -34,22 +34,25 @@ class EventMessageCell: MessageCell {
             eventView.layer.cornerRadius = configuration.eventBorderRadius
         }
         
-        eventView.preferredMaxLayoutWidth = getContentMaxWidth(configuration: configuration)
+        eventView.preferredMaxLayoutWidth = getContentMaxWidth()
         
         eventView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(eventView)
-    
+        
+        topConstraint = NSLayoutConstraint(item: eventView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+        bottomConstraint = NSLayoutConstraint(item: eventView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
+        
         contentView.addConstraints([
             
-            NSLayoutConstraint(item: eventView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: eventView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messageMarginTop),
+            topConstraint,
+            bottomConstraint,
             NSLayoutConstraint(item: eventView, attribute: .centerX, relatedBy: .equal, toItem: contentView, attribute: .centerX, multiplier: 1, constant: 0),
         
         ])
         
     }
     
-    override func update(configuration: MessageListConfiguration) {
+    override func update() {
         
         let eventMessage = message as! EventMessage
         

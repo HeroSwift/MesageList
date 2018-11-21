@@ -11,9 +11,9 @@ class LeftAudioMessageCell: AudioMessageCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func create(configuration: MessageListConfiguration) {
+    override func create() {
         
-        super.create(configuration: configuration)
+        super.create()
         
         bubbleView.setBackgroundImage(configuration.leftAudioMessageBubbleImageNormal, for: .normal)
         bubbleView.setBackgroundImage(configuration.leftAudioMessageBubbleImagePressed, for: .highlighted)
@@ -23,7 +23,6 @@ class LeftAudioMessageCell: AudioMessageCell {
         
         contentView.addConstraints([
             
-            NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: timeView, attribute: .centerX, relatedBy: .equal, toItem: contentView, attribute: .centerX, multiplier: 1, constant: 0),
             
             NSLayoutConstraint(item: avatarView, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1, constant: configuration.messagePaddingHorizontal),
@@ -31,7 +30,6 @@ class LeftAudioMessageCell: AudioMessageCell {
             NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
             
             NSLayoutConstraint(item: bubbleView, attribute: .left, relatedBy: .equal, toItem: avatarView, attribute: .right, multiplier: 1, constant: configuration.leftAudioMessageMarginLeft),
-            NSLayoutConstraint(item: bubbleView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messageMarginTop),
             NSLayoutConstraint(item: bubbleView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.leftAudioMessageBubbleHeight),
             
             NSLayoutConstraint(item: animationView, attribute: .centerY, relatedBy: .equal, toItem: bubbleView, attribute: .centerY, multiplier: 1, constant: 0),

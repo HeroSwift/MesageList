@@ -31,7 +31,7 @@ class VideoMessageCell: MessageCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func create(configuration: MessageListConfiguration) {
+    override func create() {
         
         // 时间
         timeView.isHidden = true
@@ -106,11 +106,16 @@ class VideoMessageCell: MessageCell {
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: thumbnailView, selector: #selector(onContentLongPress))
         
+        topConstraint = NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+        bottomConstraint = NSLayoutConstraint(item: thumbnailView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
+        
         thumbnailWidthConstraint = NSLayoutConstraint(item: thumbnailView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
         thumbnailHeightConstraint = NSLayoutConstraint(item: thumbnailView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
         avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
+            topConstraint,
+            bottomConstraint,
             thumbnailWidthConstraint,
             thumbnailHeightConstraint,
             avatarTopConstraint,
@@ -118,7 +123,7 @@ class VideoMessageCell: MessageCell {
         
     }
     
-    override func update(configuration: MessageListConfiguration) {
+    override func update() {
         
         let videoMessage = message as! VideoMessage
         
@@ -132,11 +137,11 @@ class VideoMessageCell: MessageCell {
         
         configuration.loadImage(imageView: thumbnailView, url: videoMessage.thumbnail)
         
-        updateImageSize(configuration: configuration, width: videoMessage.width, height: videoMessage.height, widthConstraint: thumbnailWidthConstraint, heightConstraint: thumbnailHeightConstraint)
+        updateImageSize(width: videoMessage.width, height: videoMessage.height, widthConstraint: thumbnailWidthConstraint, heightConstraint: thumbnailHeightConstraint)
 
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
-        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messageMarginTop)
+        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint)
         
     }
     

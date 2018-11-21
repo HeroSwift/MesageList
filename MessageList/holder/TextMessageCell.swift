@@ -15,6 +15,7 @@ class TextMessageCell: MessageCell {
     
     var textWidthConstraint: NSLayoutConstraint!
     var textHeightConstraint: NSLayoutConstraint!
+    
     var avatarTopConstraint: NSLayoutConstraint!
     
     var spinnerView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
@@ -29,7 +30,7 @@ class TextMessageCell: MessageCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func create(configuration: MessageListConfiguration) {
+    override func create() {
         
         // 时间
         timeView.isHidden = true
@@ -98,19 +99,24 @@ class TextMessageCell: MessageCell {
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: textView, selector: #selector(onContentLongPress))
         
+        topConstraint = NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+        bottomConstraint = NSLayoutConstraint(item: textView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
+        
         textWidthConstraint = NSLayoutConstraint(item: textView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
         textHeightConstraint = NSLayoutConstraint(item: textView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
         avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
+            topConstraint,
+            bottomConstraint,
             textWidthConstraint,
             textHeightConstraint,
-            avatarTopConstraint
+            avatarTopConstraint,
         ])
         
     }
     
-    override func update(configuration: MessageListConfiguration) {
+    override func update() {
         
         let textMessage = message as! TextMessage
         
@@ -120,15 +126,15 @@ class TextMessageCell: MessageCell {
         nameView.text = message.user.name
         nameView.sizeToFit()
 
-        updateContentSize(configuration: configuration)
+        updateContentSize()
 
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
-        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messageMarginTop)
+        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint)
         
     }
     
-    private func updateContentSize(configuration: MessageListConfiguration) {
+    private func updateContentSize() {
         
         let fixedWidth = textView.frame.size.width
         var newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
@@ -136,7 +142,7 @@ class TextMessageCell: MessageCell {
         // 算出自适应后的宽度
         let charWidth = configuration.leftTextMessageTextFont.pointSize
         // 加了 0.5 右侧就正好没有空白
-        let numberOfChars = floor(getContentMaxWidth(configuration: configuration) / charWidth) + 0.5
+        let numberOfChars = floor(getContentMaxWidth() / charWidth) + 0.5
         let maxWidth = charWidth * numberOfChars
         
         let width = min(maxWidth, max(newSize.width, fixedWidth))

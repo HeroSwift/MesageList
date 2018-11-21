@@ -31,7 +31,7 @@ class CardMessageCell: MessageCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func create(configuration: MessageListConfiguration) {
+    override func create() {
         
         // 时间
         timeView.isHidden = true
@@ -118,15 +118,19 @@ class CardMessageCell: MessageCell {
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: bubbleView, selector: #selector(onContentLongPress))
         
+        topConstraint = NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+        bottomConstraint = NSLayoutConstraint(item: bubbleView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
         avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
-            avatarTopConstraint
+            topConstraint,
+            bottomConstraint,
+            avatarTopConstraint,
         ])
         
     }
     
-    override func update(configuration: MessageListConfiguration) {
+    override func update() {
         
         let cardMessage = message as! CardMessage
         
@@ -148,7 +152,7 @@ class CardMessageCell: MessageCell {
         
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
-        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messageMarginTop)
+        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint)
         
     }
     

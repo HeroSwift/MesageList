@@ -124,7 +124,8 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
         
         var messageCell: MessageCell?
         
-        let message = messageList[ indexPath.row ]
+        let rowIndex = indexPath.row
+        let message = messageList[ rowIndex ]
         let isRight = configuration.isRightMessage(message: message)
         if message is TextMessage {
             if isRight {
@@ -178,7 +179,7 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
             messageCell = tableView.dequeueReusableCell(withIdentifier: "EventMessage") as? MessageCell
         }
 
-        messageCell?.bind(configuration: configuration, delegate: delegate, message: message)
+        messageCell?.bind(configuration: configuration, delegate: delegate, message: message, index: rowIndex, count: messageList.count)
         
         return messageCell!
         

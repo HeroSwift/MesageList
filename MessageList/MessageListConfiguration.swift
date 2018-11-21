@@ -6,12 +6,15 @@ open class MessageListConfiguration {
     // 背景色
     public var backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1)
     
-    // 消息的水平内间距
-    public var messagePaddingHorizontal: CGFloat = 10
+    // 内边距
+    public var paddingVertical: CGFloat = 18
     
-    // 消息的垂直内间距
+    // 消息的垂直间距
     public var messageMarginTop: CGFloat = 14
     
+    // 消息的水平内间距
+    public var messagePaddingHorizontal: CGFloat = 10
+
     // 用户头像的宽度
     public var userAvatarWidth: CGFloat = 40
     

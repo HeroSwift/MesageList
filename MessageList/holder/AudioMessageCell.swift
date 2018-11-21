@@ -36,7 +36,7 @@ class AudioMessageCell: MessageCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func create(configuration: MessageListConfiguration) {
+    override func create() {
         
         // 时间
         timeView.isHidden = true
@@ -120,10 +120,15 @@ class AudioMessageCell: MessageCell {
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: bubbleView, selector: #selector(onContentLongPress))
         
+        topConstraint = NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+        bottomConstraint = NSLayoutConstraint(item: bubbleView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
+        
         bubbleWidthConstraint = NSLayoutConstraint(item: bubbleView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
         avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         
         contentView.addConstraints([
+            topConstraint,
+            bottomConstraint,
             bubbleWidthConstraint,
             avatarTopConstraint,
         ])
@@ -132,7 +137,7 @@ class AudioMessageCell: MessageCell {
         
     }
     
-    override func update(configuration: MessageListConfiguration) {
+    override func update() {
         
         let audioMessage = message as! AudioMessage
 
@@ -141,7 +146,7 @@ class AudioMessageCell: MessageCell {
         nameView.text = message.user.name
         nameView.sizeToFit()
         
-        updateContentSize(configuration: configuration, duration: audioMessage.duration)
+        updateContentSize(duration: audioMessage.duration)
         
         if message.status == .sendSuccess {
             durationView.text = "\(audioMessage.duration)"
@@ -157,7 +162,7 @@ class AudioMessageCell: MessageCell {
 
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
-        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint, marginTop: configuration.messageMarginTop)
+        avatarTopConstraint = showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint)
         
         url = audioMessage.url
         
@@ -171,11 +176,11 @@ class AudioMessageCell: MessageCell {
         
     }
     
-    private func updateContentSize(configuration: MessageListConfiguration, duration: Int) {
+    private func updateContentSize(duration: Int) {
         
         let durationRatio = Float(duration) / configuration.audioMessageMaxDuration
         
-        let maxWidth = configuration.audioMessageMaxRatio * getContentMaxWidth(configuration: configuration)
+        let maxWidth = configuration.audioMessageMaxRatio * getContentMaxWidth()
         let minWidth = configuration.audioMessageBubbleMinWidth
         
         var bubbleWidth = maxWidth * CGFloat(durationRatio)
