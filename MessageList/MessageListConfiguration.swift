@@ -10,7 +10,7 @@ open class MessageListConfiguration {
     public var messagePaddingHorizontal: CGFloat = 10
     
     // 消息的垂直内间距
-    public var messagePaddingVertical: CGFloat = 14
+    public var messageMarginTop: CGFloat = 14
     
     // 用户头像的宽度
     public var userAvatarWidth: CGFloat = 40

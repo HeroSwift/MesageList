@@ -33,7 +33,7 @@ class LeftVideoMessageCell: VideoMessageCell {
             NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
             
             NSLayoutConstraint(item: thumbnailView, attribute: .left, relatedBy: .equal, toItem: avatarView, attribute: .right, multiplier: 1, constant: configuration.leftVideoMessageMarginLeft),
-            NSLayoutConstraint(item: thumbnailView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messagePaddingVertical),
+            NSLayoutConstraint(item: thumbnailView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messageMarginTop),
             
             NSLayoutConstraint(item: playView, attribute: .centerX, relatedBy: .equal, toItem: thumbnailView, attribute: .centerX, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: playView, attribute: .centerY, relatedBy: .equal, toItem: thumbnailView, attribute: .centerY, multiplier: 1, constant: 0),

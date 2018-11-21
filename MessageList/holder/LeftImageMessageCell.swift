@@ -25,7 +25,7 @@ class LeftImageMessageCell: ImageMessageCell {
             NSLayoutConstraint(item: avatarView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.userAvatarHeight),
             
             NSLayoutConstraint(item: photoView, attribute: .left, relatedBy: .equal, toItem: avatarView, attribute: .right, multiplier: 1, constant: configuration.leftImageMessageMarginLeft),
-            NSLayoutConstraint(item: photoView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messagePaddingVertical),
+            NSLayoutConstraint(item: photoView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: -configuration.messageMarginTop),
             
             NSLayoutConstraint(item: spinnerView, attribute: .left, relatedBy: .equal, toItem: photoView, attribute: .right, multiplier: 1, constant: configuration.leftStatusViewMarginLeft),
             NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: photoView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusViewMarginBottom),
