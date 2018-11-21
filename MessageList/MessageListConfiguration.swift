@@ -194,7 +194,7 @@ open class MessageListConfiguration {
     public var imageMessageBorderWidth: CGFloat = 1 / UIScreen.main.scale
     
     // 图片边框颜色
-    public var imageMessageBorderColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1)
+    public var imageMessageBorderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
     
     // 图片圆角
     public var imageMessageBorderRadius: CGFloat = 4
@@ -325,7 +325,7 @@ open class MessageListConfiguration {
     public var videoMessageBorderWidth: CGFloat = 1 / UIScreen.main.scale
     
     // 视频缩略图边框颜色
-    public var videoMessageBorderColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1)
+    public var videoMessageBorderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
     
     // 视频缩略图圆角
     public var videoMessageBorderRadius: CGFloat = 4
