@@ -319,7 +319,7 @@ extension ViewController: MessageListDelegate {
         print("click failure \(message)")
     }
     
-    func messageListDidLoadMore(_ messageList: MessageList, completion: (Bool) -> Void) {
+    func messageListDidLoadMore(completion: (Bool) -> Void) {
         print("click load more")
         completion(true)
     }
