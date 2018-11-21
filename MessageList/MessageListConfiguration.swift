@@ -184,6 +184,11 @@ open class MessageListConfiguration {
     // MARK: - 图片消息
     //
     
+    // 图片边框大小
+    public var imageMessageBorderWidth: CGFloat = 1 / UIScreen.main.scale
+    
+    // 图片边框颜色
+    public var imageMessageBorderColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1)
     
     // 图片圆角
     public var imageMessageBorderRadius: CGFloat = 4

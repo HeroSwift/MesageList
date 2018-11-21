@@ -63,8 +63,12 @@ class ImageMessageCell: MessageCell {
         nameView.translatesAutoresizingMaskIntoConstraints = false
         
         // 图片
-        photoView.clipsToBounds = true
-        photoView.layer.cornerRadius = configuration.imageMessageBorderRadius
+        if configuration.imageMessageBorderRadius > 0 {
+            photoView.clipsToBounds = true
+            photoView.layer.cornerRadius = configuration.imageMessageBorderRadius
+        }
+        photoView.layer.borderWidth = configuration.imageMessageBorderWidth
+        photoView.layer.borderColor = configuration.imageMessageBorderColor.cgColor
         photoView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(photoView)
         
