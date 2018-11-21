@@ -54,8 +54,6 @@ public class MessageList: UIView {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        tableView.contentOffset = CGPoint(x: 0, y: configuration.messageMarginTop)
-        
         tableView.register(LeftTextMessageCell.self, forCellReuseIdentifier: "LeftTextMessage")
         tableView.register(RightTextMessageCell.self, forCellReuseIdentifier: "RightTextMessage")
         
