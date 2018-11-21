@@ -315,6 +315,12 @@ open class MessageListConfiguration {
     // MARK: - 视频消息
     //
     
+    // 视频缩略图边框大小
+    public var videoMessageBorderWidth: CGFloat = 1 / UIScreen.main.scale
+    
+    // 视频缩略图边框颜色
+    public var videoMessageBorderColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1)
+    
     // 视频缩略图圆角
     public var videoMessageBorderRadius: CGFloat = 4
     

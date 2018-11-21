@@ -66,8 +66,12 @@ class VideoMessageCell: MessageCell {
         nameView.translatesAutoresizingMaskIntoConstraints = false
         
         // 视频缩略图
-        thumbnailView.clipsToBounds = true
-        thumbnailView.layer.cornerRadius = configuration.videoMessageBorderRadius
+        if configuration.videoMessageBorderRadius > 0 {
+            thumbnailView.clipsToBounds = true
+            thumbnailView.layer.cornerRadius = configuration.videoMessageBorderRadius
+        }
+        thumbnailView.layer.borderWidth = configuration.videoMessageBorderWidth
+        thumbnailView.layer.borderColor = configuration.videoMessageBorderColor.cgColor
         thumbnailView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(thumbnailView)
         
