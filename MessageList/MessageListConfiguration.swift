@@ -33,7 +33,7 @@ open class MessageListConfiguration {
     
     
     // 时间 背景色
-    public var timeBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
+    public var timeBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
     
     // 时间 圆角
     public var timeBorderRadius: CGFloat = 4
@@ -54,7 +54,7 @@ open class MessageListConfiguration {
     
     
     // 事件 背景色
-    public var eventBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
+    public var eventBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
     
     // 事件 圆角
     public var eventBorderRadius: CGFloat = 4
@@ -137,7 +137,7 @@ open class MessageListConfiguration {
     //
     
     // 文本消息的选区颜色
-    public var textMessageTintColor = UIColor(red: 0.99, green: 0.72, blue: 0.15, alpha: 1)
+    public var textMessageTintColor = UIColor(red: 1, green: 0.48, blue: 0.03, alpha: 1)
     
 
     

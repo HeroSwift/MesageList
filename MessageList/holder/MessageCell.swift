@@ -6,6 +6,7 @@ class MessageCell: UITableViewCell {
     
     var isReady = false
     
+    var delegate: MessageListDelegate!
     var message: Message!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -16,8 +17,9 @@ class MessageCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(configuration: MessageListConfiguration, message: Message) {
+    func bind(configuration: MessageListConfiguration, delegate: MessageListDelegate, message: Message) {
         
+        self.delegate = delegate
         self.message = message
         
         if !isReady {
@@ -143,27 +145,27 @@ class MessageCell: UITableViewCell {
     }
     
     @objc func onMessageClick() {
-        print("onMessageClick")
+        delegate.messageListDidClickMessage(message: message)
     }
     
     @objc func onUserNameClick() {
-        print("onUserNameClick")
+        delegate.messageListDidClickUserName(message: message)
     }
     
     @objc func onUserAvatarClick() {
-        print("onUserAvatarClick")
+        delegate.messageListDidClickUserAvatar(message: message)
     }
     
     @objc func onContentClick() {
-        print("onContentClick")
+        delegate.messageListDidClickContent(message: message)
     }
     
     @objc func onContentLongPress() {
-        print("onContentLongPress")
+        delegate.messageListDidLongPressContent(message: message)
     }
     
     @objc func onFailureClick() {
-        print("onFailureClick")
+        delegate.messageListDidClickFailure(message: message)
     }
     
 }

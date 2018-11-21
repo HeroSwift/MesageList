@@ -220,6 +220,7 @@ class AudioMessageCell: MessageCell {
         else {
             player.play(url: url)
         }
+        delegate.messageListDidClickContent(message: message)
     }
     
 }

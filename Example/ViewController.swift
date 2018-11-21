@@ -39,6 +39,8 @@ class ViewController: UIViewController {
         
         let messageList = MessageList(configuration: Configuration())
 
+        messageList.delegate = self
+        
         messageList.messageList.append(
             EventMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "", event: "哈哈哈哈123ABCabc")
         )
@@ -263,6 +265,9 @@ class ViewController: UIViewController {
         )
         
         
+        
+        messageList.hasMoreMessage = true
+        
         messageList.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(messageList)
@@ -284,3 +289,38 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: MessageListDelegate {
+    
+    func messageListDidClickList() {
+        print("click list")
+    }
+    
+    func messageListDidClickMessage(message: Message) {
+        print("click message \(message)")
+    }
+    
+    func messageListDidClickUserAvatar(message: Message) {
+        print("click user avatar \(message)")
+    }
+    
+    func messageListDidClickUserName(message: Message) {
+        print("click user name \(message)")
+    }
+    
+    func messageListDidClickContent(message: Message) {
+        print("click content \(message)")
+    }
+    
+    func messageListDidLongPressContent(message: Message) {
+        print("click long press content \(message)")
+    }
+    
+    func messageListDidClickFailure(message: Message) {
+        print("click failure \(message)")
+    }
+    
+    func messageListDidLoadMore(_ messageList: MessageList, completion: (Bool) -> Void) {
+        print("click load more")
+        completion(true)
+    }
+}

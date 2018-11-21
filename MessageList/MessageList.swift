@@ -1,51 +1,105 @@
 
 import UIKit
 
-public class MessageList: UITableView {
+public class MessageList: UIView {
+    
+    public var delegate: MessageListDelegate!
     
     public var messageList = [Message]()
     
-    private var configuration: MessageListConfiguration!
-    
-    public convenience init(configuration: MessageListConfiguration) {
-        self.init()
-        self.configuration = configuration
-        self.backgroundColor = configuration.backgroundColor
+    public var hasMoreMessage = false {
+        didSet {
+            if hasMoreMessage {
+                refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+                tableView.addSubview(refreshControl)
+            }
+            else {
+                refreshControl.removeTarget(self, action: #selector(refresh), for: .valueChanged)
+                refreshControl.removeFromSuperview()
+            }
+        }
     }
     
-    override init(frame: CGRect, style: UITableViewStyle) {
-        super.init(frame: frame, style: style)
+    private var configuration: MessageListConfiguration!
+    
+    private var tableView = UITableView()
+    
+    private var refreshControl = UIRefreshControl()
+    
+    public convenience init(configuration: MessageListConfiguration) {
         
-        self.delegate = self
-        self.dataSource = self
-        self.separatorStyle = .none
-        self.showsVerticalScrollIndicator = false
-        self.estimatedRowHeight = 100
-        self.rowHeight = UITableViewAutomaticDimension
+        self.init()
+        self.configuration = configuration
         
-        self.register(LeftTextMessageCell.self, forCellReuseIdentifier: "LeftTextMessage")
-        self.register(RightTextMessageCell.self, forCellReuseIdentifier: "RightTextMessage")
+        setup()
         
-        self.register(LeftImageMessageCell.self, forCellReuseIdentifier: "LeftImageMessage")
-        self.register(RightImageMessageCell.self, forCellReuseIdentifier: "RightImageMessage")
-        
-        self.register(LeftAudioMessageCell.self, forCellReuseIdentifier: "LeftAudioMessage")
-        self.register(RightAudioMessageCell.self, forCellReuseIdentifier: "RightAudioMessage")
-        
-        self.register(LeftVideoMessageCell.self, forCellReuseIdentifier: "LeftVideoMessage")
-        self.register(RightVideoMessageCell.self, forCellReuseIdentifier: "RightVideoMessage")
-        
-        self.register(LeftCardMessageCell.self, forCellReuseIdentifier: "LeftCardMessage")
-        self.register(RightCardMessageCell.self, forCellReuseIdentifier: "RightCardMessage")
-        
-        self.register(LeftPostMessageCell.self, forCellReuseIdentifier: "LeftPostMessage")
-        self.register(RightPostMessageCell.self, forCellReuseIdentifier: "RightPostMessage")
-        
-        self.register(EventMessageCell.self, forCellReuseIdentifier: "EventMessage")
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup() {
+ 
+        tableView.backgroundColor = configuration.backgroundColor
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.register(LeftTextMessageCell.self, forCellReuseIdentifier: "LeftTextMessage")
+        tableView.register(RightTextMessageCell.self, forCellReuseIdentifier: "RightTextMessage")
+        
+        tableView.register(LeftImageMessageCell.self, forCellReuseIdentifier: "LeftImageMessage")
+        tableView.register(RightImageMessageCell.self, forCellReuseIdentifier: "RightImageMessage")
+        
+        tableView.register(LeftAudioMessageCell.self, forCellReuseIdentifier: "LeftAudioMessage")
+        tableView.register(RightAudioMessageCell.self, forCellReuseIdentifier: "RightAudioMessage")
+        
+        tableView.register(LeftVideoMessageCell.self, forCellReuseIdentifier: "LeftVideoMessage")
+        tableView.register(RightVideoMessageCell.self, forCellReuseIdentifier: "RightVideoMessage")
+        
+        tableView.register(LeftCardMessageCell.self, forCellReuseIdentifier: "LeftCardMessage")
+        tableView.register(RightCardMessageCell.self, forCellReuseIdentifier: "RightCardMessage")
+        
+        tableView.register(LeftPostMessageCell.self, forCellReuseIdentifier: "LeftPostMessage")
+        tableView.register(RightPostMessageCell.self, forCellReuseIdentifier: "RightPostMessage")
+        
+        tableView.register(EventMessageCell.self, forCellReuseIdentifier: "EventMessage")
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(tableView)
+        
+        addConstraints([
+            NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: tableView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: tableView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: tableView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0),
+        ])
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(click))
+        gesture.numberOfTapsRequired = 1
+        
+        addGestureRecognizer(gesture)
+        
+    }
+    
+    @objc private func refresh() {
+        delegate.messageListDidLoadMore(completion: { hasMoreMessage in
+            self.hasMoreMessage = hasMoreMessage
+            self.refreshControl.endRefreshing()
+        })
+    }
+    
+    @objc private func click() {
+        delegate.messageListDidClickList()
     }
     
 }
@@ -118,7 +172,7 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
             messageCell = tableView.dequeueReusableCell(withIdentifier: "EventMessage") as? MessageCell
         }
 
-        messageCell?.bind(configuration: configuration, message: message)
+        messageCell?.bind(configuration: configuration, delegate: delegate, message: message)
         
         return messageCell!
         
