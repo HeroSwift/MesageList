@@ -55,6 +55,10 @@ class ImageMessageCell: MessageCell {
             avatarView.clipsToBounds = true
             avatarView.layer.cornerRadius = configuration.userAvatarBorderRadius
         }
+        if configuration.userAvatarBorderWidth > 0 {
+            avatarView.layer.borderWidth = configuration.userAvatarBorderWidth
+            avatarView.layer.borderColor = configuration.userAvatarBorderColor.cgColor
+        }
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
@@ -67,8 +71,10 @@ class ImageMessageCell: MessageCell {
             photoView.clipsToBounds = true
             photoView.layer.cornerRadius = configuration.imageMessageBorderRadius
         }
-        photoView.layer.borderWidth = configuration.imageMessageBorderWidth
-        photoView.layer.borderColor = configuration.imageMessageBorderColor.cgColor
+        if configuration.imageMessageBorderWidth > 0 {
+            photoView.layer.borderWidth = configuration.imageMessageBorderWidth
+            photoView.layer.borderColor = configuration.imageMessageBorderColor.cgColor
+        }
         photoView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(photoView)
         

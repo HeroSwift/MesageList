@@ -63,6 +63,10 @@ class AudioMessageCell: MessageCell {
             avatarView.clipsToBounds = true
             avatarView.layer.cornerRadius = configuration.userAvatarBorderRadius
         }
+        if configuration.userAvatarBorderWidth > 0 {
+            avatarView.layer.borderWidth = configuration.userAvatarBorderWidth
+            avatarView.layer.borderColor = configuration.userAvatarBorderColor.cgColor
+        }
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         

@@ -58,6 +58,10 @@ class VideoMessageCell: MessageCell {
             avatarView.clipsToBounds = true
             avatarView.layer.cornerRadius = configuration.userAvatarBorderRadius
         }
+        if configuration.userAvatarBorderWidth > 0 {
+            avatarView.layer.borderWidth = configuration.userAvatarBorderWidth
+            avatarView.layer.borderColor = configuration.userAvatarBorderColor.cgColor
+        }
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
@@ -70,8 +74,10 @@ class VideoMessageCell: MessageCell {
             thumbnailView.clipsToBounds = true
             thumbnailView.layer.cornerRadius = configuration.videoMessageBorderRadius
         }
-        thumbnailView.layer.borderWidth = configuration.videoMessageBorderWidth
-        thumbnailView.layer.borderColor = configuration.videoMessageBorderColor.cgColor
+        if configuration.videoMessageBorderWidth > 0 {
+            thumbnailView.layer.borderWidth = configuration.videoMessageBorderWidth
+            thumbnailView.layer.borderColor = configuration.videoMessageBorderColor.cgColor
+        }
         thumbnailView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(thumbnailView)
         

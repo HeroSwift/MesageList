@@ -18,6 +18,12 @@ open class MessageListConfiguration {
     // 用户头像的高度
     public var userAvatarHeight: CGFloat = 40
     
+    // 用户头像的边框大小
+    public var userAvatarBorderWidth: CGFloat = 0
+    
+    // 用户头像的边框颜色
+    public var userAvatarBorderColor = UIColor.gray
+    
     // 用户头像的圆角
     public var userAvatarBorderRadius: CGFloat = 4
     
