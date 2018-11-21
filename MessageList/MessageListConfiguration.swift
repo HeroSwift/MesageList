@@ -74,13 +74,13 @@ open class MessageListConfiguration {
     
     
     // 左侧用户名称是否显示
-    public var leftUserNameVisible = false
+    public var leftUserNameVisible = true
     
     // 左侧用户名称 字体大小
-    public var leftUserNameTextFont = UIFont.systemFont(ofSize: 13)
+    public var leftUserNameTextFont = UIFont.systemFont(ofSize: 11)
     
     // 左侧用户名称 字体颜色
-    public var leftUserNameTextColor = UIColor(red: 100 / 255, green: 100 / 255, blue: 100 / 255, alpha: 1)
+    public var leftUserNameTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
     // 左侧用户名称与头像的距离
     public var leftUserNameMarginLeft: CGFloat = 10
@@ -95,13 +95,13 @@ open class MessageListConfiguration {
     
     
     // 右侧用户名称是否显示
-    public var rightUserNameVisible = false
+    public var rightUserNameVisible = true
     
     // 右侧用户名称 字体大小
-    public var rightUserNameTextFont = UIFont.systemFont(ofSize: 13)
+    public var rightUserNameTextFont = UIFont.systemFont(ofSize: 11)
     
     // 右侧用户名称 字体颜色
-    public var rightUserNameTextColor = UIColor(red: 100 / 255, green: 100 / 255, blue: 100 / 255, alpha: 1)
+    public var rightUserNameTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
     // 右侧用户名称与头像的距离
     public var rightUserNameMarginRight: CGFloat = 10
