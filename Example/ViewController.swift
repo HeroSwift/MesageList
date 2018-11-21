@@ -34,11 +34,13 @@ class Configuration: MessageListConfiguration {
 
 class ViewController: UIViewController {
 
+    var messageList: MessageList!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let messageList = MessageList(configuration: Configuration())
-
+        messageList = MessageList(configuration: Configuration())
+        
         messageList.delegate = self
         
         messageList.messageList.append(
@@ -319,8 +321,8 @@ extension ViewController: MessageListDelegate {
         print("click failure \(message)")
     }
     
-    func messageListDidLoadMore(completion: (Bool) -> Void) {
+    func messageListDidLoadMore() {
         print("click load more")
-        completion(true)
+        messageList.loadMoreComplete(hasMoreMessage: true)
     }
 }

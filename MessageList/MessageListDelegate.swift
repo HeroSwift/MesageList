@@ -24,7 +24,7 @@ public protocol MessageListDelegate {
     func messageListDidClickFailure(message: Message)
     
     // 加载历史消息
-    func messageListDidLoadMore(completion: (Bool) -> Void)
+    func messageListDidLoadMore()
     
 }
 
@@ -44,7 +44,7 @@ public extension MessageListDelegate {
     
     func messageListDidClickFailure(message: Message) { }
     
-    func messageListDidLoadMore(completion: (Bool) -> Void) { }
+    func messageListDidLoadMore() { }
     
 }
 

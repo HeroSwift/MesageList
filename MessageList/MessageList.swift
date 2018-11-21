@@ -54,6 +54,8 @@ public class MessageList: UIView {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        tableView.contentOffset = CGPoint(x: 0, y: configuration.messagePaddingVertical)
+        
         tableView.register(LeftTextMessageCell.self, forCellReuseIdentifier: "LeftTextMessage")
         tableView.register(RightTextMessageCell.self, forCellReuseIdentifier: "RightTextMessage")
         
@@ -91,11 +93,15 @@ public class MessageList: UIView {
         
     }
     
+    public func loadMoreComplete(hasMoreMessage: Bool) {
+        
+        self.hasMoreMessage = hasMoreMessage
+        self.refreshControl.endRefreshing()
+        
+    }
+    
     @objc private func refresh() {
-        delegate.messageListDidLoadMore(completion: { hasMoreMessage in
-            self.hasMoreMessage = hasMoreMessage
-            self.refreshControl.endRefreshing()
-        })
+        delegate.messageListDidLoadMore()
     }
     
     @objc private func click() {
