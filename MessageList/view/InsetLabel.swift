@@ -6,7 +6,7 @@ class InsetLabel: UILabel {
     var contentInsets: UIEdgeInsets!
     
     public override var intrinsicContentSize: CGSize {
-        if isHidden {
+        if text == "" {
             return CGSize(width: 0, height: 0)
         }
         let size = super.intrinsicContentSize

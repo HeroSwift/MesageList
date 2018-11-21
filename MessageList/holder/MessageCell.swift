@@ -17,16 +17,26 @@ class MessageCell: UITableViewCell {
     
     var index = -1 {
         didSet {
+            
+            var topValue: CGFloat = 0
+            var bottomValue: CGFloat = 0
+            
             if index == 0 {
-                topConstraint.constant = configuration.paddingVertical
+                topValue = configuration.paddingVertical
             }
             else {
-                topConstraint.constant = configuration.messageMarginTop
-                if index == count - 1 {
-                    bottomConstraint.constant = configuration.paddingVertical
-                }
+                topValue = configuration.messageMarginTop
             }
-            setNeedsLayout()
+            if index == count - 1 {
+                bottomValue = -configuration.paddingVertical
+            }
+            
+            if topConstraint.constant != topValue || bottomConstraint.constant != bottomValue {
+                topConstraint.constant = topValue
+                bottomConstraint.constant = bottomValue
+                setNeedsLayout()
+            }
+            
         }
     }
     
@@ -99,35 +109,23 @@ class MessageCell: UITableViewCell {
         
     }
     
-    func showTimeView(timeView: UILabel, time: String, avatarView: UIView, avatarTopConstraint: NSLayoutConstraint) -> NSLayoutConstraint {
+    func showTimeView(timeView: UILabel, time: String, avatarView: UIView, avatarTopConstraint: NSLayoutConstraint) {
         
-        let isHidden = timeView.isHidden
+        let oldValue = timeView.text != ""
+        let newValue = time != ""
         
-        if time != "" {
-            timeView.text = time
-            timeView.sizeToFit()
-            timeView.isHidden = false
-        }
-        else {
-            timeView.isHidden = true
-        }
-        
-        // 更新头像的 top
-        // 当没有时间时，头像置顶
-        var constraint = avatarTopConstraint
-        
-        if isHidden != timeView.isHidden {
-            contentView.removeConstraint(constraint)
-            if isHidden {
-                constraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: timeView, attribute: .bottom, multiplier: 1, constant: configuration.messageMarginTop)
+        timeView.text = time
+        timeView.sizeToFit()
+
+        if newValue != oldValue {
+            if newValue {
+                avatarTopConstraint.constant = configuration.messageMarginTop
             }
             else {
-                constraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+                avatarTopConstraint.constant = 0
             }
-            contentView.addConstraint(constraint)
+            setNeedsLayout()
         }
-        
-        return constraint
         
     }
     
