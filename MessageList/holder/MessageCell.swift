@@ -173,7 +173,7 @@ class MessageCell: UITableViewCell {
     }
     
     @objc func onMessageClick() {
-        delegate.messageListDidClickMessage(message: message)
+        delegate.messageListDidClickList()
     }
     
     @objc func onUserNameClick() {

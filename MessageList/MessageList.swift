@@ -98,6 +98,10 @@ public class MessageList: UIView {
         
     }
     
+    public func scrollToBottom(animated: Bool) {
+        tableView.scrollToRow(at: IndexPath(row: messageList.count - 1, section: 0), at: .bottom, animated: animated)
+    }
+    
     @objc private func refresh() {
         delegate.messageListDidLoadMore()
     }

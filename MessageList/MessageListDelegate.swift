@@ -5,9 +5,6 @@ public protocol MessageListDelegate {
     // 点击列表
     func messageListDidClickList()
     
-    // 点击消息
-    func messageListDidClickMessage(message: Message)
-    
     // 点击消息用户头像
     func messageListDidClickUserAvatar(message: Message)
     
@@ -31,8 +28,6 @@ public protocol MessageListDelegate {
 public extension MessageListDelegate {
     
     func messageListDidClickList() { }
-    
-    func messageListDidClickMessage(message: Message) { }
     
     func messageListDidClickUserAvatar(message: Message) { }
     
