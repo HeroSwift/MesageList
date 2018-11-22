@@ -102,6 +102,50 @@ public class MessageList: UIView {
         tableView.scrollToRow(at: IndexPath(row: messageList.count - 1, section: 0), at: .bottom, animated: animated)
     }
     
+    public func append(message: Message) {
+        messageList.append(message)
+        tableView.reloadData()
+    }
+    
+    public func append(messages: [Message]) {
+        messageList.insert(contentsOf: messages, at: messageList.count)
+        tableView.reloadData()
+    }
+    
+    public func prepend(message: Message) {
+        messageList.insert(message, at: 0)
+        tableView.reloadData()
+    }
+    
+    public func prepend(messages: [Message]) {
+        messageList.insert(contentsOf: messages, at: 0)
+        tableView.reloadData()
+    }
+    
+    public func removeAll() {
+        guard messageList.count > 0 else {
+            return
+        }
+        messageList.removeAll()
+        tableView.reloadData()
+    }
+    
+    public func remove(messageId: String) {
+        guard let index = messageList.index(where: { $0.id == messageId }) else {
+            return
+        }
+        messageList.remove(at: index)
+        tableView.reloadData()
+    }
+    
+    public func update(message: Message) {
+        guard let index = messageList.index(where: { $0.id == message.id }) else {
+            return
+        }
+        messageList[ index ] = message
+        tableView.reloadData()
+    }
+    
     @objc private func refresh() {
         delegate.messageListDidLoadMore()
     }

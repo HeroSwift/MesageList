@@ -276,7 +276,9 @@ class ViewController: UIViewController {
         
         view.addSubview(messageList)
 
-        messageInput = MessageInput(configuration: MessageInputConfiguration())
+        let configuration = MessageInputConfiguration()
+        
+        messageInput = MessageInput(configuration: configuration)
         messageInput.translatesAutoresizingMaskIntoConstraints = false
         
         let emotionList = [
@@ -390,12 +392,7 @@ class ViewController: UIViewController {
 extension ViewController: MessageListDelegate {
     
     func messageListDidClickList() {
-        print("click list")
         messageInput.reset()
-    }
-    
-    func messageListDidClickMessage(message: Message) {
-        print("click message \(message)")
     }
     
     func messageListDidClickUserAvatar(message: Message) {
@@ -429,6 +426,9 @@ extension ViewController: MessageInputDelegate {
     
     func messageInputDidSendAudio(audioPath: String, audioDuration: TimeInterval) {
         print("send voice  \(audioPath) \(audioDuration)")
+        messageList.append(message:
+            AudioMessage(id: "123", user: User(id: "1", name: "mu1", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, time: "星期二", url: audioPath, duration: Int(audioDuration))
+        )
     }
     
     func messageInputDidSendEmotion(emotion: Emotion) {
@@ -437,6 +437,9 @@ extension ViewController: MessageInputDelegate {
     
     func messageInputDidSendText(text: String) {
         print("send text  \(text)")
+        messageList.append(message:
+            TextMessage(id: "123", user: User(id: "1", name: "mu1", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, time: "星期二", text: text)
+        )
     }
     
     func messageInputDidSendImages(images: [ImageFile]) {
