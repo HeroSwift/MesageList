@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         )
 
         messageList.messageList.append(
-            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendFailure, time: "星期二", text: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈")
+            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendFailure, time: "星期二", text: "哈哈哈哈哈哈 www.baidu.com  哈哈哈哈哈哈哈哈哈哈哈哈哈http://baidu.com哈哈哈哈哈哈哈哈哈哈哈15512345678哈哈哈哈哈哈哈 15512345678 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈 010-45501354 哈哈哈哈哈哈哈010-45501354哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈")
         )
         
         messageList.messageList.append(
@@ -368,6 +368,8 @@ class ViewController: UIViewController {
         
         view.addSubview(messageInput)
         
+        view.backgroundColor = .white
+        
         view.addConstraints([
             NSLayoutConstraint(item: messageInput, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: messageInput, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0),
@@ -429,6 +431,7 @@ extension ViewController: MessageInputDelegate {
         messageList.append(message:
             AudioMessage(id: "123", user: User(id: "1", name: "mu1", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, time: "星期二", url: audioPath, duration: Int(audioDuration))
         )
+        messageList.scrollToBottom(animated: true)
     }
     
     func messageInputDidSendEmotion(emotion: Emotion) {
@@ -440,6 +443,7 @@ extension ViewController: MessageInputDelegate {
         messageList.append(message:
             TextMessage(id: "123", user: User(id: "1", name: "mu1", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, time: "星期二", text: text)
         )
+        messageList.scrollToBottom(animated: true)
     }
     
     func messageInputDidSendImages(images: [ImageFile]) {
@@ -448,10 +452,18 @@ extension ViewController: MessageInputDelegate {
     
     func messageInputDidSendPhoto(photo: ImageFile) {
         print("send photo  \(photo)")
+        messageList.append(message:
+            ImageMessage(id: "123", user: User(id: "1", name: "mu1", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, time: "星期二", url: photo.path, width: photo.width, height: photo.height)
+        )
+        messageList.scrollToBottom(animated: true)
     }
     
     func messageInputDidSendVideo(videoPath: String, videoDuration: TimeInterval, thumbnail: ImageFile) {
         print("send video  \(videoPath) \(videoDuration)  \(thumbnail)")
+        messageList.append(message:
+            VideoMessage(id: "123", user: User(id: "1", name: "mu1", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendSuccess, time: "星期二", url: videoPath, duration: Int(videoDuration), thumbnail: thumbnail.path, width: thumbnail.width, height: thumbnail.height)
+        )
+        messageList.scrollToBottom(animated: true)
     }
     
     func messageInputDidLift() {

@@ -72,6 +72,7 @@ class TextMessageCell: MessageCell {
         contentView.addSubview(bubbleView)
 
         // 文本内容
+        textView.delegate = self
         textView.isEditable = false
         textView.textAlignment = .left
         textView.backgroundColor = .clear
@@ -80,6 +81,7 @@ class TextMessageCell: MessageCell {
         textView.isUserInteractionEnabled = true
         textView.textContainer.lineFragmentPadding = 0
         textView.translatesAutoresizingMaskIntoConstraints = false
+        
         contentView.addSubview(textView)
         
         // spinner icon
@@ -135,7 +137,7 @@ class TextMessageCell: MessageCell {
     
     private func updateContentSize() {
         
-        let fixedWidth = textView.frame.size.width
+        let fixedWidth: CGFloat = 0
         var newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         
         // 算出自适应后的宽度
@@ -151,8 +153,19 @@ class TextMessageCell: MessageCell {
         textWidthConstraint.constant = width
         textHeightConstraint.constant = newSize.height
         
+        print(" \(fixedWidth)  \(width) \(newSize.height)")
+        
         setNeedsLayout()
         
     }
     
+}
+
+extension TextMessageCell: UITextViewDelegate {
+    
+    func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
+        print(URL)
+        return true
+    }
+
 }
