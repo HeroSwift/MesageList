@@ -47,29 +47,11 @@
 		9D9B4E1921A3DB0D006110EE /* PostMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E1821A3DB0D006110EE /* PostMessageCell.swift */; };
 		9D9B4E1B21A3DC20006110EE /* LeftPostMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E1A21A3DC20006110EE /* LeftPostMessageCell.swift */; };
 		9D9B4E1D21A3E722006110EE /* RightPostMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E1C21A3E722006110EE /* RightPostMessageCell.swift */; };
-		9D9B4E1E21A4F05F006110EE /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC6E50219C152100F693B9 /* Kingfisher.framework */; };
-		9D9B4E1F21A4F05F006110EE /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC6E50219C152100F693B9 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9B4E2121A4F0A0006110EE /* MessageList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4350B72186E20000084889 /* MessageList.framework */; };
 		9D9B4E2221A4F0A0006110EE /* MessageList.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4350B72186E20000084889 /* MessageList.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9B4E2621A52C13006110EE /* MessageListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E2521A52C13006110EE /* MessageListDelegate.swift */; };
 		9DAC6E53219C619300F693B9 /* RightTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */; };
 		9DAC6E55219C690C00F693B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC6E54219C690C00F693B9 /* Assets.xcassets */; };
-		9DD3A7EC21A6AE5100A0E948 /* MessageInput.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7EB21A6AE5100A0E948 /* MessageInput.framework */; };
-		9DD3A7ED21A6AE5100A0E948 /* MessageInput.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7EB21A6AE5100A0E948 /* MessageInput.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DD3A7F521A6AF3F00A0E948 /* DotIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7EE21A6AF3E00A0E948 /* DotIndicator.framework */; };
-		9DD3A7F621A6AF3F00A0E948 /* DotIndicator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7EE21A6AF3E00A0E948 /* DotIndicator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DD3A7F721A6AF3F00A0E948 /* CameraView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7EF21A6AF3E00A0E948 /* CameraView.framework */; };
-		9DD3A7F821A6AF3F00A0E948 /* CameraView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7EF21A6AF3E00A0E948 /* CameraView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DD3A7F921A6AF3F00A0E948 /* CircleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F021A6AF3E00A0E948 /* CircleView.framework */; };
-		9DD3A7FA21A6AF3F00A0E948 /* CircleView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F021A6AF3E00A0E948 /* CircleView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DD3A7FB21A6AF3F00A0E948 /* VoiceInput.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F121A6AF3E00A0E948 /* VoiceInput.framework */; };
-		9DD3A7FC21A6AF3F00A0E948 /* VoiceInput.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F121A6AF3E00A0E948 /* VoiceInput.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DD3A7FD21A6AF3F00A0E948 /* RoundView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F221A6AF3F00A0E948 /* RoundView.framework */; };
-		9DD3A7FE21A6AF3F00A0E948 /* RoundView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F221A6AF3F00A0E948 /* RoundView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DD3A7FF21A6AF3F00A0E948 /* SimpleButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F321A6AF3F00A0E948 /* SimpleButton.framework */; };
-		9DD3A80021A6AF3F00A0E948 /* SimpleButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F321A6AF3F00A0E948 /* SimpleButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DD3A80121A6AF3F00A0E948 /* EmotionInput.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F421A6AF3F00A0E948 /* EmotionInput.framework */; };
-		9DD3A80221A6AF3F00A0E948 /* EmotionInput.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD3A7F421A6AF3F00A0E948 /* EmotionInput.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,16 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9DD3A7ED21A6AE5100A0E948 /* MessageInput.framework in Embed Frameworks */,
 				9D9B4E2221A4F0A0006110EE /* MessageList.framework in Embed Frameworks */,
-				9DD3A7FE21A6AF3F00A0E948 /* RoundView.framework in Embed Frameworks */,
-				9DD3A80221A6AF3F00A0E948 /* EmotionInput.framework in Embed Frameworks */,
-				9DD3A7F621A6AF3F00A0E948 /* DotIndicator.framework in Embed Frameworks */,
-				9DD3A80021A6AF3F00A0E948 /* SimpleButton.framework in Embed Frameworks */,
-				9DD3A7F821A6AF3F00A0E948 /* CameraView.framework in Embed Frameworks */,
-				9D9B4E1F21A4F05F006110EE /* Kingfisher.framework in Embed Frameworks */,
-				9DD3A7FA21A6AF3F00A0E948 /* CircleView.framework in Embed Frameworks */,
-				9DD3A7FC21A6AF3F00A0E948 /* VoiceInput.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,17 +124,8 @@
 		9D9B4E1A21A3DC20006110EE /* LeftPostMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPostMessageCell.swift; sourceTree = "<group>"; };
 		9D9B4E1C21A3E722006110EE /* RightPostMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightPostMessageCell.swift; sourceTree = "<group>"; };
 		9D9B4E2521A52C13006110EE /* MessageListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListDelegate.swift; sourceTree = "<group>"; };
-		9DAC6E50219C152100F693B9 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTextMessageCell.swift; sourceTree = "<group>"; };
 		9DAC6E54219C690C00F693B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9DD3A7EB21A6AE5100A0E948 /* MessageInput.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageInput.framework; path = Carthage/Build/iOS/MessageInput.framework; sourceTree = "<group>"; };
-		9DD3A7EE21A6AF3E00A0E948 /* DotIndicator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DotIndicator.framework; path = Carthage/Build/iOS/DotIndicator.framework; sourceTree = "<group>"; };
-		9DD3A7EF21A6AF3E00A0E948 /* CameraView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CameraView.framework; path = Carthage/Build/iOS/CameraView.framework; sourceTree = "<group>"; };
-		9DD3A7F021A6AF3E00A0E948 /* CircleView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleView.framework; path = Carthage/Build/iOS/CircleView.framework; sourceTree = "<group>"; };
-		9DD3A7F121A6AF3E00A0E948 /* VoiceInput.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VoiceInput.framework; path = Carthage/Build/iOS/VoiceInput.framework; sourceTree = "<group>"; };
-		9DD3A7F221A6AF3F00A0E948 /* RoundView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoundView.framework; path = Carthage/Build/iOS/RoundView.framework; sourceTree = "<group>"; };
-		9DD3A7F321A6AF3F00A0E948 /* SimpleButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleButton.framework; path = Carthage/Build/iOS/SimpleButton.framework; sourceTree = "<group>"; };
-		9DD3A7F421A6AF3F00A0E948 /* EmotionInput.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EmotionInput.framework; path = Carthage/Build/iOS/EmotionInput.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,16 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD3A7EC21A6AE5100A0E948 /* MessageInput.framework in Frameworks */,
 				9D9B4E2121A4F0A0006110EE /* MessageList.framework in Frameworks */,
-				9DD3A7FD21A6AF3F00A0E948 /* RoundView.framework in Frameworks */,
-				9DD3A80121A6AF3F00A0E948 /* EmotionInput.framework in Frameworks */,
-				9DD3A7F521A6AF3F00A0E948 /* DotIndicator.framework in Frameworks */,
-				9DD3A7FF21A6AF3F00A0E948 /* SimpleButton.framework in Frameworks */,
-				9DD3A7F721A6AF3F00A0E948 /* CameraView.framework in Frameworks */,
-				9D9B4E1E21A4F05F006110EE /* Kingfisher.framework in Frameworks */,
-				9DD3A7F921A6AF3F00A0E948 /* CircleView.framework in Frameworks */,
-				9DD3A7FB21A6AF3F00A0E948 /* VoiceInput.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,14 +150,6 @@
 		9D4350AD2186E20000084889 = {
 			isa = PBXGroup;
 			children = (
-				9DD3A7EF21A6AF3E00A0E948 /* CameraView.framework */,
-				9DD3A7F021A6AF3E00A0E948 /* CircleView.framework */,
-				9DD3A7EE21A6AF3E00A0E948 /* DotIndicator.framework */,
-				9DD3A7F421A6AF3F00A0E948 /* EmotionInput.framework */,
-				9DD3A7F221A6AF3F00A0E948 /* RoundView.framework */,
-				9DD3A7F321A6AF3F00A0E948 /* SimpleButton.framework */,
-				9DD3A7F121A6AF3E00A0E948 /* VoiceInput.framework */,
-				9DD3A7EB21A6AE5100A0E948 /* MessageInput.framework */,
 				9D4350B92186E20000084889 /* MessageList */,
 				9D4350C72186E21200084889 /* Example */,
 				9D4350B82186E20000084889 /* Products */,
@@ -321,7 +268,6 @@
 		9DAC6E4F219C152100F693B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9DAC6E50219C152100F693B9 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -444,7 +390,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/MessageInput.framework",
 			);
 			outputPaths = (
 			);
