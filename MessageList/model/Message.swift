@@ -1,13 +1,15 @@
 
-public class Message {
+import Foundation
+
+@objc public class Message: NSObject {
     
-    public var id: String
+    @objc public var id: String
     
-    public var user: User
+    @objc public var user: User
     
-    public var status: MessageStatus
+    @objc public var status: MessageStatus
     
-    public var time: String
+    @objc public var time: String
     
     public init(id: String, user: User, status: MessageStatus, time: String) {
         self.id = id

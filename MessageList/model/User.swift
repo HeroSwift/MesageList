@@ -1,13 +1,15 @@
 
-public class User {
+import Foundation
+
+@objc public class User: NSObject {
     
-    public var id: String
+    @objc public var id: String
     
-    public var name: String
+    @objc public var name: String
     
-    public var avatar: String
+    @objc public var avatar: String
     
-    public init(id: String, name: String, avatar: String) {
+    @objc public init(id: String, name: String, avatar: String) {
         self.id = id
         self.name = name
         self.avatar = avatar

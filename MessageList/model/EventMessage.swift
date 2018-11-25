@@ -1,9 +1,11 @@
 
-public class EventMessage: Message {
+import Foundation
+
+@objc public class EventMessage: Message {
     
-    public var event: String
+    @objc public var event: String
     
-    public init(id: String, user: User, status: MessageStatus, time: String, event: String) {
+    @objc public init(id: String, user: User, status: MessageStatus, time: String, event: String) {
         self.event = event
         super.init(id: id, user: user, status: status, time: time)
     }

@@ -1,7 +1,7 @@
 
 import UIKit
 
-public class MessageList: UIView {
+@objc public class MessageList: UIView {
     
     public var delegate: MessageListDelegate!
     
@@ -98,31 +98,31 @@ public class MessageList: UIView {
         
     }
     
-    public func scrollToBottom(animated: Bool) {
+    @objc public func scrollToBottom(animated: Bool) {
         tableView.scrollToRow(at: IndexPath(row: messageList.count - 1, section: 0), at: .bottom, animated: animated)
     }
     
-    public func append(message: Message) {
+    @objc public func append(message: Message) {
         messageList.append(message)
         tableView.reloadData()
     }
     
-    public func append(messages: [Message]) {
+    @objc public func append(messages: [Message]) {
         messageList.insert(contentsOf: messages, at: messageList.count)
         tableView.reloadData()
     }
     
-    public func prepend(message: Message) {
+    @objc public func prepend(message: Message) {
         messageList.insert(message, at: 0)
         tableView.reloadData()
     }
     
-    public func prepend(messages: [Message]) {
+    @objc public func prepend(messages: [Message]) {
         messageList.insert(contentsOf: messages, at: 0)
         tableView.reloadData()
     }
     
-    public func removeAll() {
+    @objc public func removeAll() {
         guard messageList.count > 0 else {
             return
         }
@@ -130,7 +130,7 @@ public class MessageList: UIView {
         tableView.reloadData()
     }
     
-    public func remove(messageId: String) {
+    @objc public func remove(messageId: String) {
         guard let index = messageList.index(where: { $0.id == messageId }) else {
             return
         }
@@ -138,7 +138,7 @@ public class MessageList: UIView {
         tableView.reloadData()
     }
     
-    public func update(message: Message) {
+    @objc public func update(message: Message) {
         guard let index = messageList.index(where: { $0.id == message.id }) else {
             return
         }

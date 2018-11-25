@@ -1,17 +1,19 @@
 
-public class CardMessage: Message {
+import Foundation
+
+@objc public class CardMessage: Message {
     
-    public var thumbnail: String
+    @objc public var thumbnail: String
     
-    public var title: String
+    @objc public var title: String
     
-    public var desc: String
+    @objc public var desc: String
     
-    public var type: String
+    @objc public var type: String
     
-    public var link: String
+    @objc public var link: String
     
-    public init(id: String, user: User, status: MessageStatus, time: String, thumbnail: String, title: String, desc: String, type: String, link: String) {
+    @objc public init(id: String, user: User, status: MessageStatus, time: String, thumbnail: String, title: String, desc: String, type: String, link: String) {
         self.thumbnail = thumbnail
         self.title = title
         self.desc = desc

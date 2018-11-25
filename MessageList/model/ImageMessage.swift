@@ -1,13 +1,15 @@
 
-public class ImageMessage: Message {
+import Foundation
+
+@objc public class ImageMessage: Message {
     
-    public var url: String
+    @objc public var url: String
     
-    public var width: Int
+    @objc public var width: Int
     
-    public var height: Int
+    @objc public var height: Int
     
-    public init(id: String, user: User, status: MessageStatus, time: String, url: String, width: Int, height: Int) {
+    @objc public init(id: String, user: User, status: MessageStatus, time: String, url: String, width: Int, height: Int) {
         self.url = url
         self.width = width
         self.height = height

@@ -1,17 +1,19 @@
 
-public class PostMessage: Message {
+import Foundation
+
+@objc public class PostMessage: Message {
     
-    public var thumbnail: String
+    @objc public var thumbnail: String
     
-    public var title: String
+    @objc public var title: String
     
-    public var desc: String
+    @objc public var desc: String
     
-    public var brand: String
+    @objc public var brand: String
     
-    public var link: String
+    @objc public var link: String
     
-    public init(id: String, user: User, status: MessageStatus, time: String, thumbnail: String, title: String, desc: String, brand: String, link: String) {
+    @objc public init(id: String, user: User, status: MessageStatus, time: String, thumbnail: String, title: String, desc: String, brand: String, link: String) {
         self.thumbnail = thumbnail
         self.title = title
         self.desc = desc
