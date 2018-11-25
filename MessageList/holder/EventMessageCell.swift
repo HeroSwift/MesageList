@@ -16,7 +16,7 @@ class EventMessageCell: MessageCell {
     override func create() {
         
         eventView.numberOfLines = 0
-        eventView.textAlignment = .left
+        eventView.textAlignment = .justified
         
         eventView.font = configuration.eventTextFont
         eventView.textColor = configuration.eventTextColor

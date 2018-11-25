@@ -227,7 +227,7 @@ extension MessageList: UITableViewDataSource, UITableViewDelegate {
         else if message is EventMessage {
             messageCell = tableView.dequeueReusableCell(withIdentifier: "EventMessage") as? MessageCell
         }
-
+        
         messageCell?.bind(configuration: configuration, delegate: delegate, message: message, index: rowIndex, count: messageList.count)
         
         return messageCell!

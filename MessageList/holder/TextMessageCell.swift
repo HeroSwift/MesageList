@@ -74,7 +74,7 @@ class TextMessageCell: MessageCell {
         // 文本内容
         textView.delegate = self
         textView.isEditable = false
-        textView.textAlignment = .left
+        textView.textAlignment = .justified
         textView.backgroundColor = .clear
         textView.tintColor = configuration.textMessageTintColor
         textView.isScrollEnabled = false
@@ -141,20 +141,13 @@ class TextMessageCell: MessageCell {
         var newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         
         // 算出自适应后的宽度
-        let charWidth = configuration.leftTextMessageTextFont.pointSize
-        // 加了 0.5 右侧就正好没有空白
-        let numberOfChars = floor(getContentMaxWidth() / charWidth) + 0.5
-        let maxWidth = charWidth * numberOfChars
-        
-        let width = min(maxWidth, max(newSize.width, fixedWidth))
+        let width = min(getContentMaxWidth(), max(newSize.width, fixedWidth))
 
         newSize = textView.sizeThatFits(CGSize(width: width, height: CGFloat.greatestFiniteMagnitude))
         
         textWidthConstraint.constant = width
         textHeightConstraint.constant = newSize.height
-        
-        print(" \(fixedWidth)  \(width) \(newSize.height)")
-        
+
         setNeedsLayout()
         
     }
