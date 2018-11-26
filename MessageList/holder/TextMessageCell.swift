@@ -95,7 +95,7 @@ class TextMessageCell: MessageCell {
         
         addClickHandler(view: contentView, selector: #selector(onMessageClick))
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
-        addClickHandler(view: textView, selector: #selector(onContentClick))
+        addClickHandler(view: textView, selector: #selector(onBubbleClick))
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
         addLongPressHandler(view: textView, selector: #selector(onContentLongPress))
         
@@ -150,6 +150,11 @@ class TextMessageCell: MessageCell {
 
         setNeedsLayout()
         
+    }
+    
+    @objc func onBubbleClick() {
+        textView.selectedRange = NSMakeRange(0, 0)
+        delegate.messageListDidClickContent(message: message)
     }
     
 }
