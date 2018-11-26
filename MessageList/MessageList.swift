@@ -43,6 +43,10 @@ public class MessageList: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        AudioPlayer.sharedInstance.stop()
+    }
+    
     func setup() {
  
         tableView.backgroundColor = configuration.backgroundColor
