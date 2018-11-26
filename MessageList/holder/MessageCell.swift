@@ -7,7 +7,7 @@ class MessageCell: UITableViewCell {
     // 文本消息和事件消息，传入 [type:link] 格式就能展现成链接
     private static let linkPattern = try! NSRegularExpression(pattern: "\\[\\w+:[^]]+\\]")
     
-    var isReady = false
+    private var isReady = false
     
     var configuration: MessageListConfiguration!
     var delegate: MessageListDelegate!
@@ -111,13 +111,13 @@ class MessageCell: UITableViewCell {
             let link = string.substring(with: range)
             
             // 文本
-            let text = String(link.suffix(from: link.index(of: ":")!).dropFirst())
+            let subText = String(link.suffix(from: link.index(of: ":")!).dropFirst())
             
             links.append(
-                LinkToken(text: text, link: link, position: newString.length)
+                LinkToken(text: subText, link: link, position: newString.length)
             )
             
-            newString.append(text)
+            newString.append(subText)
             
             index = location + length
             

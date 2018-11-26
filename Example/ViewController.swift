@@ -26,7 +26,7 @@ class Configuration: MessageListConfiguration {
         return message.user.id == "1"
     }
     
-    override func formatText(text: NSMutableAttributedString) {
+    override func formatText(textView: UITextView, text: NSMutableAttributedString) {
         
     }
     
@@ -311,7 +311,7 @@ extension ViewController: MessageListDelegate {
         print("click failure \(message)")
     }
     
-    public func messageListDidClickTextLink(link: String) {
+    public func messageListDidClickLink(link: String) {
         print("click link \(link)")
     }
     

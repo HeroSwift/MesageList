@@ -21,7 +21,7 @@ public protocol MessageListDelegate {
     func messageListDidClickFailure(message: Message)
     
     // 点击文本链接
-    func messageListDidClickTextLink(link: String)
+    func messageListDidClickLink(link: String)
     
     // 加载历史消息
     func messageListDidLoadMore()
@@ -42,7 +42,7 @@ public extension MessageListDelegate {
     
     func messageListDidClickFailure(message: Message) { }
     
-    func messageListDidClickTextLink(link: String) { }
+    func messageListDidClickLink(link: String) { }
     
     func messageListDidLoadMore() { }
     

@@ -139,7 +139,7 @@ class TextMessageCell: MessageCell {
 extension TextMessageCell: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-        delegate.messageListDidClickTextLink(link: URL.absoluteString)
+        delegate.messageListDidClickLink(link: URL.absoluteString)
         return false
     }
 
