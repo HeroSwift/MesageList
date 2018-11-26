@@ -17,9 +17,6 @@ class LeftTextMessageCell: TextMessageCell {
         
         bubbleView.image = configuration.leftTextMessageBubbleImage
         
-        textView.font = configuration.leftTextMessageTextFont
-        textView.textColor = configuration.leftTextMessageTextColor
-        
         textView.textContainerInset = UIEdgeInsetsMake(
             configuration.leftTextMessagePaddingTop,
             configuration.leftTextMessagePaddingLeft,
@@ -78,6 +75,27 @@ class LeftTextMessageCell: TextMessageCell {
 
             ])
         }
+        
+    }
+    
+    override func update() {
+        
+        super.update()
+        
+        let textMessage = message as! TextMessage
+        
+        let attributedString = formatLinks(
+            text: textMessage.text,
+            font: configuration.leftTextMessageTextFont,
+            color: configuration.leftTextMessageTextColor,
+            lineSpacing: configuration.leftTextMessageLineSpacing
+        )
+        
+        configuration.formatText(text: attributedString)
+        
+        textView.attributedText = attributedString
+        
+        updateTextSize(textView: textView, widthConstraint: textWidthConstraint, heightConstraint: textHeightConstraint)
         
     }
     

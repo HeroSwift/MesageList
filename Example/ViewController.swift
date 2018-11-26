@@ -26,14 +26,8 @@ class Configuration: MessageListConfiguration {
         return message.user.id == "1"
     }
     
-    override func formatText(textView: UITextView, text: String) {
-
+    override func formatText(text: NSMutableAttributedString) {
         
-        
-    }
-    
-    override func formatEvent(textView: UILabel, event: String) {
-        textView.text = event
     }
     
 }

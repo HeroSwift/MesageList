@@ -144,9 +144,9 @@ open class MessageListConfiguration {
     
     // 文本消息的选区颜色
     public var textMessageTintColor = UIColor(red: 1, green: 0.48, blue: 0.03, alpha: 1)
+
     
-    // 文本消息的行间距
-    public var textMessageLineSpacing: CGFloat = 2
+    
     
     // 左侧文本消息背景图
     public var leftTextMessageBubbleImage = UIImage(named: "bubble_left_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
@@ -156,6 +156,9 @@ open class MessageListConfiguration {
     
     // 左侧文本消息的字体颜色
     public var leftTextMessageTextColor = UIColor(red: 30 / 255, green: 30 / 255, blue: 30 / 255, alpha: 1)
+    
+    // 左侧文本消息的行间距
+    public var leftTextMessageLineSpacing: CGFloat = 2
     
     // 左侧文本消息到头像的距离
     public var leftTextMessageMarginLeft: CGFloat = 5
@@ -177,6 +180,9 @@ open class MessageListConfiguration {
     
     // 右侧文本消息的字体颜色
     public var rightTextMessageTextColor = UIColor(red: 30 / 255, green: 30 / 255, blue: 30 / 255, alpha: 1)
+    
+    // 右侧文本消息的行间距
+    public var rightTextMessageLineSpacing: CGFloat = 2
     
     // 右侧文本消息到头像的距离
     public var rightTextMessageMarginRight: CGFloat = 5
@@ -748,11 +754,7 @@ open class MessageListConfiguration {
         return false
     }
     
-    open func formatText(textView: UITextView, text: String) {
-        
-    }
-    
-    open func formatEvent(textView: UILabel, event: String) {
+    open func formatText(text: NSMutableAttributedString) {
         
     }
     

@@ -17,9 +17,6 @@ class RightTextMessageCell: TextMessageCell {
         
         bubbleView.image = configuration.rightTextMessageBubbleImage
         
-        textView.font = configuration.rightTextMessageTextFont
-        textView.textColor = configuration.rightTextMessageTextColor
-        
         textView.textContainerInset = UIEdgeInsetsMake(
             configuration.rightTextMessagePaddingTop,
             configuration.rightTextMessagePaddingLeft,
@@ -78,6 +75,27 @@ class RightTextMessageCell: TextMessageCell {
 
             ])
         }
+        
+    }
+    
+    override func update() {
+        
+        super.update()
+        
+        let textMessage = message as! TextMessage
+        
+        let attributedString = formatLinks(
+            text: textMessage.text,
+            font: configuration.rightTextMessageTextFont,
+            color: configuration.rightTextMessageTextColor,
+            lineSpacing: configuration.rightTextMessageLineSpacing
+        )
+        
+        configuration.formatText(text: attributedString)
+        
+        textView.attributedText = attributedString
+        
+        updateTextSize(textView: textView, widthConstraint: textWidthConstraint, heightConstraint: textHeightConstraint)
         
     }
 

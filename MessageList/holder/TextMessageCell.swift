@@ -74,7 +74,7 @@ class TextMessageCell: MessageCell {
         // 文本内容
         textView.delegate = self
         textView.isEditable = false
-        textView.textAlignment = .justified
+        textView.isSelectable = true
         textView.backgroundColor = .clear
         textView.tintColor = configuration.textMessageTintColor
         textView.isScrollEnabled = false
@@ -118,37 +118,14 @@ class TextMessageCell: MessageCell {
     
     override func update() {
         
-        let textMessage = message as! TextMessage
-        
         configuration.loadImage(imageView: avatarView, url: message.user.avatar)
-        
-        textView.attributedText = formatLinks(text: textMessage.text, lineSpacing: configuration.textMessageLineSpacing)
 
         nameView.text = message.user.name
         nameView.sizeToFit()
 
-        updateContentSize()
-
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
         showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint)
-        
-    }
-    
-    private func updateContentSize() {
-        
-        let fixedWidth: CGFloat = 0
-        var newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        
-        // 算出自适应后的宽度
-        let width = min(getContentMaxWidth(), max(newSize.width, fixedWidth))
-
-        newSize = textView.sizeThatFits(CGSize(width: width, height: CGFloat.greatestFiniteMagnitude))
-        
-        textWidthConstraint.constant = width
-        textHeightConstraint.constant = newSize.height
-
-        setNeedsLayout()
         
     }
     

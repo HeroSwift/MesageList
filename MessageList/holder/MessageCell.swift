@@ -4,6 +4,7 @@ import UIKit
 
 class MessageCell: UITableViewCell {
     
+    // 文本消息和事件消息，传入 [type:link] 格式就能展现成链接
     private static let linkPattern = try! NSRegularExpression(pattern: "\\[\\w+:[^]]+\\]")
     
     var isReady = false
@@ -83,7 +84,7 @@ class MessageCell: UITableViewCell {
         
     }
     
-    func formatLinks(text: String, lineSpacing: CGFloat) -> NSAttributedString {
+    func formatLinks(text: String, font: UIFont, color: UIColor, lineSpacing: CGFloat) -> NSMutableAttributedString {
         
         let string = NSString(string: text)
         let length = string.length
@@ -126,20 +127,40 @@ class MessageCell: UITableViewCell {
             newString.append(string.substring(from: index))
         }
         
+        let fullRange = NSRange(location: 0, length: newString.length)
         let attributedString = NSMutableAttributedString(string: newString as String)
         
-        let style = NSMutableParagraphStyle()
-        style.alignment = .justified
-        style.lineSpacing = lineSpacing
-        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: style, range: NSRange(location: 0, length: newString.length))
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        paragraphStyle.lineSpacing = lineSpacing
+        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: fullRange)
+        
+        attributedString.addAttribute(NSAttributedStringKey.font, value: font, range: fullRange)
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: fullRange)
         
         for item in links {
             let range = NSMakeRange(item.position, NSString(string: item.text).length)
             attributedString.addAttribute(NSAttributedStringKey.link, value: item.link, range: range)
-            attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: range)
         }
         
         return attributedString
+        
+    }
+    
+    func updateTextSize(textView: UITextView, widthConstraint: NSLayoutConstraint, heightConstraint: NSLayoutConstraint) {
+
+        let fixedWidth: CGFloat = 0
+        var newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        
+        // 算出自适应后的宽度
+        let width = min(getContentMaxWidth(), max(newSize.width, fixedWidth))
+        
+        newSize = textView.sizeThatFits(CGSize(width: width, height: CGFloat.greatestFiniteMagnitude))
+        
+        widthConstraint.constant = width
+        heightConstraint.constant = newSize.height
+        
+        setNeedsLayout()
         
     }
     
