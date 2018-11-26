@@ -74,6 +74,9 @@ open class MessageListConfiguration {
     // 事件 字体颜色
     public var eventTextColor = UIColor.white
     
+    // 事件 行间距
+    public var eventTextLineSpacing: CGFloat = 2
+    
     
     
     // 左侧用户名称是否显示
@@ -142,7 +145,8 @@ open class MessageListConfiguration {
     // 文本消息的选区颜色
     public var textMessageTintColor = UIColor(red: 1, green: 0.48, blue: 0.03, alpha: 1)
     
-
+    // 文本消息的行间距
+    public var textMessageLineSpacing: CGFloat = 2
     
     // 左侧文本消息背景图
     public var leftTextMessageBubbleImage = UIImage(named: "bubble_left_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)

@@ -4,6 +4,8 @@ import UIKit
 
 class MessageCell: UITableViewCell {
     
+    private static let linkPattern = try! NSRegularExpression(pattern: "\\[\\w+:[^]]+\\]")
+    
     var isReady = false
     
     var configuration: MessageListConfiguration!
@@ -78,6 +80,66 @@ class MessageCell: UITableViewCell {
     }
     
     func update() {
+        
+    }
+    
+    func formatLinks(text: String, lineSpacing: CGFloat) -> NSAttributedString {
+        
+        let string = NSString(string: text)
+        let length = string.length
+        
+        var links = [LinkToken]()
+        var index = 0
+        
+        // 生成一段新的文本
+        let newString = NSMutableString(string: "")
+        
+        let matches = MessageCell.linkPattern.matches(in: text, options: [], range: NSRange(location: 0, length: length))
+        
+        for item in matches {
+            
+            let location = item.range.location
+            let length = item.range.length
+            
+            newString.append(string.substring(with: NSMakeRange(index, location - index)))
+            
+            // 去掉左右 [ ]
+            let range = NSMakeRange(location + 1, length - 2)
+            
+            // 链接
+            let link = string.substring(with: range)
+            
+            // 文本
+            let text = String(link.suffix(from: link.index(of: ":")!).dropFirst())
+            
+            links.append(
+                LinkToken(text: text, link: link, position: newString.length)
+            )
+            
+            newString.append(text)
+            
+            index = location + length
+            
+        }
+        
+        if index < length {
+            newString.append(string.substring(from: index))
+        }
+        
+        let attributedString = NSMutableAttributedString(string: newString as String)
+        
+        let style = NSMutableParagraphStyle()
+        style.alignment = .justified
+        style.lineSpacing = lineSpacing
+        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: style, range: NSRange(location: 0, length: newString.length))
+        
+        for item in links {
+            let range = NSMakeRange(item.position, NSString(string: item.text).length)
+            attributedString.addAttribute(NSAttributedStringKey.link, value: item.link, range: range)
+            attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: range)
+        }
+        
+        return attributedString
         
     }
     

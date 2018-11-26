@@ -81,7 +81,6 @@ class TextMessageCell: MessageCell {
         textView.isUserInteractionEnabled = true
         textView.textContainer.lineFragmentPadding = 0
         textView.translatesAutoresizingMaskIntoConstraints = false
-        
         contentView.addSubview(textView)
         
         // spinner icon
@@ -122,7 +121,8 @@ class TextMessageCell: MessageCell {
         let textMessage = message as! TextMessage
         
         configuration.loadImage(imageView: avatarView, url: message.user.avatar)
-        configuration.formatText(textView: textView, text: textMessage.text)
+        
+        textView.attributedText = formatLinks(text: textMessage.text, lineSpacing: configuration.textMessageLineSpacing)
 
         nameView.text = message.user.name
         nameView.sizeToFit()
@@ -156,9 +156,9 @@ class TextMessageCell: MessageCell {
 
 extension TextMessageCell: UITextViewDelegate {
     
-    func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
-        print(URL)
-        return true
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        delegate.messageListDidClickTextLink(link: URL.absoluteString)
+        return false
     }
 
 }

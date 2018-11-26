@@ -52,6 +52,7 @@
 		9D9B4E2621A52C13006110EE /* MessageListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4E2521A52C13006110EE /* MessageListDelegate.swift */; };
 		9DAC6E53219C619300F693B9 /* RightTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */; };
 		9DAC6E55219C690C00F693B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC6E54219C690C00F693B9 /* Assets.xcassets */; };
+		9DB002E921ABCB2A00358E85 /* LinkToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB002E821ABCB2A00358E85 /* LinkToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		9D9B4E2521A52C13006110EE /* MessageListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListDelegate.swift; sourceTree = "<group>"; };
 		9DAC6E52219C619300F693B9 /* RightTextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTextMessageCell.swift; sourceTree = "<group>"; };
 		9DAC6E54219C690C00F693B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DB002E821ABCB2A00358E85 /* LinkToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				9D9B4DBD21A29580006110EE /* EventMessage.swift */,
 				9D9B4DC621A39C79006110EE /* CardMessage.swift */,
 				9D9B4E1621A3DAAC006110EE /* PostMessage.swift */,
+				9DB002E821ABCB2A00358E85 /* LinkToken.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				9D9B4E1721A3DAAC006110EE /* PostMessage.swift in Sources */,
 				9D08B66A219D43B6006904E5 /* AudioMessage.swift in Sources */,
 				9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */,
+				9DB002E921ABCB2A00358E85 /* LinkToken.swift in Sources */,
 				9D4350F02187098700084889 /* MessageCell.swift in Sources */,
 				9D08B668219D2D40006904E5 /* RightImageMessage.swift in Sources */,
 				9D08B664219D229E006904E5 /* ImageMessage.swift in Sources */,

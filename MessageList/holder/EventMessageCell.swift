@@ -58,7 +58,7 @@ class EventMessageCell: MessageCell {
         
         let eventMessage = message as! EventMessage
         
-        configuration.formatEvent(textView: eventView, event: eventMessage.event)
+        eventView.attributedText = formatLinks(text: eventMessage.event, lineSpacing: configuration.eventTextLineSpacing)
         
     }
     

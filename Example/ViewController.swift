@@ -11,6 +11,10 @@ import MessageList
 
 import Kingfisher
 
+
+
+
+
 class Configuration: MessageListConfiguration {
     
     override func loadImage(imageView: UIImageView, url: String) {
@@ -23,7 +27,9 @@ class Configuration: MessageListConfiguration {
     }
     
     override func formatText(textView: UITextView, text: String) {
-        textView.text = text
+
+        
+        
     }
     
     override func formatEvent(textView: UILabel, event: String) {
@@ -45,7 +51,7 @@ class ViewController: UIViewController {
         view.addSubview(messageList)
         
         messageList.append(message:
-            EventMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "", event: "哈哈哈哈123ABCabc")
+            EventMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "", event: "哈哈哈哈 [link:musicode] 123ABCabc")
         )
         
         messageList.append(message:
@@ -69,7 +75,7 @@ class ViewController: UIViewController {
         )
         
         messageList.append(message:
-            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendFailure, time: "星期二", text: "哈哈哈哈哈哈 www.baidu.com  哈哈哈哈哈哈哈哈哈哈哈哈哈http://baidu.com哈哈哈哈哈哈哈哈哈哈哈15512345678哈哈哈哈哈哈哈 15512345678 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈 010-45501354 哈哈哈哈哈哈哈010-45501354哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈")
+            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendFailure, time: "星期二", text: "1😍11  [url:www.baidu.com]  22😍2  http://baidu.com 3😍33 1551234😍5678 ------😍--- [link:15598765432] ---😍-")
         )
         
         messageList.append(message:
@@ -309,6 +315,10 @@ extension ViewController: MessageListDelegate {
     
     public func messageListDidClickFailure(message: Message) {
         print("click failure \(message)")
+    }
+    
+    public func messageListDidClickTextLink(link: String) {
+        print("click link \(link)")
     }
     
     public func messageListDidLoadMore() {

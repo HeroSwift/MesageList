@@ -1,7 +1,7 @@
 
 import Foundation
 
-@objc public enum MessageStatus: Int, RawRepresentable {
+@objc public enum MessageStatus: Int {
     
     // 发送成功
     case sendSuccess;
