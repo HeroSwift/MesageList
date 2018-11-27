@@ -3,9 +3,6 @@ import UIKit
 
 open class MessageListConfiguration {
     
-    // 背景色
-    public var backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1)
-    
     // 内边距
     public var paddingVertical: CGFloat = 18
     

@@ -49,7 +49,7 @@ public class MessageList: UIView {
     
     func setup() {
  
-        tableView.backgroundColor = configuration.backgroundColor
+        tableView.backgroundColor = .clear
         
         tableView.delegate = self
         tableView.dataSource = self
