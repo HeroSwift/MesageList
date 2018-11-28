@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         messageList.hasMoreMessage = true
         messageList.translatesAutoresizingMaskIntoConstraints = false
         
-        view.backgroundColor = .green
+        view.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         view.addSubview(messageList)
         
         messageList.append(message:
