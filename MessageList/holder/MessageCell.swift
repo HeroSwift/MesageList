@@ -194,7 +194,7 @@ class MessageCell: UITableViewCell {
     
     func showTimeView(timeView: UILabel, time: String, avatarView: UIView, avatarTopConstraint: NSLayoutConstraint) {
         
-        let oldValue = timeView.text != ""
+        let oldValue = timeView.text != nil && timeView.text != ""
         let newValue = time != ""
         
         timeView.text = time

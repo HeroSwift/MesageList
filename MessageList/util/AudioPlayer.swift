@@ -1,5 +1,6 @@
 
 import AVFoundation
+import UIKit
 
 class AudioPlayer: NSObject {
     
@@ -15,6 +16,9 @@ class AudioPlayer: NSObject {
     
     // 当前正在播放的 url
     private var url = ""
+    
+    // 播放音频之前的 category
+    private var category: String!
     
     // 播放音频
     func play(url: String) {
@@ -83,6 +87,15 @@ class AudioPlayer: NSObject {
             object: playerItem
         )
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(sensorStateChange(notification:)),
+            name: Notification.Name.UIDeviceProximityStateDidChange,
+            object: nil
+        )
+        
+        category = AVAudioSession.sharedInstance().category
+        
     }
     
     private func removeObservers() {
@@ -94,6 +107,14 @@ class AudioPlayer: NSObject {
             name: Notification.Name.AVPlayerItemDidPlayToEndTime,
             object: playerItem
         )
+        
+        NotificationCenter.default.removeObserver(
+            self,
+            name: Notification.Name.UIDeviceProximityStateDidChange,
+            object: nil
+        )
+        
+        try! AVAudioSession.sharedInstance().setCategory(category)
         
     }
     
@@ -120,6 +141,27 @@ class AudioPlayer: NSObject {
 
     @objc private func playerItemDidPlayToEndTime(notification: Notification) {
         stop()
+    }
+    
+    @objc private func sensorStateChange(notification: Notification) {
+        
+        // 贴紧耳朵，听筒播放
+        if UIDevice.current.proximityState {
+            useEar()
+        }
+        // 远离耳朵，扬声器播放
+        else {
+            useSpeaker()
+        }
+        
+    }
+    
+    private func useSpeaker() {
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+    }
+    
+    private func useEar() {
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
     }
 
 }

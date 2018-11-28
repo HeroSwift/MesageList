@@ -63,6 +63,7 @@ class ImageMessageCell: MessageCell {
         
         // 昵称
         nameView.numberOfLines = 1
+        nameView.lineBreakMode = .byTruncatingTail
         nameView.translatesAutoresizingMaskIntoConstraints = false
         
         // 图片

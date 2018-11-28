@@ -66,6 +66,7 @@ class VideoMessageCell: MessageCell {
         
         // 昵称
         nameView.numberOfLines = 1
+        nameView.lineBreakMode = .byTruncatingTail
         nameView.translatesAutoresizingMaskIntoConstraints = false
         
         // 视频缩略图

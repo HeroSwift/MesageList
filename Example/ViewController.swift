@@ -42,6 +42,8 @@ class ViewController: UIViewController {
         messageList.delegate = self
         messageList.hasMoreMessage = true
         messageList.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.backgroundColor = .green
         view.addSubview(messageList)
         
         messageList.append(message:
@@ -85,7 +87,7 @@ class ViewController: UIViewController {
         )
         
         messageList.append(message:
-            TextMessage(id: "123", user: User(id: "1", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendFailure, time: "星期二", text: "哈哈哈哈123ABCabc")
+            TextMessage(id: "123", user: User(id: "1", name: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendFailure, time: "星期二", text: "哈哈哈哈123ABCabc")
         )
         
         messageList.append(message:
