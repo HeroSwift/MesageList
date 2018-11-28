@@ -26,6 +26,11 @@ class EventMessageCell: MessageCell {
         eventView.isUserInteractionEnabled = true
         eventView.textContainer.lineFragmentPadding = 0
 
+        
+        eventView.linkTextAttributes = [
+            NSAttributedStringKey.foregroundColor.rawValue: configuration.linkTextColor
+        ]
+        
         eventView.textContainerInset = UIEdgeInsetsMake(
             configuration.eventPaddingVertical,
             configuration.eventPaddingHorizontal,

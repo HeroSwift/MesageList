@@ -32,6 +32,9 @@ open class MessageListConfiguration {
     public var messageFailureIconPressed = UIImage(named: "failure_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
     
     
+    // 链接颜色
+    public var linkTextColor = UIColor(red: 0.08, green: 0.52, blue: 0.88, alpha: 1)
+    
     // 时间 背景色
     public var timeBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
     

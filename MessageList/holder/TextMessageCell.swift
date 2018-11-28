@@ -82,6 +82,9 @@ class TextMessageCell: MessageCell {
         textView.isUserInteractionEnabled = true
         textView.textContainer.lineFragmentPadding = 0
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.linkTextAttributes = [
+            NSAttributedStringKey.foregroundColor.rawValue: configuration.linkTextColor
+        ]
         contentView.addSubview(textView)
         
         // spinner icon
