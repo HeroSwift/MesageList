@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         )
         
         messageList.append(message:
-            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "星期二", text: "哈哈哈哈123ABCabc")
+            TextMessage(id: "123", user: User(id: "123", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "星期二", text: "1")
         )
         
         messageList.append(message:
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         )
         
         messageList.append(message:
-            TextMessage(id: "123", user: User(id: "1", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "星期二", text: "哈哈哈哈123ABCabc")
+            TextMessage(id: "123", user: User(id: "1", name: "哈哈哈", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "星期二", text: "1")
         )
         
         messageList.append(message:
@@ -290,7 +290,7 @@ class ViewController: UIViewController {
 extension ViewController: MessageListDelegate {
     
     public func messageListDidClickList() {
-        
+        print("click list")
     }
     
     public func messageListDidClickUserAvatar(message: Message) {

@@ -163,6 +163,9 @@ open class MessageListConfiguration {
     // 左侧文本消息到头像的距离
     public var leftTextMessageMarginLeft: CGFloat = 5
     
+    // 左侧文本消息的最小宽度
+    public var leftTextMessageMinWidth: CGFloat = 50
+    
     // 左侧文本消息的内边距
     public var leftTextMessagePaddingLeft: CGFloat = 16
     public var leftTextMessagePaddingRight: CGFloat = 12
@@ -186,6 +189,9 @@ open class MessageListConfiguration {
     
     // 右侧文本消息到头像的距离
     public var rightTextMessageMarginRight: CGFloat = 5
+    
+    // 右侧文本消息的最小宽度
+    public var rightTextMessageMinWidth: CGFloat = 50
     
     // 右侧文本消息的内边距
     public var rightTextMessagePaddingLeft: CGFloat = 12

@@ -147,13 +147,21 @@ class MessageCell: UITableViewCell {
         
     }
     
-    func updateTextSize(textView: UITextView, widthConstraint: NSLayoutConstraint, heightConstraint: NSLayoutConstraint) {
+    func updateTextSize(textView: UITextView, minWidth: CGFloat, widthConstraint: NSLayoutConstraint, heightConstraint: NSLayoutConstraint) {
 
         let fixedWidth: CGFloat = 0
         var newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         
         // 算出自适应后的宽度
-        let width = min(getContentMaxWidth(), max(newSize.width, fixedWidth))
+        var width = newSize.width
+        let maxWidth = getContentMaxWidth()
+        
+        if width > maxWidth {
+            width = maxWidth
+        }
+        else if width < minWidth {
+            width = minWidth
+        }
         
         newSize = textView.sizeThatFits(CGSize(width: width, height: CGFloat.greatestFiniteMagnitude))
         

@@ -76,7 +76,7 @@ class EventMessageCell: MessageCell {
             color: configuration.eventTextColor,
             lineSpacing: configuration.eventTextLineSpacing
         )
-        updateTextSize(textView: eventView, widthConstraint: widthConstraint, heightConstraint: heightConstraint)
+        updateTextSize(textView: eventView, minWidth: 0, widthConstraint: widthConstraint, heightConstraint: heightConstraint)
         
     }
     

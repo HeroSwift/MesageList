@@ -96,7 +96,7 @@ class RightTextMessageCell: TextMessageCell {
         
         textView.attributedText = attributedString
         
-        updateTextSize(textView: textView, widthConstraint: textWidthConstraint, heightConstraint: textHeightConstraint)
+        updateTextSize(textView: textView, minWidth: configuration.rightTextMessageMinWidth, widthConstraint: textWidthConstraint, heightConstraint: textHeightConstraint)
         
     }
 

@@ -1,6 +1,7 @@
 
+import Foundation
 
-public protocol MessageListDelegate {
+@objc public protocol MessageListDelegate {
     
     // 点击列表
     func messageListDidClickList()
