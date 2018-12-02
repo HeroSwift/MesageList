@@ -28,8 +28,8 @@ open class MessageListConfiguration {
     public var userAvatarBorderRadius: CGFloat = 4
     
     // 发送失败的图标
-    public var messageFailureIconNormal = UIImage(named: "failure_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
-    public var messageFailureIconPressed = UIImage(named: "failure_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+    public var messageFailureIconNormal = UIImage(named: "message_list_failure_normal")!
+    public var messageFailureIconPressed = UIImage(named: "message_list_failure_pressed")!
     
     
     // 链接颜色
@@ -149,7 +149,7 @@ open class MessageListConfiguration {
     
     
     // 左侧文本消息背景图
-    public var leftTextMessageBubbleImage = UIImage(named: "bubble_left_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var leftTextMessageBubbleImage = UIImage(named: "message_list_bubble_left_normal")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
     // 左侧文本消息的字体大小
     public var leftTextMessageTextFont = UIFont.systemFont(ofSize: 13)
@@ -176,7 +176,7 @@ open class MessageListConfiguration {
     
     
     // 右侧文本消息背景图
-    public var rightTextMessageBubbleImage = UIImage(named: "bubble_active_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var rightTextMessageBubbleImage = UIImage(named: "message_list_bubble_active_normal")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
     // 右侧文本消息的字体大小
     public var rightTextMessageTextFont = UIFont.systemFont(ofSize: 13)
@@ -257,20 +257,20 @@ open class MessageListConfiguration {
     
     
     // 左侧语音消息背景图
-    public var leftAudioMessageBubbleImageNormal = UIImage(named: "bubble_left_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var leftAudioMessageBubbleImageNormal = UIImage(named: "message_list_bubble_left_normal")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
-    public var leftAudioMessageBubbleImagePressed = UIImage(named: "bubble_left_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var leftAudioMessageBubbleImagePressed = UIImage(named: "message_list_bubble_left_pressed")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
     // 左侧语音消息气泡高度
     public var leftAudioMessageBubbleHeight: CGFloat = 40
     
     // 左侧语音消息声波图
-    public var leftAudioMessageWave = UIImage(named: "wave_3_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+    public var leftAudioMessageWave = UIImage(named: "message_list_wave_3_left")!
     
     public var leftAudioMessageWaves = [UIImage](arrayLiteral: 
-        UIImage(named: "wave_1_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!,
-        UIImage(named: "wave_2_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!,
-        UIImage(named: "wave_3_left", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+        UIImage(named: "message_list_wave_1_left")!,
+        UIImage(named: "message_list_wave_2_left")!,
+        UIImage(named: "message_list_wave_3_left")!
     )
     
     // 左侧语音消息到头像的距离
@@ -295,20 +295,20 @@ open class MessageListConfiguration {
     
     
     // 右侧语音消息背景图
-    public var rightAudioMessageBubbleImageNormal = UIImage(named: "bubble_active_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var rightAudioMessageBubbleImageNormal = UIImage(named: "message_list_bubble_active_normal")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
-    public var rightAudioMessageBubbleImagePressed = UIImage(named: "bubble_active_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var rightAudioMessageBubbleImagePressed = UIImage(named: "message_list_bubble_active_pressed")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
     // 右侧语音消息气泡高度
     public var rightAudioMessageBubbleHeight: CGFloat = 40
     
     // 右侧语音消息声波图
-    public var rightAudioMessageWave = UIImage(named: "wave_3_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+    public var rightAudioMessageWave = UIImage(named: "message_list_wave_3_right")!
     
     public var rightAudioMessageWaves = [UIImage](arrayLiteral:
-        UIImage(named: "wave_1_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!,
-        UIImage(named: "wave_2_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!,
-        UIImage(named: "wave_3_right", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+        UIImage(named: "message_list_wave_1_right")!,
+        UIImage(named: "message_list_wave_2_right")!,
+        UIImage(named: "message_list_wave_3_right")!
     )
     
     // 右侧语音消息到头像的距离
@@ -350,7 +350,7 @@ open class MessageListConfiguration {
     public var videoMessageBorderRadius: CGFloat = 4
     
     // 视频播放图标
-    public var videoMessagePlayImage = UIImage(named: "play", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!
+    public var videoMessagePlayImage = UIImage(named: "message_list_play")!
     
     // 视频时长到缩略图右侧的距离
     public var videoMessageDurationMarginRight: CGFloat = 8
@@ -417,9 +417,9 @@ open class MessageListConfiguration {
     public var leftCardMessageMarginLeft: CGFloat = 4
     
     // 左侧名片消息的气泡图片
-    public var leftCardMessageBubbleImageNormal = UIImage(named: "bubble_left_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var leftCardMessageBubbleImageNormal = UIImage(named: "message_list_bubble_left_normal")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
-    public var leftCardMessageBubbleImagePressed = UIImage(named: "bubble_left_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var leftCardMessageBubbleImagePressed = UIImage(named: "message_list_bubble_left_pressed")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
     // 左侧名片消息的缩略图到气泡左侧的距离
     public var leftCardMessageThumbnailMarginLeft: CGFloat = 16
@@ -495,9 +495,9 @@ open class MessageListConfiguration {
     public var rightCardMessageMarginRight: CGFloat = 4
     
     // 右侧名片消息的气泡图片
-    public var rightCardMessageBubbleImageNormal = UIImage(named: "bubble_right_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var rightCardMessageBubbleImageNormal = UIImage(named: "message_list_bubble_right_normal")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
-    public var rightCardMessageBubbleImagePressed = UIImage(named: "bubble_right_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var rightCardMessageBubbleImagePressed = UIImage(named: "message_list_bubble_right_pressed")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
     // 右侧名片消息的缩略图到气泡右侧的距离
     public var rightCardMessageThumbnailMarginLeft: CGFloat = 10
@@ -590,9 +590,9 @@ open class MessageListConfiguration {
     public var leftPostMessageMarginLeft: CGFloat = 4
     
     // 左侧文章消息的气泡图片
-    public var leftPostMessageBubbleImageNormal = UIImage(named: "bubble_left_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var leftPostMessageBubbleImageNormal = UIImage(named: "message_list_bubble_left_normal")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
-    public var leftPostMessageBubbleImagePressed = UIImage(named: "bubble_left_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var leftPostMessageBubbleImagePressed = UIImage(named: "message_list_bubble_left_pressed")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
     // 左侧文章消息的标题字体大小
     public var leftPostMessageTitleTextFont = UIFont.systemFont(ofSize: 14)
@@ -673,9 +673,9 @@ open class MessageListConfiguration {
     public var rightPostMessageMarginRight: CGFloat = 4
     
     // 右侧文章消息的气泡图片
-    public var rightPostMessageBubbleImageNormal = UIImage(named: "bubble_right_normal", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var rightPostMessageBubbleImageNormal = UIImage(named: "message_list_bubble_right_normal")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
-    public var rightPostMessageBubbleImagePressed = UIImage(named: "bubble_right_pressed", in: Bundle(for: MessageListConfiguration.self), compatibleWith: nil)!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
+    public var rightPostMessageBubbleImagePressed = UIImage(named: "message_list_bubble_right_pressed")!.resizableImage(withCapInsets: UIEdgeInsetsMake(26, 20, 20, 20), resizingMode: .tile)
     
     // 右侧文章消息的标题字体大小
     public var rightPostMessageTitleTextFont = UIFont.systemFont(ofSize: 14)
