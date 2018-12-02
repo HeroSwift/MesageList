@@ -469,20 +469,20 @@ open class MessageListConfiguration {
     // 左侧名片消息的分割线到气泡右侧的距离
     public var leftCardMessageDividerMarginRight: CGFloat = 0
     
-    // 左侧名片消息的类型字体大小
-    public var leftCardMessageTypeTextFont = UIFont.systemFont(ofSize: 10)
+    // 左侧名片消息的标签字体大小
+    public var leftCardMessageLabelTextFont = UIFont.systemFont(ofSize: 10)
     
-    // 左侧名片消息的类型字体颜色
-    public var leftCardMessageTypeTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
+    // 左侧名片消息的标签字体颜色
+    public var leftCardMessageLabelTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
-    // 左侧名片消息的类型到分割线的距离
-    public var leftCardMessageTypeMarginTop: CGFloat = 4
+    // 左侧名片消息的标签到分割线的距离
+    public var leftCardMessageLabelMarginTop: CGFloat = 4
     
-    // 左侧名片消息的类型到气泡底部的距离
-    public var leftCardMessageTypeMarginBottom: CGFloat = 4
+    // 左侧名片消息的标签到气泡底部的距离
+    public var leftCardMessageLabelMarginBottom: CGFloat = 4
     
-    // 左侧名片消息的类型到气泡左侧的距离
-    public var leftCardMessageTypeMarginLeft: CGFloat = 16
+    // 左侧名片消息的标签到气泡左侧的距离
+    public var leftCardMessageLabelMarginLeft: CGFloat = 16
     
     
     
@@ -547,20 +547,20 @@ open class MessageListConfiguration {
     // 右侧名片消息的分割线到气泡左侧的距离
     public var rightCardMessageDividerMarginLeft: CGFloat = 0
     
-    // 右侧名片消息的类型字体大小
-    public var rightCardMessageTypeTextFont = UIFont.systemFont(ofSize: 10)
+    // 右侧名片消息的标签字体大小
+    public var rightCardMessageLabelTextFont = UIFont.systemFont(ofSize: 10)
     
-    // 右侧名片消息的类型字体颜色
-    public var rightCardMessageTypeTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
+    // 右侧名片消息的标签字体颜色
+    public var rightCardMessageLabelTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
-    // 右侧名片消息的类型到分割线的距离
-    public var rightCardMessageTypeMarginTop: CGFloat = 4
+    // 右侧名片消息的标签到分割线的距离
+    public var rightCardMessageLabelMarginTop: CGFloat = 4
     
-    // 右侧名片消息的类型到气泡底部的距离
-    public var rightCardMessageTypeMarginBottom: CGFloat = 4
+    // 右侧名片消息的标签到气泡底部的距离
+    public var rightCardMessageLabelMarginBottom: CGFloat = 4
     
-    // 右侧名片消息的类型到气泡左侧的距离
-    public var rightCardMessageTypeMarginLeft: CGFloat = 10
+    // 右侧名片消息的标签到气泡左侧的距离
+    public var rightCardMessageLabelMarginLeft: CGFloat = 10
     
     
     
@@ -648,20 +648,20 @@ open class MessageListConfiguration {
     // 左侧文章消息的分割线到气泡右侧的距离
     public var leftPostMessageDividerMarginRight: CGFloat = 0
     
-    // 左侧文章消息的品牌字体大小
-    public var leftPostMessageBrandTextFont = UIFont.systemFont(ofSize: 10)
+    // 左侧文章消息的标签字体大小
+    public var leftPostMessageLabelTextFont = UIFont.systemFont(ofSize: 10)
     
-    // 左侧文章消息的品牌字体颜色
-    public var leftPostMessageBrandTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
+    // 左侧文章消息的标签字体颜色
+    public var leftPostMessageLabelTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
-    // 左侧文章消息的品牌到分割线的距离
-    public var leftPostMessageBrandMarginTop: CGFloat = 4
+    // 左侧文章消息的标签到分割线的距离
+    public var leftPostMessageLabelMarginTop: CGFloat = 4
     
-    // 左侧文章消息的品牌到气泡底部的距离
-    public var leftPostMessageBrandMarginBottom: CGFloat = 4
+    // 左侧文章消息的标签到气泡底部的距离
+    public var leftPostMessageLabelMarginBottom: CGFloat = 4
     
-    // 左侧文章消息的品牌到气泡左侧的距离
-    public var leftPostMessageBrandMarginLeft: CGFloat = 16
+    // 左侧文章消息的标签到气泡左侧的距离
+    public var leftPostMessageLabelMarginLeft: CGFloat = 16
     
     
     
@@ -731,20 +731,20 @@ open class MessageListConfiguration {
     // 右侧文章消息的分割线到气泡右侧的距离
     public var rightPostMessageDividerMarginRight: CGFloat = 6
     
-    // 右侧文章消息的品牌字体大小
-    public var rightPostMessageBrandTextFont = UIFont.systemFont(ofSize: 10)
+    // 右侧文章消息的标签字体大小
+    public var rightPostMessageLabelTextFont = UIFont.systemFont(ofSize: 10)
     
-    // 右侧文章消息的品牌字体颜色
-    public var rightPostMessageBrandTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
+    // 右侧文章消息的标签字体颜色
+    public var rightPostMessageLabelTextColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
     
-    // 右侧文章消息的品牌到分割线的距离
-    public var rightPostMessageBrandMarginTop: CGFloat = 4
+    // 右侧文章消息的标签到分割线的距离
+    public var rightPostMessageLabelMarginTop: CGFloat = 4
     
-    // 右侧文章消息的品牌到气泡底部的距离
-    public var rightPostMessageBrandMarginBottom: CGFloat = 4
+    // 右侧文章消息的标签到气泡底部的距离
+    public var rightPostMessageLabelMarginBottom: CGFloat = 4
     
-    // 右侧文章消息的品牌到气泡左侧的距离
-    public var rightPostMessageBrandMarginLeft: CGFloat = 10
+    // 右侧文章消息的标签到气泡左侧的距离
+    public var rightPostMessageLabelMarginLeft: CGFloat = 10
     
     
     

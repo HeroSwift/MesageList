@@ -15,7 +15,7 @@ class PostMessageCell: MessageCell {
     var titleView = UILabel()
     var descView = UILabel()
     var dividerView = UIView()
-    var brandView = UILabel()
+    var labelView = UILabel()
     
     var avatarTopConstraint: NSLayoutConstraint!
     
@@ -97,10 +97,9 @@ class PostMessageCell: MessageCell {
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(dividerView)
         
-        // 品牌
-        brandView.numberOfLines = 1
-        brandView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(brandView)
+        labelView.numberOfLines = 1
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(labelView)
         
         // spinner icon
         spinnerView.translatesAutoresizingMaskIntoConstraints = false
@@ -148,8 +147,8 @@ class PostMessageCell: MessageCell {
         descView.text = postMessage.desc
         descView.sizeToFit()
         
-        brandView.text = postMessage.brand
-        brandView.sizeToFit()
+        labelView.text = postMessage.label
+        labelView.sizeToFit()
         
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         

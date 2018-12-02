@@ -15,7 +15,7 @@ class CardMessageCell: MessageCell {
     var titleView = UILabel()
     var descView = UILabel()
     var dividerView = UIView()
-    var typeView = UILabel()
+    var labelView = UILabel()
 
     var avatarTopConstraint: NSLayoutConstraint!
     
@@ -98,9 +98,9 @@ class CardMessageCell: MessageCell {
         contentView.addSubview(dividerView)
         
         // 类型
-        typeView.numberOfLines = 1
-        typeView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(typeView)
+        labelView.numberOfLines = 1
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(labelView)
         
         // spinner icon
         spinnerView.translatesAutoresizingMaskIntoConstraints = false
@@ -147,8 +147,8 @@ class CardMessageCell: MessageCell {
         descView.text = cardMessage.desc
         descView.sizeToFit()
         
-        typeView.text = cardMessage.type
-        typeView.sizeToFit()
+        labelView.text = cardMessage.label
+        labelView.sizeToFit()
         
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         

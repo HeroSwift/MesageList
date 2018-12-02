@@ -26,8 +26,8 @@ class RightPostMessageCell: PostMessageCell {
         
         dividerView.backgroundColor = configuration.rightPostMessageDividerColor
         
-        brandView.font = configuration.rightPostMessageBrandTextFont
-        brandView.textColor = configuration.rightPostMessageBrandTextColor
+        labelView.font = configuration.rightPostMessageLabelTextFont
+        labelView.textColor = configuration.rightPostMessageLabelTextColor
         
         contentView.addConstraints([
             
@@ -58,9 +58,9 @@ class RightPostMessageCell: PostMessageCell {
             NSLayoutConstraint(item: dividerView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .right, multiplier: 1, constant: -configuration.rightPostMessageDividerMarginRight),
             NSLayoutConstraint(item: dividerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.postMessageDividerWidth),
             
-            NSLayoutConstraint(item: brandView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: configuration.rightPostMessageBrandMarginLeft),
-            NSLayoutConstraint(item: brandView, attribute: .top, relatedBy: .equal, toItem: dividerView, attribute: .top, multiplier: 1, constant: configuration.rightPostMessageBrandMarginTop),
-            NSLayoutConstraint(item: brandView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.rightPostMessageBrandMarginBottom),
+            NSLayoutConstraint(item: labelView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: configuration.rightPostMessageLabelMarginLeft),
+            NSLayoutConstraint(item: labelView, attribute: .top, relatedBy: .equal, toItem: dividerView, attribute: .top, multiplier: 1, constant: configuration.rightPostMessageLabelMarginTop),
+            NSLayoutConstraint(item: labelView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.rightPostMessageLabelMarginBottom),
             
             NSLayoutConstraint(item: spinnerView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: -configuration.rightStatusViewMarginRight),
             NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.rightStatusViewMarginBottom),

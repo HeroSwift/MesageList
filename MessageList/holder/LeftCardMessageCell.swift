@@ -26,8 +26,8 @@ class LeftCardMessageCell: CardMessageCell {
         
         dividerView.backgroundColor = configuration.leftCardMessageDividerColor
         
-        typeView.font = configuration.leftCardMessageTypeTextFont
-        typeView.textColor = configuration.leftCardMessageTypeTextColor
+        labelView.font = configuration.leftCardMessageLabelTextFont
+        labelView.textColor = configuration.leftCardMessageLabelTextColor
         
         contentView.addConstraints([
             
@@ -58,9 +58,9 @@ class LeftCardMessageCell: CardMessageCell {
             NSLayoutConstraint(item: dividerView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .right, multiplier: 1, constant: -configuration.leftCardMessageDividerMarginRight),
             NSLayoutConstraint(item: dividerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.cardMessageDividerWidth),
 
-            NSLayoutConstraint(item: typeView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: configuration.leftCardMessageTypeMarginLeft),
-            NSLayoutConstraint(item: typeView, attribute: .top, relatedBy: .equal, toItem: dividerView, attribute: .top, multiplier: 1, constant: configuration.leftCardMessageTypeMarginTop),
-            NSLayoutConstraint(item: typeView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftCardMessageTypeMarginBottom),
+            NSLayoutConstraint(item: labelView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: configuration.leftCardMessageLabelMarginLeft),
+            NSLayoutConstraint(item: labelView, attribute: .top, relatedBy: .equal, toItem: dividerView, attribute: .top, multiplier: 1, constant: configuration.leftCardMessageLabelMarginTop),
+            NSLayoutConstraint(item: labelView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftCardMessageLabelMarginBottom),
             
             NSLayoutConstraint(item: spinnerView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .right, multiplier: 1, constant: configuration.leftStatusViewMarginLeft),
             NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusViewMarginBottom),
