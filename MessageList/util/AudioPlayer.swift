@@ -97,6 +97,8 @@ class AudioPlayer: NSObject {
         
         category = AVAudioSession.sharedInstance().category
         
+        useSpeaker()
+        
     }
     
     private func removeObservers() {
