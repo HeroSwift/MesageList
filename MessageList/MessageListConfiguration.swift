@@ -762,7 +762,7 @@ open class MessageListConfiguration {
         return false
     }
     
-    open func formatText(textView: UITextView, text: NSMutableAttributedString) {
+    open func formatText(font: UIFont, text: NSMutableAttributedString) {
         
     }
     
