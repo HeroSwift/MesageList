@@ -9,9 +9,9 @@ class TextMessageCell: MessageCell {
     
     var nameView = UILabel()
 
-    var bubbleView = InteractiveButton()
+    var bubbleView = UIImageView()
     
-    var textView = UITextView()
+    var textView = InteractiveTextView()
     
     var textWidthConstraint: NSLayoutConstraint!
     var textHeightConstraint: NSLayoutConstraint!
@@ -76,11 +76,11 @@ class TextMessageCell: MessageCell {
         nameView.translatesAutoresizingMaskIntoConstraints = false
 
         // 气泡
-        bubbleView.bind(cell: self)
         bubbleView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(bubbleView)
 
         // 文本内容
+        textView.bind(cell: self)
         textView.delegate = self
         textView.isEditable = false
         textView.backgroundColor = .clear
@@ -104,9 +104,10 @@ class TextMessageCell: MessageCell {
         failureView.setBackgroundImage(configuration.messageFailureIconPressed, for: .highlighted)
         contentView.addSubview(failureView)
         
-        addContentGesture(view: bubbleView)
+        addContentGesture(view: textView)
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
+        
         
         topConstraint = NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         bottomConstraint = NSLayoutConstraint(item: textView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)

@@ -15,9 +15,15 @@ class RightTextMessageCell: TextMessageCell {
         
         super.create()
         
-        bubbleView.setBackgroundImage(configuration.rightTextMessageBubbleImageNormal, for: .normal)
-        bubbleView.setBackgroundImage(configuration.rightTextMessageBubbleImagePressed, for: .selected)
-        bubbleView.setBackgroundImage(configuration.rightTextMessageBubbleImagePressed, for: .highlighted)
+        bubbleView.image = configuration.rightTextMessageBubbleImageNormal
+        
+        textView.onTouchDown = {
+            self.bubbleView.image = self.configuration.rightTextMessageBubbleImagePressed
+        }
+        
+        textView.onTouchUp = {
+            self.bubbleView.image = self.configuration.rightTextMessageBubbleImageNormal
+        }
         
         textView.textContainerInset = UIEdgeInsetsMake(
             configuration.rightTextMessagePaddingTop,
