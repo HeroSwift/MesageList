@@ -9,7 +9,7 @@ class TextMessageCell: MessageCell {
     
     var nameView = UILabel()
 
-    var bubbleView = UIImageView()
+    var bubbleView = InteractiveButton()
     
     var textView = UITextView()
     
@@ -31,6 +31,13 @@ class TextMessageCell: MessageCell {
     }
     
     override func create() {
+        
+        menuItems.append(
+            UIMenuItem(
+                title: configuration.menuItemCopy,
+                action: #selector(InteractiveTextView.onCopy)
+            )
+        )
         
         // 时间
         timeView.numberOfLines = 1
@@ -69,13 +76,13 @@ class TextMessageCell: MessageCell {
         nameView.translatesAutoresizingMaskIntoConstraints = false
 
         // 气泡
+        bubbleView.bind(cell: self)
         bubbleView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(bubbleView)
 
         // 文本内容
         textView.delegate = self
         textView.isEditable = false
-        textView.isSelectable = true
         textView.backgroundColor = .clear
         textView.tintColor = configuration.textMessageTintColor
         textView.isScrollEnabled = false
@@ -97,11 +104,9 @@ class TextMessageCell: MessageCell {
         failureView.setBackgroundImage(configuration.messageFailureIconPressed, for: .highlighted)
         contentView.addSubview(failureView)
         
-        addClickHandler(view: contentView, selector: #selector(onMessageClick))
+        addContentGesture(view: bubbleView)
         addClickHandler(view: avatarView, selector: #selector(onUserAvatarClick))
-        addClickHandler(view: textView, selector: #selector(onBubbleClick))
         addClickHandler(view: failureView, selector: #selector(onFailureClick))
-        addLongPressHandler(view: textView, selector: #selector(onContentLongPress))
         
         topConstraint = NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
         bottomConstraint = NSLayoutConstraint(item: textView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
@@ -134,11 +139,6 @@ class TextMessageCell: MessageCell {
         
     }
     
-    @objc func onBubbleClick() {
-        textView.selectedRange = NSMakeRange(0, 0)
-        delegate.messageListDidClickContent(message: message)
-    }
-    
 }
 
 extension TextMessageCell: UITextViewDelegate {
@@ -146,6 +146,10 @@ extension TextMessageCell: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
         delegate.messageListDidClickLink(link: URL.absoluteString)
         return false
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        textView.selectedTextRange = nil
     }
     
     // 避免 ios 10.11+ 长按表情会触发保存图片的系统窗口

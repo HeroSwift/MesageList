@@ -26,7 +26,7 @@ class Configuration: MessageListConfiguration {
         return message.user.id == "1"
     }
     
-    override func formatText(textView: UITextView, text: NSMutableAttributedString) {
+    override func formatText(font: UIFont, text: NSMutableAttributedString) {
         
     }
     
@@ -110,7 +110,7 @@ class ViewController: UIViewController {
         
         
         messageList.append(message:
-            ImageMessage(id: getId(), user: User(id: "123", name: "mu1", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "星期二", url: "https://img.ui.cn/data/file/6/2/0/1839026.png?imageMogr2/auto-orient/format/jpg/strip/thumbnail/!1800%3E/quality/90/", width: 200, height: 140)
+            ImageMessage(id: getId(), user: User(id: "123", name: "mu1", avatar: "https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendIng, time: "星期二", url: "http://img.finstao.com/1ed0987921.gif", width: 150, height: 150)
         )
         
         messageList.append(message:
