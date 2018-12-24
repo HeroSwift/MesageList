@@ -27,22 +27,11 @@ public class MessageList: UIView {
     private var refreshControl = UIRefreshControl()
     
     public convenience init(configuration: MessageListConfiguration) {
-        
         self.init()
         self.configuration = configuration
-        
         setup()
-        
     }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     deinit {
         stopAudio()
     }

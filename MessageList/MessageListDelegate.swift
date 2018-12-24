@@ -18,6 +18,9 @@ import Foundation
     // 点击消息复制菜单
     func messageListDidClickCopy(message: Message)
     
+    // 点击消息分享菜单
+    func messageListDidClickShare(message: Message)
+    
     // 点击消息失败图标
     func messageListDidClickFailure(message: Message)
     
@@ -40,6 +43,8 @@ public extension MessageListDelegate {
     func messageListDidClickContent(message: Message) { }
     
     func messageListDidClickCopy(message: Message) { }
+    
+    func messageListDidClickShare(message: Message) { }
     
     func messageListDidClickFailure(message: Message) { }
     

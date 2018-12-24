@@ -36,7 +36,7 @@
 		9D6C53CD219ABA7F000DD119 /* TextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */; };
 		9D8AE8B521BA611300BA2EF2 /* InteractiveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AE8B421BA611300BA2EF2 /* InteractiveImageView.swift */; };
 		9D8AE8B721BA6D6100BA2EF2 /* InteractiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AE8B621BA6D6100BA2EF2 /* InteractiveButton.swift */; };
-		9D8AE8B921BA714000BA2EF2 /* InteractiveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AE8B821BA714000BA2EF2 /* InteractiveTextView.swift */; };
+		9D8AE8B921BA714000BA2EF2 /* LinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AE8B821BA714000BA2EF2 /* LinkTextView.swift */; };
 		9D9B4DB921A24F1D006110EE /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DB821A24F1D006110EE /* InsetLabel.swift */; };
 		9D9B4DBE21A29580006110EE /* EventMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DBD21A29580006110EE /* EventMessage.swift */; };
 		9D9B4DC021A2964D006110EE /* EventMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B4DBF21A2964D006110EE /* EventMessageCell.swift */; };
@@ -115,7 +115,7 @@
 		9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageCell.swift; sourceTree = "<group>"; };
 		9D8AE8B421BA611300BA2EF2 /* InteractiveImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveImageView.swift; sourceTree = "<group>"; };
 		9D8AE8B621BA6D6100BA2EF2 /* InteractiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveButton.swift; sourceTree = "<group>"; };
-		9D8AE8B821BA714000BA2EF2 /* InteractiveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTextView.swift; sourceTree = "<group>"; };
+		9D8AE8B821BA714000BA2EF2 /* LinkTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkTextView.swift; sourceTree = "<group>"; };
 		9D9B4DB821A24F1D006110EE /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
 		9D9B4DBD21A29580006110EE /* EventMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMessage.swift; sourceTree = "<group>"; };
 		9D9B4DBF21A2964D006110EE /* EventMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMessageCell.swift; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 				9D9B4DB821A24F1D006110EE /* InsetLabel.swift */,
 				9D8AE8B421BA611300BA2EF2 /* InteractiveImageView.swift */,
 				9D8AE8B621BA6D6100BA2EF2 /* InteractiveButton.swift */,
-				9D8AE8B821BA714000BA2EF2 /* InteractiveTextView.swift */,
+				9D8AE8B821BA714000BA2EF2 /* LinkTextView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -427,7 +427,7 @@
 				9D9B4E1721A3DAAC006110EE /* PostMessage.swift in Sources */,
 				9D08B66A219D43B6006904E5 /* AudioMessage.swift in Sources */,
 				9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */,
-				9D8AE8B921BA714000BA2EF2 /* InteractiveTextView.swift in Sources */,
+				9D8AE8B921BA714000BA2EF2 /* LinkTextView.swift in Sources */,
 				9DB002E921ABCB2A00358E85 /* LinkToken.swift in Sources */,
 				9D4350F02187098700084889 /* MessageCell.swift in Sources */,
 				9D8AE8B521BA611300BA2EF2 /* InteractiveImageView.swift in Sources */,

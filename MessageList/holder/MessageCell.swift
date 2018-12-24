@@ -8,15 +8,15 @@ class MessageCell: UITableViewCell {
     private static let linkPattern = try! NSRegularExpression(pattern: "\\[[^:]+:[^]]+\\]")
     
     private var isReady = false
-    
-    var menuItems = [UIMenuItem]()
-    
+
     var configuration: MessageListConfiguration!
     var delegate: MessageListDelegate!
     var message: Message!
     
     var topConstraint: NSLayoutConstraint!
     var bottomConstraint: NSLayoutConstraint!
+    
+    private(set) var menuItems: [UIMenuItem] = [ ]
     
     var count = 0
     
@@ -44,15 +44,7 @@ class MessageCell: UITableViewCell {
             
         }
     }
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     func bind(configuration: MessageListConfiguration, delegate: MessageListDelegate, message: Message, index: Int, count: Int) {
         
         self.message = message
@@ -84,6 +76,12 @@ class MessageCell: UITableViewCell {
     
     func update() {
         
+    }
+    
+    func createMenuItems(_ menuItems: [UIMenuItem]) -> [UIMenuItem] {
+        return menuItems.filter {
+            return $0.title != ""
+        }
     }
     
     func formatLinks(text: String, font: UIFont, color: UIColor, lineSpacing: CGFloat) -> NSMutableAttributedString {

@@ -3,19 +3,11 @@ import UIKit
 
 class EventMessageCell: MessageCell {
     
-    var eventView = UITextView()
+    var eventView = LinkTextView()
     
     var widthConstraint: NSLayoutConstraint!
     var heightConstraint: NSLayoutConstraint!
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     override func create() {
 
         eventView.delegate = self
@@ -86,10 +78,6 @@ extension EventMessageCell: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
         delegate.messageListDidClickLink(link: URL.absoluteString)
         return false
-    }
-   
-    func textViewDidChangeSelection(_ textView: UITextView) {
-        eventView.selectedTextRange = nil
     }
     
 }

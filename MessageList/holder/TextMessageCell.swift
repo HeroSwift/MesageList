@@ -11,7 +11,7 @@ class TextMessageCell: MessageCell {
 
     var bubbleView = InteractiveButton()
     
-    var textView = InteractiveTextView()
+    var textView = LinkTextView()
     
     var textWidthConstraint: NSLayoutConstraint!
     var textHeightConstraint: NSLayoutConstraint!
@@ -22,22 +22,22 @@ class TextMessageCell: MessageCell {
     
     var failureView = UIButton()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override var menuItems: [UIMenuItem] {
+        get {
+            return createMenuItems([
+                UIMenuItem(
+                    title: configuration.menuItemCopy,
+                    action: #selector(InteractiveButton.onCopy)
+                ),
+                UIMenuItem(
+                    title: configuration.menuItemShare,
+                    action: #selector(InteractiveButton.onShare)
+                )
+            ])
+        }
     }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     override func create() {
-        
-        menuItems.append(
-            UIMenuItem(
-                title: configuration.menuItemCopy,
-                action: #selector(InteractiveButton.onCopy)
-            )
-        )
         
         // 时间
         timeView.numberOfLines = 1

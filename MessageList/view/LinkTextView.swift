@@ -1,7 +1,7 @@
 
 import UIKit
 
-class InteractiveTextView: UITextView {
+class LinkTextView: UITextView {
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         

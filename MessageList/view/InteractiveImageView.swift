@@ -21,5 +21,9 @@ class InteractiveImageView: UIImageView {
         }
     }
     
+    @objc func onShare(_ controller: UIMenuController) {
+        cell.delegate.messageListDidClickShare(message: cell.message)
+    }
+    
 }
 

@@ -46,7 +46,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messageList = MessageList(configuration: Configuration())
+        let configuration = Configuration()
+        messageList = MessageList(configuration: configuration)
         
         messageList.delegate = self
         messageList.hasMoreMessage = true

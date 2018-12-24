@@ -23,12 +23,15 @@ class VideoMessageCell: MessageCell {
     
     var failureView = UIButton()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override var menuItems: [UIMenuItem] {
+        get {
+            return createMenuItems([
+                UIMenuItem(
+                    title: configuration.menuItemShare,
+                    action: #selector(InteractiveImageView.onShare)
+                )
+            ])
+        }
     }
     
     override func create() {

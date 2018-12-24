@@ -756,7 +756,7 @@ open class MessageListConfiguration {
     // 菜单文本
     public var menuItemCopy = "复制"
     
-    
+    public var menuItemShare = "转发"
     
     
     

@@ -25,5 +25,9 @@ class InteractiveButton: UIButton {
         cell.delegate.messageListDidClickCopy(message: cell.message)
     }
     
+    @objc func onShare(_ controller: UIMenuController) {
+        cell.delegate.messageListDidClickShare(message: cell.message)
+    }
+    
 }
 
