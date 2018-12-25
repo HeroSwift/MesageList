@@ -407,10 +407,10 @@ open class MessageListConfiguration {
     public var cardMessageBubbleWidth: CGFloat = 230
     
     // 名片消息的缩略图宽度
-    public var cardMessageThumbnailWidth: CGFloat = 42
+    public var cardMessageThumbnailWidth: CGFloat = 40
     
     // 名片消息的缩略图高度
-    public var cardMessageThumbnailHeight: CGFloat = 42
+    public var cardMessageThumbnailHeight: CGFloat = 40
     
     // 名片消息的缩略图圆角
     public var cardMessageThumbnailBorderRadius: CGFloat = 0
@@ -449,7 +449,7 @@ open class MessageListConfiguration {
     public var leftCardMessageTitleMarginTop: CGFloat = 13
     
     // 左侧名片消息的描述字体大小
-    public var leftCardMessageDescTextFont = UIFont.systemFont(ofSize: 10)
+    public var leftCardMessageDescTextFont = UIFont.systemFont(ofSize: 11)
     
     // 左侧名片消息的描述字体颜色
     public var leftCardMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
@@ -527,7 +527,7 @@ open class MessageListConfiguration {
     public var rightCardMessageTitleMarginTop: CGFloat = 13
     
     // 右侧名片消息的描述字体大小
-    public var rightCardMessageDescTextFont = UIFont.systemFont(ofSize: 10)
+    public var rightCardMessageDescTextFont = UIFont.systemFont(ofSize: 11)
     
     // 右侧名片消息的描述字体颜色
     public var rightCardMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
@@ -616,7 +616,7 @@ open class MessageListConfiguration {
     public var leftPostMessageTitleMarginTop: CGFloat = 10
     
     // 左侧文章消息的描述字体大小
-    public var leftPostMessageDescTextFont = UIFont.systemFont(ofSize: 10)
+    public var leftPostMessageDescTextFont = UIFont.systemFont(ofSize: 11)
     
     // 左侧文章消息的描述字体颜色
     public var leftPostMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
@@ -628,10 +628,10 @@ open class MessageListConfiguration {
     public var leftPostMessageDescMarginTop: CGFloat = 7
     
     // 左侧文章消息的缩略图宽度
-    public var leftPostMessageThumbnailWidth: CGFloat = 36
+    public var leftPostMessageThumbnailWidth: CGFloat = 38
     
     // 左侧文章消息的缩略图高度
-    public var leftPostMessageThumbnailHeight: CGFloat = 36
+    public var leftPostMessageThumbnailHeight: CGFloat = 38
     
     // 左侧文章消息的缩略图到描述的距离
     public var leftPostMessageThumbnailMarginLeft: CGFloat = 5
@@ -699,7 +699,7 @@ open class MessageListConfiguration {
     public var rightPostMessageTitleMarginTop: CGFloat = 10
     
     // 右侧文章消息的描述字体大小
-    public var rightPostMessageDescTextFont = UIFont.systemFont(ofSize: 10)
+    public var rightPostMessageDescTextFont = UIFont.systemFont(ofSize: 11)
     
     // 右侧文章消息的描述字体颜色
     public var rightPostMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
@@ -711,10 +711,10 @@ open class MessageListConfiguration {
     public var rightPostMessageDescMarginTop: CGFloat = 7
     
     // 右侧文章消息的缩略图宽度
-    public var rightPostMessageThumbnailWidth: CGFloat = 36
+    public var rightPostMessageThumbnailWidth: CGFloat = 38
     
     // 右侧文章消息的缩略图高度
-    public var rightPostMessageThumbnailHeight: CGFloat = 36
+    public var rightPostMessageThumbnailHeight: CGFloat = 38
     
     // 右侧文章消息的缩略图到描述的距离
     public var rightPostMessageThumbnailMarginLeft: CGFloat = 5
