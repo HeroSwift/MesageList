@@ -64,6 +64,7 @@ class CardMessageCell: MessageCell {
             avatarView.layer.borderWidth = configuration.userAvatarBorderWidth
             avatarView.layer.borderColor = configuration.userAvatarBorderColor.cgColor
         }
+        avatarView.backgroundColor = configuration.userAvatarBackgroundColor
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
@@ -82,6 +83,7 @@ class CardMessageCell: MessageCell {
             thumbnailView.clipsToBounds = true
             thumbnailView.layer.cornerRadius = configuration.cardMessageThumbnailBorderRadius
         }
+        thumbnailView.backgroundColor = configuration.cardMessageThumbnailBackgroundColor
         thumbnailView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(thumbnailView)
         

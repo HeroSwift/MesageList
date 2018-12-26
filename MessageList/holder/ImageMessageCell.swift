@@ -61,6 +61,7 @@ class ImageMessageCell: MessageCell {
             avatarView.layer.borderWidth = configuration.userAvatarBorderWidth
             avatarView.layer.borderColor = configuration.userAvatarBorderColor.cgColor
         }
+        avatarView.backgroundColor = configuration.userAvatarBackgroundColor
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
@@ -80,6 +81,7 @@ class ImageMessageCell: MessageCell {
         }
         photoView.bind(cell: self)
         photoView.contentMode = .scaleAspectFill
+        photoView.backgroundColor = configuration.imageMessageBackgroundColor
         photoView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(photoView)
         

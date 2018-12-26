@@ -64,6 +64,7 @@ class PostMessageCell: MessageCell {
             avatarView.layer.borderWidth = configuration.userAvatarBorderWidth
             avatarView.layer.borderColor = configuration.userAvatarBorderColor.cgColor
         }
+        avatarView.backgroundColor = configuration.userAvatarBackgroundColor
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
@@ -94,6 +95,7 @@ class PostMessageCell: MessageCell {
             thumbnailView.clipsToBounds = true
             thumbnailView.layer.cornerRadius = configuration.postMessageThumbnailBorderRadius
         }
+        thumbnailView.backgroundColor = configuration.postMessageThumbnailBackgroundColor
         thumbnailView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(thumbnailView)
         

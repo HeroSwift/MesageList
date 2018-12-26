@@ -64,6 +64,7 @@ class VideoMessageCell: MessageCell {
             avatarView.layer.borderWidth = configuration.userAvatarBorderWidth
             avatarView.layer.borderColor = configuration.userAvatarBorderColor.cgColor
         }
+        avatarView.backgroundColor = configuration.userAvatarBackgroundColor
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
@@ -83,6 +84,7 @@ class VideoMessageCell: MessageCell {
         }
         thumbnailView.bind(cell: self)
         thumbnailView.contentMode = .scaleAspectFill
+        thumbnailView.backgroundColor = configuration.videoMessageBackgroundColor
         thumbnailView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(thumbnailView)
         

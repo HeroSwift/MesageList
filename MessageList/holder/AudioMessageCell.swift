@@ -56,6 +56,7 @@ class AudioMessageCell: MessageCell {
             avatarView.layer.borderWidth = configuration.userAvatarBorderWidth
             avatarView.layer.borderColor = configuration.userAvatarBorderColor.cgColor
         }
+        avatarView.backgroundColor = configuration.userAvatarBackgroundColor
         avatarView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(avatarView)
         
