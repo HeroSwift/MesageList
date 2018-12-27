@@ -334,4 +334,8 @@ extension ViewController: MessageListDelegate {
         print("click load more")
     }
     
+    public func messageListWillPlayAudio() {
+        print("play audio")
+    }
+    
 }
