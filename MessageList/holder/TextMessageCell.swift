@@ -130,7 +130,12 @@ class TextMessageCell: MessageCell {
     
     override func update() {
         
-        configuration.loadImage(imageView: avatarView, url: message.user.avatar)
+        configuration.loadImage(
+            imageView: avatarView,
+            url: message.user.avatar,
+            width: configuration.userAvatarWidth,
+            height: configuration.userAvatarHeight
+        )
 
         nameView.text = message.user.name
         nameView.sizeToFit()

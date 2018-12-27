@@ -17,7 +17,8 @@ import Kingfisher
 
 class Configuration: MessageListConfiguration {
     
-    override func loadImage(imageView: UIImageView, url: String) {
+    override func loadImage(imageView: UIImageView, url: String, width: CGFloat, height: CGFloat) {
+        print("\(url) \(width) \(height)")
         let url = URL(string: url)
         imageView.kf.setImage(with: url)
     }
@@ -334,7 +335,7 @@ extension ViewController: MessageListDelegate {
         print("click load more")
     }
     
-    public func messageListWillPlayAudio() {
+    public func messageListWillUseAudio() {
         print("play audio")
     }
     

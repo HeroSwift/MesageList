@@ -779,7 +779,7 @@ open class MessageListConfiguration {
         
     }
     
-    open func loadImage(imageView: UIImageView, url: String) {
+    open func loadImage(imageView: UIImageView, url: String, width: CGFloat, height: CGFloat) {
         
     }
     

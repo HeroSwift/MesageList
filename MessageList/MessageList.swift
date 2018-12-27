@@ -35,7 +35,7 @@ public class MessageList: UIView {
     func setup() {
         
         configuration.audioPlayer.onPlay = {
-            self.delegate.messageListWillPlayAudio()
+            self.delegate.messageListWillUseAudio()
         }
         
         tableView.backgroundColor = .clear

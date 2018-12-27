@@ -132,7 +132,12 @@ class AudioMessageCell: MessageCell {
         
         let audioMessage = message as! AudioMessage
 
-        configuration.loadImage(imageView: avatarView, url: message.user.avatar)
+        configuration.loadImage(
+            imageView: avatarView,
+            url: message.user.avatar,
+            width: configuration.userAvatarWidth,
+            height: configuration.userAvatarHeight
+        )
         
         nameView.text = message.user.name
         nameView.sizeToFit()

@@ -31,7 +31,7 @@ import Foundation
     func messageListDidLoadMore()
     
     // 即将播放音频
-    func messageListWillPlayAudio()
+    func messageListWillUseAudio()
     
 }
 
@@ -55,7 +55,7 @@ public extension MessageListDelegate {
     
     func messageListDidLoadMore() { }
     
-    func messageListWillPlayAudio() { }
+    func messageListWillUseAudio() { }
     
 }
 

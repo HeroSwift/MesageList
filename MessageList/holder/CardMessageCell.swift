@@ -139,12 +139,22 @@ class CardMessageCell: MessageCell {
         
         let cardMessage = message as! CardMessage
         
-        configuration.loadImage(imageView: avatarView, url: message.user.avatar)
+        configuration.loadImage(
+            imageView: avatarView,
+            url: message.user.avatar,
+            width: configuration.userAvatarWidth,
+            height: configuration.userAvatarHeight
+        )
         
         nameView.text = message.user.name
         nameView.sizeToFit()
         
-        configuration.loadImage(imageView: thumbnailView, url: cardMessage.thumbnail)
+        configuration.loadImage(
+            imageView: thumbnailView,
+            url: cardMessage.thumbnail,
+            width: configuration.cardMessageThumbnailWidth,
+            height: configuration.cardMessageThumbnailHeight
+        )
         
         // 撑起高度
         titleView.text = cardMessage.title != "" ? cardMessage.title : " "
