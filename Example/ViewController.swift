@@ -9,7 +9,7 @@ import UIKit
 
 import MessageList
 
-import Kingfisher
+//import Kingfisher
 
 
 
@@ -19,8 +19,8 @@ class Configuration: MessageListConfiguration {
     
     override func loadImage(imageView: UIImageView, url: String, width: CGFloat, height: CGFloat) {
         print("\(url) \(width) \(height)")
-        let url = URL(string: url)
-        imageView.kf.setImage(with: url)
+//        let url = URL(string: url)
+//        imageView.kf.setImage(with: url)
     }
     
     override func isRightMessage(message: Message) -> Bool {
