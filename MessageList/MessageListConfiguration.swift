@@ -597,20 +597,20 @@ open class MessageListConfiguration {
     
     public var leftPostMessageBubbleImagePressed = UIImage(named: "message_list_bubble_left_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
     
+    // 左侧文章消息的垂直内边距
+    public var leftPostMessagePaddingVertical: CGFloat = 10
+    
+    // 左侧文章消息的水平内边距
+    public var leftPostMessagePaddingHorizontal: CGFloat = 12
+    
+    // 左侧文章消息的左边内边距（有个箭头）
+    public var leftPostMessagePaddingLeft: CGFloat = 16
+    
     // 左侧文章消息的标题字体大小
     public var leftPostMessageTitleTextFont = UIFont.systemFont(ofSize: 14)
     
     // 左侧文章消息的标题字体颜色
     public var leftPostMessageTitleTextColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1)
-    
-    // 左侧文章消息的标题到气泡左侧的距离
-    public var leftPostMessageTitleMarginLeft: CGFloat = 16
-    
-    // 左侧文章消息的标题到气泡右侧的距离
-    public var leftPostMessageTitleMarginRight: CGFloat = 12
-    
-    // 左侧文章消息的标题到气泡顶部的距离
-    public var leftPostMessageTitleMarginTop: CGFloat = 10
     
     // 左侧文章消息的描述字体大小
     public var leftPostMessageDescTextFont = UIFont.systemFont(ofSize: 11)
@@ -618,26 +618,17 @@ open class MessageListConfiguration {
     // 左侧文章消息的描述字体颜色
     public var leftPostMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
-    // 左侧文章消息的描述到气泡左侧的距离
-    public var leftPostMessageDescMarginLeft: CGFloat = 16
-    
     // 左侧文章消息的描述到标题的距离
     public var leftPostMessageDescMarginTop: CGFloat = 7
     
-    // 左侧文章消息的缩略图到描述的距离
-    public var leftPostMessageThumbnailMarginLeft: CGFloat = 5
-    
-    // 左侧文章消息的缩略图到气泡右侧的距离
-    public var leftPostMessageThumbnailMarginRight: CGFloat = 12
+    // 左侧文章消息的描述到缩略图的距离
+    public var leftPostMessageDescMarginRight: CGFloat = 7
     
     // 左侧文章消息的缩略图到标题的距离
     public var leftPostMessageThumbnailMarginTop: CGFloat = 8
     
     // 左侧文章消息的分割线颜色
     public var leftPostMessageDividerColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-    
-    // 左侧文章消息的分割线到缩略图底部的距离
-    public var leftPostMessageDividerMarginTop: CGFloat = 10
     
     // 左侧文章消息的分割线到气泡左侧的距离
     public var leftPostMessageDividerMarginLeft: CGFloat = 4
@@ -657,9 +648,6 @@ open class MessageListConfiguration {
     // 左侧文章消息的标签到气泡底部的距离
     public var leftPostMessageLabelMarginBottom: CGFloat = 4
     
-    // 左侧文章消息的标签到气泡左侧的距离
-    public var leftPostMessageLabelMarginLeft: CGFloat = 16
-    
     
     
     
@@ -674,20 +662,20 @@ open class MessageListConfiguration {
     
     public var rightPostMessageBubbleImagePressed = UIImage(named: "message_list_bubble_right_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
     
+    // 右侧文章消息的垂直内边距
+    public var rightPostMessagePaddingVertical: CGFloat = 10
+    
+    // 右侧文章消息的水平内边距
+    public var rightPostMessagePaddingHorizontal: CGFloat = 12
+    
+    // 右侧文章消息的左边内边距（有个箭头）
+    public var rightPostMessagePaddingRight: CGFloat = 16
+    
     // 右侧文章消息的标题字体大小
     public var rightPostMessageTitleTextFont = UIFont.systemFont(ofSize: 14)
     
     // 右侧文章消息的标题字体颜色
     public var rightPostMessageTitleTextColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1)
-    
-    // 右侧文章消息的标题到气泡左侧的距离
-    public var rightPostMessageTitleMarginLeft: CGFloat = 12
-    
-    // 右侧文章消息的标题到气泡右侧的距离
-    public var rightPostMessageTitleMarginRight: CGFloat = 16
-    
-    // 右侧文章消息的标题到气泡顶部的距离
-    public var rightPostMessageTitleMarginTop: CGFloat = 10
     
     // 右侧文章消息的描述字体大小
     public var rightPostMessageDescTextFont = UIFont.systemFont(ofSize: 11)
@@ -695,27 +683,18 @@ open class MessageListConfiguration {
     // 右侧文章消息的描述字体颜色
     public var rightPostMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
-    // 右侧文章消息的描述到气泡左侧的距离
-    public var rightPostMessageDescMarginLeft: CGFloat = 12
-    
     // 右侧文章消息的描述到标题的距离
     public var rightPostMessageDescMarginTop: CGFloat = 7
     
-    // 右侧文章消息的缩略图到描述的距离
-    public var rightPostMessageThumbnailMarginLeft: CGFloat = 5
-    
-    // 右侧文章消息的缩略图到气泡右侧的距离
-    public var rightPostMessageThumbnailMarginRight: CGFloat = 16
+    // 右侧文章消息的描述到缩略图的距离
+    public var rightPostMessageDescMarginRight: CGFloat = 7
     
     // 右侧文章消息的缩略图到标题的距离
     public var rightPostMessageThumbnailMarginTop: CGFloat = 8
     
     // 右侧文章消息的分割线颜色
     public var rightPostMessageDividerColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-    
-    // 右侧文章消息的分割线到缩略图底部的距离
-    public var rightPostMessageDividerMarginTop: CGFloat = 10
-    
+
     // 右侧文章消息的分割线到气泡左侧的距离
     public var rightPostMessageDividerMarginLeft: CGFloat = 0
     
@@ -733,9 +712,6 @@ open class MessageListConfiguration {
     
     // 右侧文章消息的标签到气泡底部的距离
     public var rightPostMessageLabelMarginBottom: CGFloat = 4
-    
-    // 右侧文章消息的标签到气泡左侧的距离
-    public var rightPostMessageLabelMarginLeft: CGFloat = 12
     
     
     
