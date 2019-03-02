@@ -126,39 +126,5 @@ class CardMessageCell: MessageCell {
         showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint)
         
     }
-    
-    override func createMenuItems() -> [UIMenuItem] {
-        var items = [UIMenuItem]()
-        
-        if message.canShare {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemShare,
-                    action: #selector(InteractiveButton.onShare)
-                )
-            )
-        }
-        if message.canRecall {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemRecall,
-                    action: #selector(InteractiveButton.onRecall)
-                )
-            )
-        }
-        if message.canDelete {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemDelete,
-                    action: #selector(InteractiveButton.onDelete)
-                )
-            )
-        }
-        
-        bubbleView.actions = items.map {
-            return $0.action
-        }
-        
-        return items
-    }
+
 }

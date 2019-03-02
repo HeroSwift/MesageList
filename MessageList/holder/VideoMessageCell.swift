@@ -25,6 +25,11 @@ class VideoMessageCell: MessageCell {
     
     override func create() {
         
+        copySelector = #selector(InteractiveImageView.onCopy)
+        shareSelector = #selector(InteractiveImageView.onShare)
+        recallSelector = #selector(InteractiveImageView.onRecall)
+        deleteSelector = #selector(InteractiveImageView.onDelete)
+        
         // 时间
         addTimeView(timeView)
         
@@ -114,41 +119,6 @@ class VideoMessageCell: MessageCell {
         
         showTimeView(timeView: timeView, time: message.time, avatarView: avatarView, avatarTopConstraint: avatarTopConstraint)
         
-    }
-    
-    override func createMenuItems() -> [UIMenuItem] {
-        var items = [UIMenuItem]()
-        
-        if message.canShare {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemShare,
-                    action: #selector(InteractiveImageView.onShare)
-                )
-            )
-        }
-        if message.canRecall {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemRecall,
-                    action: #selector(InteractiveImageView.onRecall)
-                )
-            )
-        }
-        if message.canDelete {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemDelete,
-                    action: #selector(InteractiveImageView.onDelete)
-                )
-            )
-        }
-        
-        thumbnailView.actions = items.map {
-            return $0.action
-        }
-        
-        return items
     }
     
     private func formatDuration(_ duration: Int) -> String {

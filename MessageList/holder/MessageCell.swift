@@ -13,6 +13,12 @@ class MessageCell: UITableViewCell {
     var delegate: MessageListDelegate!
     var message: Message!
     
+    var copySelector = #selector(InteractiveButton.onCopy)
+    var shareSelector = #selector(InteractiveButton.onShare)
+    var recallSelector = #selector(InteractiveButton.onRecall)
+    var deleteSelector = #selector(InteractiveButton.onDelete)
+    var menuAtions: [Selector]!
+    
     var topConstraint: NSLayoutConstraint!
     var bottomConstraint: NSLayoutConstraint!
     
@@ -77,7 +83,42 @@ class MessageCell: UITableViewCell {
     }
     
     func createMenuItems() -> [UIMenuItem] {
-        return []
+        var items = [UIMenuItem]()
+        
+        if message.canCopy {
+            items.append(
+                UIMenuItem(
+                    title: configuration.menuItemCopy,
+                    action: copySelector
+                )
+            )
+        }
+        if message.canShare {
+            items.append(
+                UIMenuItem(
+                    title: configuration.menuItemShare,
+                    action: shareSelector
+                )
+            )
+        }
+        if message.canRecall {
+            items.append(
+                UIMenuItem(
+                    title: configuration.menuItemRecall,
+                    action: recallSelector
+                )
+            )
+        }
+        if message.canDelete {
+            items.append(
+                UIMenuItem(
+                    title: configuration.menuItemDelete,
+                    action: deleteSelector
+                )
+            )
+        }
+
+        return items
     }
     
     func addTimeView(_ timeView: InsetLabel) {
@@ -364,6 +405,10 @@ class MessageCell: UITableViewCell {
         
         guard !menuController.isMenuVisible else {
             return
+        }
+        
+        menuAtions = menuItems.map {
+            return $0.action
         }
         
         view.becomeFirstResponder()

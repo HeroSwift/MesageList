@@ -22,6 +22,11 @@ class ImageMessageCell: MessageCell {
     
     override func create() {
         
+        copySelector = #selector(InteractiveImageView.onCopy)
+        shareSelector = #selector(InteractiveImageView.onShare)
+        recallSelector = #selector(InteractiveImageView.onRecall)
+        deleteSelector = #selector(InteractiveImageView.onDelete)
+        
         // 时间
         addTimeView(timeView)
         
@@ -101,38 +106,4 @@ class ImageMessageCell: MessageCell {
         
     }
     
-    override func createMenuItems() -> [UIMenuItem] {
-        var items = [UIMenuItem]()
-        
-        if message.canShare {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemShare,
-                    action: #selector(InteractiveImageView.onShare)
-                )
-            )
-        }
-        if message.canRecall {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemRecall,
-                    action: #selector(InteractiveImageView.onRecall)
-                )
-            )
-        }
-        if message.canDelete {
-            items.append(
-                UIMenuItem(
-                    title: configuration.menuItemDelete,
-                    action: #selector(InteractiveImageView.onDelete)
-                )
-            )
-        }
-        
-        photoView.actions = items.map {
-            return $0.action
-        }
-        
-        return items
-    }
 }
