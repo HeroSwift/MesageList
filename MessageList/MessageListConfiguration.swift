@@ -441,11 +441,14 @@ open class MessageListConfiguration {
     
     public var leftCardMessageBubbleImagePressed = UIImage(named: "message_list_bubble_left_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
     
-    // 左侧名片消息的缩略图到气泡左侧的距离
-    public var leftCardMessageThumbnailMarginLeft: CGFloat = 16
+    // 左侧卡片消息的垂直内边距
+    public var leftCardMessagePaddingVertical: CGFloat = 10
     
-    // 左侧名片消息的缩略图到气泡顶部的距离
-    public var leftCardMessageThumbnailMarginTop: CGFloat = 10
+    // 左侧卡片消息的水平内边距
+    public var leftCardMessagePaddingHorizontal: CGFloat = 12
+    
+    // 左侧卡片消息的左边内边距（有个箭头）
+    public var leftCardMessagePaddingLeft: CGFloat = 16
     
     // 左侧名片消息的标题字体大小
     public var leftCardMessageTitleTextFont = UIFont.systemFont(ofSize: 14)
@@ -456,11 +459,8 @@ open class MessageListConfiguration {
     // 左侧名片消息的标题到缩略图的距离
     public var leftCardMessageTitleMarginLeft: CGFloat = 10
     
-    // 左侧名片消息的标题到气泡右侧的距离
-    public var leftCardMessageTitleMarginRight: CGFloat = 12
-    
     // 左侧名片消息的标题到气泡顶部的距离
-    public var leftCardMessageTitleMarginTop: CGFloat = 13
+    public var leftCardMessageTitleMarginTop: CGFloat = 3
     
     // 左侧名片消息的描述字体大小
     public var leftCardMessageDescTextFont = UIFont.systemFont(ofSize: 11)
@@ -468,20 +468,11 @@ open class MessageListConfiguration {
     // 左侧名片消息的描述字体颜色
     public var leftCardMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
-    // 左侧名片消息的描述到缩略图的距离
-    public var leftCardMessageDescMarginLeft: CGFloat = 10
-    
-    // 左侧名片消息的描述到气泡右侧的距离
-    public var leftCardMessageDescMarginRight: CGFloat = 12
-    
     // 左侧名片消息的描述到标题的距离
     public var leftCardMessageDescMarginTop: CGFloat = 5
     
     // 左侧名片消息的分割线颜色
     public var leftCardMessageDividerColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-    
-    // 左侧名片消息的分割线到气泡顶部的距离
-    public var leftCardMessageDividerMarginTop: CGFloat = 10
     
     // 左侧名片消息的分割线到气泡左侧的距离
     public var leftCardMessageDividerMarginLeft: CGFloat = 4
@@ -501,10 +492,6 @@ open class MessageListConfiguration {
     // 左侧名片消息的标签到气泡底部的距离
     public var leftCardMessageLabelMarginBottom: CGFloat = 4
     
-    // 左侧名片消息的标签到气泡左侧的距离
-    public var leftCardMessageLabelMarginLeft: CGFloat = 16
-    
-    
     
     
     
@@ -519,11 +506,14 @@ open class MessageListConfiguration {
     
     public var rightCardMessageBubbleImagePressed = UIImage(named: "message_list_bubble_right_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
     
-    // 右侧名片消息的缩略图到气泡左侧的距离
-    public var rightCardMessageThumbnailMarginLeft: CGFloat = 12
+    // 右侧卡片消息的垂直内边距
+    public var rightCardMessagePaddingVertical: CGFloat = 10
     
-    // 右侧名片消息的缩略图到气泡顶部的距离
-    public var rightCardMessageThumbnailMarginTop: CGFloat = 10
+    // 右侧卡片消息的水平内边距
+    public var rightCardMessagePaddingHorizontal: CGFloat = 12
+    
+    // 右侧卡片消息的右边内边距（有个箭头）
+    public var rightCardMessagePaddingRight: CGFloat = 16
     
     // 右侧名片消息的标题字体大小
     public var rightCardMessageTitleTextFont = UIFont.systemFont(ofSize: 14)
@@ -534,11 +524,8 @@ open class MessageListConfiguration {
     // 右侧名片消息的标题到缩略图的距离
     public var rightCardMessageTitleMarginLeft: CGFloat = 10
     
-    // 右侧名片消息的标题到气泡右侧的距离
-    public var rightCardMessageTitleMarginRight: CGFloat = 16
-    
     // 右侧名片消息的标题到气泡顶部的距离
-    public var rightCardMessageTitleMarginTop: CGFloat = 13
+    public var rightCardMessageTitleMarginTop: CGFloat = 3
     
     // 右侧名片消息的描述字体大小
     public var rightCardMessageDescTextFont = UIFont.systemFont(ofSize: 11)
@@ -546,27 +533,18 @@ open class MessageListConfiguration {
     // 右侧名片消息的描述字体颜色
     public var rightCardMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
-    // 右侧名片消息的描述到缩略图的距离
-    public var rightCardMessageDescMarginLeft: CGFloat = 10
-    
-    // 右侧名片消息的描述到气泡右侧的距离
-    public var rightCardMessageDescMarginRight: CGFloat = 16
-    
     // 右侧名片消息的描述到标题的距离
     public var rightCardMessageDescMarginTop: CGFloat = 5
     
     // 右侧名片消息的分割线颜色
     public var rightCardMessageDividerColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
     
-    // 右侧名片消息的分割线到气泡顶部的距离
-    public var rightCardMessageDividerMarginTop: CGFloat = 10
-    
-    // 右侧名片消息的分割线到气泡右侧的距离
-    public var rightCardMessageDividerMarginRight: CGFloat = 4
-    
     // 右侧名片消息的分割线到气泡左侧的距离
     public var rightCardMessageDividerMarginLeft: CGFloat = 0
     
+    // 右侧名片消息的分割线到气泡右侧的距离
+    public var rightCardMessageDividerMarginRight: CGFloat = 4
+
     // 右侧名片消息的标签字体大小
     public var rightCardMessageLabelTextFont = UIFont.systemFont(ofSize: 10)
     
@@ -577,11 +555,7 @@ open class MessageListConfiguration {
     public var rightCardMessageLabelMarginTop: CGFloat = 4
     
     // 右侧名片消息的标签到气泡底部的距离
-    public var rightCardMessageLabelMarginBottom: CGFloat = 4
-    
-    // 右侧名片消息的标签到气泡左侧的距离
-    public var rightCardMessageLabelMarginLeft: CGFloat = 12
-    
+    public var rightCardMessageLabelMarginBottom: CGFloat = 4    
     
     
     
