@@ -13,7 +13,7 @@ class FileMessageCell: MessageCell {
     
     var typeView = UIImageView()
     var titleView = UILabel()
-    var sizeView = UILabel()
+    var descView = UILabel()
     
     var avatarTopConstraint: NSLayoutConstraint!
     
@@ -53,11 +53,11 @@ class FileMessageCell: MessageCell {
         contentView.addSubview(titleView)
         
         // 描述
-        sizeView.numberOfLines = 1
-        sizeView.lineBreakMode = .byTruncatingTail
-        sizeView.textAlignment = .left
-        sizeView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(sizeView)
+        descView.numberOfLines = 1
+        descView.lineBreakMode = .byTruncatingTail
+        descView.textAlignment = .left
+        descView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(descView)
         
         // spinner icon
         addSpinnerView(spinnerView)
@@ -113,8 +113,8 @@ class FileMessageCell: MessageCell {
         titleView.text = fileMessage.title != "" ? fileMessage.title : " "
         titleView.sizeToFit()
         
-        sizeView.text = fileMessage.size
-        sizeView.sizeToFit()
+        descView.text = fileMessage.desc
+        descView.sizeToFit()
         
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         

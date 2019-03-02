@@ -827,17 +827,20 @@ open class MessageListConfiguration {
     // 左侧文件消息的标题到气泡顶部的距离
     public var leftFileMessageTitleMarginTop: CGFloat = 13
     
-    // 左侧文件消息的尺寸字体大小
-    public var leftFileMessageSizeTextFont = UIFont.systemFont(ofSize: 11)
+    // 左侧文件消息的描述字体大小
+    public var leftFileMessageDescTextFont = UIFont.systemFont(ofSize: 11)
     
-    // 左侧文件消息的尺寸字体颜色
-    public var leftFileMessageSizeTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
+    // 左侧文件消息的描述字体颜色
+    public var leftFileMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
-    // 左侧文件消息的尺寸到类型图标的距离
-    public var leftFileMessageSizeMarginLeft: CGFloat = 10
+    // 左侧文件消息的描述到类型图标的距离
+    public var leftFileMessageDescMarginLeft: CGFloat = 10
     
-    // 左侧文件消息的尺寸到标题的距离
-    public var leftFileMessageSizeMarginTop: CGFloat = 4
+    // 左侧文件消息的描述到标题的距离
+    public var leftFileMessageDescMarginTop: CGFloat = 4
+    
+    // 左侧文件消息的描述到气泡底部的距离
+    public var leftFileMessageDescMarginBottom: CGFloat = 10
     
     
     
@@ -876,17 +879,20 @@ open class MessageListConfiguration {
     // 右侧文件消息的标题到气泡顶部的距离
     public var rightFileMessageTitleMarginTop: CGFloat = 13
     
-    // 右侧文件消息的尺寸字体大小
-    public var rightFileMessageSizeTextFont = UIFont.systemFont(ofSize: 11)
+    // 右侧文件消息的描述字体大小
+    public var rightFileMessageDescTextFont = UIFont.systemFont(ofSize: 11)
     
-    // 右侧文件消息的尺寸字体颜色
-    public var rightFileMessageSizeTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
+    // 右侧文件消息的描述字体颜色
+    public var rightFileMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
-    // 右侧文件消息的尺寸到类型图标的距离
-    public var rightFileMessageSizeMarginLeft: CGFloat = 10
+    // 右侧文件消息的描述到类型图标的距离
+    public var rightFileMessageDescMarginLeft: CGFloat = 10
     
-    // 右侧文件消息的尺寸到标题的距离
-    public var rightFileMessageSizeMarginTop: CGFloat = 4
+    // 右侧文件消息的描述到标题的距离
+    public var rightFileMessageDescMarginTop: CGFloat = 4
+    
+    // 右侧文件消息的描述到气泡底部的距离
+    public var rightFileMessageDescMarginBottom: CGFloat = 10
     
     
     
