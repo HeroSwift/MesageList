@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         )
         
         messageList.append(message:
-            FileMessage(id: getId(), user: User(id: "1", name: "哈哈哈", avatar: "1https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendFailure, time: "星期二", canCopy: true, canShare: true, canRecall: true, canDelete: false, type: FileType.ppt, title: "哈哈哈哈", desc: "123", link: "123")
+            FileMessage(id: getId(), user: User(id: "1", name: "哈哈哈", avatar: "1https://img.finstao.com/7eb10748bd.jpg"), status: MessageStatus.sendFailure, time: "星期二", canCopy: true, canShare: true, canRecall: true, canDelete: false, type: FileType.ppt, title: "哈哈哈哈", desc: "123123123123123123123123123123123123123123123123123123", link: "123")
         )
         
         messageList.append(message:

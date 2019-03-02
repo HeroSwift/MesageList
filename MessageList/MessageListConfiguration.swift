@@ -804,14 +804,14 @@ open class MessageListConfiguration {
     
     public var leftFileMessageBubbleImagePressed = UIImage(named: "message_list_bubble_left_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
     
-    // 左侧文件消息的类型图标到气泡左侧的距离
-    public var leftFileMessageTypeMarginLeft: CGFloat = 16
+    // 左侧文件消息的垂直内边距
+    public var leftFileMessagePaddingVertical: CGFloat = 10
     
-    // 左侧文件消息的类型图标到气泡顶部的距离
-    public var leftFileMessageTypeMarginTop: CGFloat = 10
+    // 左侧文件消息的水平内边距
+    public var leftFileMessagePaddingHorizontal: CGFloat = 12
     
-    // 左侧文件消息的类型图标到气泡底部的距离
-    public var leftFileMessageTypeMarginBottom: CGFloat = 10
+    // 左侧文件消息的左边内边距（有个箭头）
+    public var leftFileMessagePaddingLeft: CGFloat = 16
     
     // 左侧文件消息的标题字体大小
     public var leftFileMessageTitleTextFont = UIFont.systemFont(ofSize: 13)
@@ -822,11 +822,8 @@ open class MessageListConfiguration {
     // 左侧文件消息的标题到类型图标的距离
     public var leftFileMessageTitleMarginLeft: CGFloat = 10
     
-    // 左侧文件消息的标题到气泡右侧的距离
-    public var leftFileMessageTitleMarginRight: CGFloat = 12
-    
-    // 左侧文件消息的标题到气泡顶部的距离
-    public var leftFileMessageTitleMarginTop: CGFloat = 13
+    // 左侧文件消息的标题到类型图标顶部的距离
+    public var leftFileMessageTitleMarginTop: CGFloat = 3
     
     // 左侧文件消息的描述字体大小
     public var leftFileMessageDescTextFont = UIFont.systemFont(ofSize: 11)
@@ -834,17 +831,8 @@ open class MessageListConfiguration {
     // 左侧文件消息的描述字体颜色
     public var leftFileMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
-    // 左侧文件消息的描述到类型图标的距离
-    public var leftFileMessageDescMarginLeft: CGFloat = 10
-    
-    // 左侧文件消息的描述到气泡右侧的距离
-    public var leftFileMessageDescMarginRight: CGFloat = 12
-    
     // 左侧文件消息的描述到标题的距离
     public var leftFileMessageDescMarginTop: CGFloat = 4
-    
-    // 左侧文件消息的描述到气泡底部的距离
-    public var leftFileMessageDescMarginBottom: CGFloat = 10
     
     
     
@@ -859,15 +847,15 @@ open class MessageListConfiguration {
     
     public var rightFileMessageBubbleImagePressed = UIImage(named: "message_list_bubble_right_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
     
-    // 右侧文件消息的类型图标到气泡左侧的距离
-    public var rightFileMessageTypeMarginLeft: CGFloat = 12
+    // 右侧文件消息的垂直内边距
+    public var rightFileMessagePaddingVertical: CGFloat = 10
     
-    // 右侧文件消息的类型图标到气泡顶部的距离
-    public var rightFileMessageTypeMarginTop: CGFloat = 10
+    // 右侧文件消息的水平内边距
+    public var rightFileMessagePaddingHorizontal: CGFloat = 12
     
-    // 右侧文件消息的类型图标到气泡底部的距离
-    public var rightFileMessageTypeMarginBottom: CGFloat = 10
-    
+    // 右侧文件消息的右边内边距（有个箭头）
+    public var rightFileMessagePaddingRight: CGFloat = 16
+
     // 右侧文件消息的标题字体大小
     public var rightFileMessageTitleTextFont = UIFont.systemFont(ofSize: 13)
     
@@ -877,11 +865,8 @@ open class MessageListConfiguration {
     // 右侧文件消息的标题到类型图标的距离
     public var rightFileMessageTitleMarginLeft: CGFloat = 10
     
-    // 右侧文件消息的标题到气泡右侧的距离
-    public var rightFileMessageTitleMarginRight: CGFloat = 16
-    
-    // 右侧文件消息的标题到气泡顶部的距离
-    public var rightFileMessageTitleMarginTop: CGFloat = 13
+    // 右侧文件消息的标题到类型图标顶部的距离
+    public var rightFileMessageTitleMarginTop: CGFloat = 3
     
     // 右侧文件消息的描述字体大小
     public var rightFileMessageDescTextFont = UIFont.systemFont(ofSize: 11)
@@ -889,17 +874,8 @@ open class MessageListConfiguration {
     // 右侧文件消息的描述字体颜色
     public var rightFileMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
-    // 右侧文件消息的描述到类型图标的距离
-    public var rightFileMessageDescMarginLeft: CGFloat = 10
-    
-    // 右侧文件消息的描述到气泡右侧的距离
-    public var rightFileMessageDescMarginRight: CGFloat = 16
-    
     // 右侧文件消息的描述到标题的距离
     public var rightFileMessageDescMarginTop: CGFloat = 4
-    
-    // 右侧文件消息的描述到气泡底部的距离
-    public var rightFileMessageDescMarginBottom: CGFloat = 10
     
     
     
