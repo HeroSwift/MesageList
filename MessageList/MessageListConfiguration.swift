@@ -763,6 +763,132 @@ open class MessageListConfiguration {
     public var rightPostMessageLabelMarginLeft: CGFloat = 10
     
     
+    
+    
+    
+    
+    
+    //
+    // MARK: - 文件消息
+    //
+    
+    // 文件消息的气泡宽度
+    public var fileMessageBubbleWidth: CGFloat = 230
+    
+    // 文件消息的类型图标宽度
+    public var fileMessageTypeWidth: CGFloat = 36
+    
+    // 文件消息的类型图标高度
+    public var fileMessageTypeHeight: CGFloat = 46
+    
+    // 文件消息的类型图标圆角
+    public var fileMessageTypeBorderRadius: CGFloat = 0
+    
+    // 文件消息的类型图标背景色
+    public var fileMessageTypeBackgroundColor = UIColor.clear
+    
+    // 文件消息类型 - ppt
+    public var fileMessageTypePpt = UIImage(named: "message_list_file_ppt")
+    
+    
+    
+    // 左侧文件消息到头像的距离
+    public var leftFileMessageMarginLeft: CGFloat = 4
+    
+    // 左侧文件消息的气泡图片
+    public var leftFileMessageBubbleImageNormal = UIImage(named: "message_list_bubble_left_normal")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
+    
+    public var leftFileMessageBubbleImagePressed = UIImage(named: "message_list_bubble_left_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
+    
+    // 左侧文件消息的类型图标到气泡左侧的距离
+    public var leftFileMessageTypeMarginLeft: CGFloat = 16
+    
+    // 左侧文件消息的类型图标到气泡顶部的距离
+    public var leftFileMessageTypeMarginTop: CGFloat = 10
+    
+    // 左侧文件消息的类型图标到气泡底部的距离
+    public var leftFileMessageTypeMarginBottom: CGFloat = 10
+    
+    // 左侧文件消息的标题字体大小
+    public var leftFileMessageTitleTextFont = UIFont.systemFont(ofSize: 12)
+    
+    // 左侧文件消息的标题字体颜色
+    public var leftFileMessageTitleTextColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1)
+    
+    // 左侧文件消息的标题到类型图标的距离
+    public var leftFileMessageTitleMarginLeft: CGFloat = 10
+    
+    // 左侧文件消息的标题到气泡右侧的距离
+    public var leftFileMessageTitleMarginRight: CGFloat = 10
+    
+    // 左侧文件消息的标题到气泡顶部的距离
+    public var leftFileMessageTitleMarginTop: CGFloat = 10
+    
+    // 左侧文件消息的尺寸字体大小
+    public var leftFileMessageSizeTextFont = UIFont.systemFont(ofSize: 11)
+    
+    // 左侧文件消息的尺寸字体颜色
+    public var leftFileMessageSizeTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
+    
+    // 左侧文件消息的尺寸到类型图标的距离
+    public var leftFileMessageSizeMarginLeft: CGFloat = 10
+    
+    // 左侧文件消息的尺寸到标题的距离
+    public var leftFileMessageSizeMarginTop: CGFloat = 4
+    
+    
+    
+    
+    
+    
+    // 右侧文件消息到头像的距离
+    public var rightFileMessageMarginRight: CGFloat = 4
+    
+    // 右侧文件消息的气泡图片
+    public var rightFileMessageBubbleImageNormal = UIImage(named: "message_list_bubble_right_normal")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
+    
+    public var rightFileMessageBubbleImagePressed = UIImage(named: "message_list_bubble_right_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
+    
+    // 右侧文件消息的类型图标到气泡右侧的距离
+    public var rightFileMessageTypeMarginLeft: CGFloat = 10
+    
+    // 右侧文件消息的类型图标到气泡顶部的距离
+    public var rightFileMessageTypeMarginTop: CGFloat = 10
+    
+    // 右侧文件消息的类型图标到气泡底部的距离
+    public var rightFileMessageTypeMarginBottom: CGFloat = 10
+    
+    // 右侧文件消息的标题字体大小
+    public var rightFileMessageTitleTextFont = UIFont.systemFont(ofSize: 12)
+    
+    // 右侧文件消息的标题字体颜色
+    public var rightFileMessageTitleTextColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1)
+    
+    // 右侧文件消息的标题到类型图标的距离
+    public var rightFileMessageTitleMarginLeft: CGFloat = 10
+    
+    // 右侧文件消息的标题到气泡右侧的距离
+    public var rightFileMessageTitleMarginRight: CGFloat = 16
+    
+    // 右侧文件消息的标题到气泡顶部的距离
+    public var rightFileMessageTitleMarginTop: CGFloat = 10
+    
+    // 右侧文件消息的尺寸字体大小
+    public var rightFileMessageSizeTextFont = UIFont.systemFont(ofSize: 11)
+    
+    // 右侧文件消息的尺寸字体颜色
+    public var rightFileMessageSizeTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
+    
+    // 右侧文件消息的尺寸到类型图标的距离
+    public var rightFileMessageSizeMarginLeft: CGFloat = 10
+    
+    // 右侧文件消息的尺寸到标题的距离
+    public var rightFileMessageSizeMarginTop: CGFloat = 4
+    
+    
+    
+    
+    
     // 菜单文本
     public var menuItemCopy = "复制"
     

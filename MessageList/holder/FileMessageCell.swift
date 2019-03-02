@@ -1,7 +1,10 @@
 
 import UIKit
 
-class ImageMessageCell: MessageCell {
+class FileMessageCell: MessageCell {
+    
+    static let KB = 1024
+    static let MB = 1024 * 1024
     
     var timeView = InsetLabel()
     
@@ -9,11 +12,12 @@ class ImageMessageCell: MessageCell {
     
     var nameView = UILabel()
     
-    // imageView 被占用了
-    var photoView = InteractiveImageView()
-
-    var photoWidthConstraint: NSLayoutConstraint!
-    var photoHeightConstraint: NSLayoutConstraint!
+    var bubbleView = InteractiveButton()
+    
+    var typeView = UIImageView()
+    var titleView = UILabel()
+    var sizeView = UILabel()
+    
     var avatarTopConstraint: NSLayoutConstraint!
     
     var spinnerView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
@@ -31,20 +35,32 @@ class ImageMessageCell: MessageCell {
         // 昵称
         addNameView(nameView)
         
-        // 图片
-        if configuration.imageMessageBorderRadius > 0 {
-            photoView.clipsToBounds = true
-            photoView.layer.cornerRadius = configuration.imageMessageBorderRadius
+        // 气泡
+        bubbleView.cell = self
+        bubbleView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(bubbleView)
+        
+        // 文件类型图标
+        if configuration.fileMessageTypeBorderRadius > 0 {
+            typeView.clipsToBounds = true
+            typeView.layer.cornerRadius = configuration.fileMessageTypeBorderRadius
         }
-        if configuration.imageMessageBorderWidth > 0 {
-            photoView.layer.borderWidth = configuration.imageMessageBorderWidth
-            photoView.layer.borderColor = configuration.imageMessageBorderColor.cgColor
-        }
-        photoView.cell = self
-        photoView.contentMode = .scaleAspectFill
-        photoView.backgroundColor = configuration.imageMessageBackgroundColor
-        photoView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(photoView)
+        typeView.backgroundColor = configuration.fileMessageTypeBackgroundColor
+        typeView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(typeView)
+        
+        // 文件名称
+        titleView.numberOfLines = 2
+        titleView.lineBreakMode = .byTruncatingMiddle
+        titleView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(titleView)
+        
+        // 描述
+        sizeView.numberOfLines = 1
+        sizeView.lineBreakMode = .byTruncatingTail
+        sizeView.textAlignment = .left
+        sizeView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(sizeView)
         
         // spinner icon
         addSpinnerView(spinnerView)
@@ -52,21 +68,16 @@ class ImageMessageCell: MessageCell {
         // failure icon
         addFailureView(failureView)
         
-        addContentGesture(view: photoView)
+        addContentGesture(view: bubbleView)
         
         topConstraint = NSLayoutConstraint(item: timeView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
-        bottomConstraint = NSLayoutConstraint(item: photoView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
-        
-        photoWidthConstraint = NSLayoutConstraint(item: photoView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
-        photoHeightConstraint = NSLayoutConstraint(item: photoView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+        bottomConstraint = NSLayoutConstraint(item: bubbleView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
         avatarTopConstraint = NSLayoutConstraint(item: avatarView, attribute: .top, relatedBy: .equal, toItem: timeView, attribute: .bottom, multiplier: 1, constant: 0)
         avatarTopConstraint.priority = .defaultLow
         
         contentView.addConstraints([
             topConstraint,
             bottomConstraint,
-            photoWidthConstraint,
-            photoHeightConstraint,
             avatarTopConstraint,
         ])
         
@@ -74,7 +85,7 @@ class ImageMessageCell: MessageCell {
     
     override func update() {
         
-        let imageMessage = message as! ImageMessage
+        let fileMessage = message as! FileMessage
         
         configuration.loadImage(
             imageView: avatarView,
@@ -86,14 +97,33 @@ class ImageMessageCell: MessageCell {
         nameView.text = message.user.name
         nameView.sizeToFit()
         
-        configuration.loadImage(
-            imageView: photoView,
-            url: imageMessage.url,
-            width: CGFloat(integerLiteral: imageMessage.width),
-            height: CGFloat(integerLiteral: imageMessage.height)
-        )
+        switch fileMessage.type {
+        case .ppt:
+            typeView.image = configuration.fileMessageTypePpt
+            break
+        default:
+            break
+        }
         
-        updateImageSize(width: imageMessage.width, height: imageMessage.height, widthConstraint: photoWidthConstraint, heightConstraint: photoHeightConstraint)
+        // 撑起高度
+        titleView.text = fileMessage.title != "" ? fileMessage.title : " "
+        titleView.sizeToFit()
+        
+        let size = fileMessage.size
+        let sizeString: String
+        
+        if size > FileMessageCell.MB {
+            sizeString = "\(size / FileMessageCell.MB)M"
+        }
+        else if size > FileMessageCell.KB {
+            sizeString = "\(size / FileMessageCell.KB)KB"
+        }
+        else {
+            sizeString = "\(size)B"
+        }
+        
+        sizeView.text = sizeString
+        sizeView.sizeToFit()
         
         showStatusView(spinnerView: spinnerView, failureView: failureView)
         
@@ -108,7 +138,7 @@ class ImageMessageCell: MessageCell {
             items.append(
                 UIMenuItem(
                     title: configuration.menuItemShare,
-                    action: #selector(InteractiveImageView.onShare)
+                    action: #selector(InteractiveButton.onShare)
                 )
             )
         }
@@ -116,7 +146,7 @@ class ImageMessageCell: MessageCell {
             items.append(
                 UIMenuItem(
                     title: configuration.menuItemRecall,
-                    action: #selector(InteractiveImageView.onRecall)
+                    action: #selector(InteractiveButton.onRecall)
                 )
             )
         }
@@ -124,12 +154,12 @@ class ImageMessageCell: MessageCell {
             items.append(
                 UIMenuItem(
                     title: configuration.menuItemDelete,
-                    action: #selector(InteractiveImageView.onDelete)
+                    action: #selector(InteractiveButton.onDelete)
                 )
             )
         }
         
-        photoView.actions = items.map {
+        bubbleView.actions = items.map {
             return $0.action
         }
         
