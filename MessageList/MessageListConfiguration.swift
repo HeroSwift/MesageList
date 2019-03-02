@@ -432,6 +432,7 @@ open class MessageListConfiguration {
     public var cardMessageDividerWidth: CGFloat = 1 / UIScreen.main.scale
     
     
+    
     // 左侧名片消息到头像的距离
     public var leftCardMessageMarginLeft: CGFloat = 4
     
@@ -456,7 +457,7 @@ open class MessageListConfiguration {
     public var leftCardMessageTitleMarginLeft: CGFloat = 10
     
     // 左侧名片消息的标题到气泡右侧的距离
-    public var leftCardMessageTitleMarginRight: CGFloat = 10
+    public var leftCardMessageTitleMarginRight: CGFloat = 12
     
     // 左侧名片消息的标题到气泡顶部的距离
     public var leftCardMessageTitleMarginTop: CGFloat = 13
@@ -471,7 +472,7 @@ open class MessageListConfiguration {
     public var leftCardMessageDescMarginLeft: CGFloat = 10
     
     // 左侧名片消息的描述到气泡右侧的距离
-    public var leftCardMessageDescMarginRight: CGFloat = 10
+    public var leftCardMessageDescMarginRight: CGFloat = 12
     
     // 左侧名片消息的描述到标题的距离
     public var leftCardMessageDescMarginTop: CGFloat = 5
@@ -483,7 +484,7 @@ open class MessageListConfiguration {
     public var leftCardMessageDividerMarginTop: CGFloat = 10
     
     // 左侧名片消息的分割线到气泡左侧的距离
-    public var leftCardMessageDividerMarginLeft: CGFloat = 6
+    public var leftCardMessageDividerMarginLeft: CGFloat = 4
     
     // 左侧名片消息的分割线到气泡右侧的距离
     public var leftCardMessageDividerMarginRight: CGFloat = 0
@@ -518,8 +519,8 @@ open class MessageListConfiguration {
     
     public var rightCardMessageBubbleImagePressed = UIImage(named: "message_list_bubble_right_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
     
-    // 右侧名片消息的缩略图到气泡右侧的距离
-    public var rightCardMessageThumbnailMarginLeft: CGFloat = 10
+    // 右侧名片消息的缩略图到气泡左侧的距离
+    public var rightCardMessageThumbnailMarginLeft: CGFloat = 12
     
     // 右侧名片消息的缩略图到气泡顶部的距离
     public var rightCardMessageThumbnailMarginTop: CGFloat = 10
@@ -561,7 +562,7 @@ open class MessageListConfiguration {
     public var rightCardMessageDividerMarginTop: CGFloat = 10
     
     // 右侧名片消息的分割线到气泡右侧的距离
-    public var rightCardMessageDividerMarginRight: CGFloat = 6
+    public var rightCardMessageDividerMarginRight: CGFloat = 4
     
     // 右侧名片消息的分割线到气泡左侧的距离
     public var rightCardMessageDividerMarginLeft: CGFloat = 0
@@ -579,7 +580,7 @@ open class MessageListConfiguration {
     public var rightCardMessageLabelMarginBottom: CGFloat = 4
     
     // 右侧名片消息的标签到气泡左侧的距离
-    public var rightCardMessageLabelMarginLeft: CGFloat = 10
+    public var rightCardMessageLabelMarginLeft: CGFloat = 12
     
     
     
@@ -632,7 +633,7 @@ open class MessageListConfiguration {
     public var leftPostMessageTitleMarginLeft: CGFloat = 16
     
     // 左侧文章消息的标题到气泡右侧的距离
-    public var leftPostMessageTitleMarginRight: CGFloat = 10
+    public var leftPostMessageTitleMarginRight: CGFloat = 12
     
     // 左侧文章消息的标题到气泡顶部的距离
     public var leftPostMessageTitleMarginTop: CGFloat = 10
@@ -653,7 +654,7 @@ open class MessageListConfiguration {
     public var leftPostMessageThumbnailMarginLeft: CGFloat = 5
     
     // 左侧文章消息的缩略图到气泡右侧的距离
-    public var leftPostMessageThumbnailMarginRight: CGFloat = 10
+    public var leftPostMessageThumbnailMarginRight: CGFloat = 12
     
     // 左侧文章消息的缩略图到标题的距离
     public var leftPostMessageThumbnailMarginTop: CGFloat = 8
@@ -665,7 +666,7 @@ open class MessageListConfiguration {
     public var leftPostMessageDividerMarginTop: CGFloat = 10
     
     // 左侧文章消息的分割线到气泡左侧的距离
-    public var leftPostMessageDividerMarginLeft: CGFloat = 6
+    public var leftPostMessageDividerMarginLeft: CGFloat = 4
     
     // 左侧文章消息的分割线到气泡右侧的距离
     public var leftPostMessageDividerMarginRight: CGFloat = 0
@@ -706,7 +707,7 @@ open class MessageListConfiguration {
     public var rightPostMessageTitleTextColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1)
     
     // 右侧文章消息的标题到气泡左侧的距离
-    public var rightPostMessageTitleMarginLeft: CGFloat = 10
+    public var rightPostMessageTitleMarginLeft: CGFloat = 12
     
     // 右侧文章消息的标题到气泡右侧的距离
     public var rightPostMessageTitleMarginRight: CGFloat = 16
@@ -721,7 +722,7 @@ open class MessageListConfiguration {
     public var rightPostMessageDescTextColor = UIColor(red: 0.49, green: 0.49, blue: 0.49, alpha: 1)
     
     // 右侧文章消息的描述到气泡左侧的距离
-    public var rightPostMessageDescMarginLeft: CGFloat = 10
+    public var rightPostMessageDescMarginLeft: CGFloat = 12
     
     // 右侧文章消息的描述到标题的距离
     public var rightPostMessageDescMarginTop: CGFloat = 7
@@ -745,7 +746,7 @@ open class MessageListConfiguration {
     public var rightPostMessageDividerMarginLeft: CGFloat = 0
     
     // 右侧文章消息的分割线到气泡右侧的距离
-    public var rightPostMessageDividerMarginRight: CGFloat = 6
+    public var rightPostMessageDividerMarginRight: CGFloat = 4
     
     // 右侧文章消息的标签字体大小
     public var rightPostMessageLabelTextFont = UIFont.systemFont(ofSize: 10)
@@ -760,7 +761,7 @@ open class MessageListConfiguration {
     public var rightPostMessageLabelMarginBottom: CGFloat = 4
     
     // 右侧文章消息的标签到气泡左侧的距离
-    public var rightPostMessageLabelMarginLeft: CGFloat = 10
+    public var rightPostMessageLabelMarginLeft: CGFloat = 12
     
     
     
@@ -822,7 +823,7 @@ open class MessageListConfiguration {
     public var leftFileMessageTitleMarginLeft: CGFloat = 10
     
     // 左侧文件消息的标题到气泡右侧的距离
-    public var leftFileMessageTitleMarginRight: CGFloat = 10
+    public var leftFileMessageTitleMarginRight: CGFloat = 12
     
     // 左侧文件消息的标题到气泡顶部的距离
     public var leftFileMessageTitleMarginTop: CGFloat = 13
@@ -835,6 +836,9 @@ open class MessageListConfiguration {
     
     // 左侧文件消息的描述到类型图标的距离
     public var leftFileMessageDescMarginLeft: CGFloat = 10
+    
+    // 左侧文件消息的描述到气泡右侧的距离
+    public var leftFileMessageDescMarginRight: CGFloat = 12
     
     // 左侧文件消息的描述到标题的距离
     public var leftFileMessageDescMarginTop: CGFloat = 4
@@ -855,8 +859,8 @@ open class MessageListConfiguration {
     
     public var rightFileMessageBubbleImagePressed = UIImage(named: "message_list_bubble_right_pressed")!.resizableImage(withCapInsets: UIEdgeInsets(top: 26, left: 20, bottom: 20, right: 20), resizingMode: .tile)
     
-    // 右侧文件消息的类型图标到气泡右侧的距离
-    public var rightFileMessageTypeMarginLeft: CGFloat = 10
+    // 右侧文件消息的类型图标到气泡左侧的距离
+    public var rightFileMessageTypeMarginLeft: CGFloat = 12
     
     // 右侧文件消息的类型图标到气泡顶部的距离
     public var rightFileMessageTypeMarginTop: CGFloat = 10
@@ -887,6 +891,9 @@ open class MessageListConfiguration {
     
     // 右侧文件消息的描述到类型图标的距离
     public var rightFileMessageDescMarginLeft: CGFloat = 10
+    
+    // 右侧文件消息的描述到气泡右侧的距离
+    public var rightFileMessageDescMarginRight: CGFloat = 16
     
     // 右侧文件消息的描述到标题的距离
     public var rightFileMessageDescMarginTop: CGFloat = 4
