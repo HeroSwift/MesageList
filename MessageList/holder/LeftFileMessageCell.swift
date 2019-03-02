@@ -32,7 +32,7 @@ class LeftFileMessageCell: FileMessageCell {
             NSLayoutConstraint(item: typeView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: configuration.leftFileMessageTypeMarginLeft),
             NSLayoutConstraint(item: typeView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.fileMessageTypeWidth),
             NSLayoutConstraint(item: typeView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.fileMessageTypeHeight),
-            NSLayoutConstraint(item: typeView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftFileMessageTypeMarginBottom),
+            NSLayoutConstraint(item: typeView, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftFileMessageTypeMarginBottom),
 
             NSLayoutConstraint(item: titleView, attribute: .left, relatedBy: .equal, toItem: typeView, attribute: .right, multiplier: 1, constant: configuration.leftFileMessageTitleMarginLeft),
             NSLayoutConstraint(item: titleView, attribute: .top, relatedBy: .equal, toItem: bubbleView, attribute: .top, multiplier: 1, constant: configuration.leftFileMessageTitleMarginTop),
@@ -40,6 +40,7 @@ class LeftFileMessageCell: FileMessageCell {
             
             NSLayoutConstraint(item: sizeView, attribute: .left, relatedBy: .equal, toItem: typeView, attribute: .right, multiplier: 1, constant: configuration.leftFileMessageSizeMarginLeft),
             NSLayoutConstraint(item: sizeView, attribute: .top, relatedBy: .equal, toItem: titleView, attribute: .bottom, multiplier: 1, constant: configuration.leftFileMessageSizeMarginTop),
+            NSLayoutConstraint(item: sizeView, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftFileMessageTypeMarginBottom),
             
             NSLayoutConstraint(item: spinnerView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .right, multiplier: 1, constant: configuration.leftStatusViewMarginLeft),
             NSLayoutConstraint(item: spinnerView, attribute: .bottom, relatedBy: .equal, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.leftStatusViewMarginBottom),

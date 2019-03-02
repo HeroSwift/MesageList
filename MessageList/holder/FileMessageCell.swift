@@ -3,9 +3,6 @@ import UIKit
 
 class FileMessageCell: MessageCell {
     
-    static let KB = 1024
-    static let MB = 1024 * 1024
-    
     var timeView = InsetLabel()
     
     var avatarView = UIImageView()
@@ -98,10 +95,17 @@ class FileMessageCell: MessageCell {
         nameView.sizeToFit()
         
         switch fileMessage.type {
+        case .word:
+            typeView.image = configuration.fileMessageTypeWord
+            break
+        case .excel:
+            typeView.image = configuration.fileMessageTypeExcel
+            break
         case .ppt:
             typeView.image = configuration.fileMessageTypePpt
             break
         default:
+            typeView.image = configuration.fileMessageTypePdf
             break
         }
         
@@ -109,20 +113,7 @@ class FileMessageCell: MessageCell {
         titleView.text = fileMessage.title != "" ? fileMessage.title : " "
         titleView.sizeToFit()
         
-        let size = fileMessage.size
-        let sizeString: String
-        
-        if size > FileMessageCell.MB {
-            sizeString = "\(size / FileMessageCell.MB)M"
-        }
-        else if size > FileMessageCell.KB {
-            sizeString = "\(size / FileMessageCell.KB)KB"
-        }
-        else {
-            sizeString = "\(size)B"
-        }
-        
-        sizeView.text = sizeString
+        sizeView.text = fileMessage.size
         sizeView.sizeToFit()
         
         showStatusView(spinnerView: spinnerView, failureView: failureView)

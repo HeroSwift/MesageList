@@ -776,10 +776,10 @@ open class MessageListConfiguration {
     public var fileMessageBubbleWidth: CGFloat = 230
     
     // 文件消息的类型图标宽度
-    public var fileMessageTypeWidth: CGFloat = 36
+    public var fileMessageTypeWidth: CGFloat = 40
     
     // 文件消息的类型图标高度
-    public var fileMessageTypeHeight: CGFloat = 46
+    public var fileMessageTypeHeight: CGFloat = 40
     
     // 文件消息的类型图标圆角
     public var fileMessageTypeBorderRadius: CGFloat = 0
@@ -787,8 +787,11 @@ open class MessageListConfiguration {
     // 文件消息的类型图标背景色
     public var fileMessageTypeBackgroundColor = UIColor.clear
     
-    // 文件消息类型 - ppt
+    // 文件消息类型
+    public var fileMessageTypeWord = UIImage(named: "message_list_file_word")
+    public var fileMessageTypeExcel = UIImage(named: "message_list_file_excel")
     public var fileMessageTypePpt = UIImage(named: "message_list_file_ppt")
+    public var fileMessageTypePdf = UIImage(named: "message_list_file_pdf")
     
     
     
@@ -810,7 +813,7 @@ open class MessageListConfiguration {
     public var leftFileMessageTypeMarginBottom: CGFloat = 10
     
     // 左侧文件消息的标题字体大小
-    public var leftFileMessageTitleTextFont = UIFont.systemFont(ofSize: 12)
+    public var leftFileMessageTitleTextFont = UIFont.systemFont(ofSize: 13)
     
     // 左侧文件消息的标题字体颜色
     public var leftFileMessageTitleTextColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1)
@@ -822,7 +825,7 @@ open class MessageListConfiguration {
     public var leftFileMessageTitleMarginRight: CGFloat = 10
     
     // 左侧文件消息的标题到气泡顶部的距离
-    public var leftFileMessageTitleMarginTop: CGFloat = 10
+    public var leftFileMessageTitleMarginTop: CGFloat = 13
     
     // 左侧文件消息的尺寸字体大小
     public var leftFileMessageSizeTextFont = UIFont.systemFont(ofSize: 11)
@@ -859,7 +862,7 @@ open class MessageListConfiguration {
     public var rightFileMessageTypeMarginBottom: CGFloat = 10
     
     // 右侧文件消息的标题字体大小
-    public var rightFileMessageTitleTextFont = UIFont.systemFont(ofSize: 12)
+    public var rightFileMessageTitleTextFont = UIFont.systemFont(ofSize: 13)
     
     // 右侧文件消息的标题字体颜色
     public var rightFileMessageTitleTextColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1)
@@ -871,7 +874,7 @@ open class MessageListConfiguration {
     public var rightFileMessageTitleMarginRight: CGFloat = 16
     
     // 右侧文件消息的标题到气泡顶部的距离
-    public var rightFileMessageTitleMarginTop: CGFloat = 10
+    public var rightFileMessageTitleMarginTop: CGFloat = 13
     
     // 右侧文件消息的尺寸字体大小
     public var rightFileMessageSizeTextFont = UIFont.systemFont(ofSize: 11)

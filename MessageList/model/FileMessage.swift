@@ -7,11 +7,11 @@ import Foundation
     
     @objc public var title: String
     
-    @objc public var size: Int
+    @objc public var size: String
 
     @objc public var link: String
     
-    @objc public init(id: String, user: User, status: MessageStatus, time: String, canShare: Bool, canRecall: Bool, canDelete: Bool, type: FileType, title: String, size: Int, link: String) {
+    @objc public init(id: String, user: User, status: MessageStatus, time: String, canShare: Bool, canRecall: Bool, canDelete: Bool, type: FileType, title: String, size: String, link: String) {
         self.type = type
         self.title = title
         self.size = size
