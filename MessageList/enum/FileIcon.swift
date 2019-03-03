@@ -1,7 +1,7 @@
 
 import Foundation
 
-@objc public enum FileType: Int {
+@objc public enum FileIcon: Int {
     
     case word;
     

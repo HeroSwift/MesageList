@@ -28,14 +28,14 @@ class RightFileMessageCell: FileMessageCell {
             NSLayoutConstraint(item: bubbleView, attribute: .right, relatedBy: .equal, toItem: avatarView, attribute: .left, multiplier: 1, constant: -configuration.rightFileMessageMarginRight),
             NSLayoutConstraint(item: bubbleView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.fileMessageBubbleWidth),
             
-            NSLayoutConstraint(item: typeView, attribute: .top, relatedBy: .equal, toItem: bubbleView, attribute: .top, multiplier: 1, constant: configuration.rightFileMessagePaddingVertical),
-            NSLayoutConstraint(item: typeView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: configuration.rightFileMessagePaddingHorizontal),
-            NSLayoutConstraint(item: typeView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.fileMessageTypeWidth),
-            NSLayoutConstraint(item: typeView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.fileMessageTypeHeight),
-            NSLayoutConstraint(item: typeView, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.rightFileMessagePaddingVertical),
+            NSLayoutConstraint(item: iconView, attribute: .top, relatedBy: .equal, toItem: bubbleView, attribute: .top, multiplier: 1, constant: configuration.rightFileMessagePaddingVertical),
+            NSLayoutConstraint(item: iconView, attribute: .left, relatedBy: .equal, toItem: bubbleView, attribute: .left, multiplier: 1, constant: configuration.rightFileMessagePaddingHorizontal),
+            NSLayoutConstraint(item: iconView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: configuration.fileMessageIconWidth),
+            NSLayoutConstraint(item: iconView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: configuration.fileMessageIconHeight),
+            NSLayoutConstraint(item: iconView, attribute: .bottom, relatedBy: .lessThanOrEqual, toItem: bubbleView, attribute: .bottom, multiplier: 1, constant: -configuration.rightFileMessagePaddingVertical),
             
-            NSLayoutConstraint(item: titleView, attribute: .left, relatedBy: .equal, toItem: typeView, attribute: .right, multiplier: 1, constant: configuration.rightFileMessageTitleMarginLeft),
-            NSLayoutConstraint(item: titleView, attribute: .top, relatedBy: .equal, toItem: typeView, attribute: .top, multiplier: 1, constant: configuration.rightFileMessageTitleMarginTop),
+            NSLayoutConstraint(item: titleView, attribute: .left, relatedBy: .equal, toItem: iconView, attribute: .right, multiplier: 1, constant: configuration.rightFileMessageTitleMarginLeft),
+            NSLayoutConstraint(item: titleView, attribute: .top, relatedBy: .equal, toItem: iconView, attribute: .top, multiplier: 1, constant: configuration.rightFileMessageTitleMarginTop),
             NSLayoutConstraint(item: titleView, attribute: .right, relatedBy: .equal, toItem: bubbleView, attribute: .right, multiplier: 1, constant: -configuration.rightFileMessagePaddingHorizontal),
             
             NSLayoutConstraint(item: descView, attribute: .left, relatedBy: .equal, toItem: titleView, attribute: .left, multiplier: 1, constant: 0),

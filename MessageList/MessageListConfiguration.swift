@@ -727,23 +727,23 @@ open class MessageListConfiguration {
     public var fileMessageBubbleWidth: CGFloat = 230
     
     // 文件消息的类型图标宽度
-    public var fileMessageTypeWidth: CGFloat = 40
+    public var fileMessageIconWidth: CGFloat = 40
     
     // 文件消息的类型图标高度
-    public var fileMessageTypeHeight: CGFloat = 40
+    public var fileMessageIconHeight: CGFloat = 40
     
     // 文件消息的类型图标圆角
-    public var fileMessageTypeBorderRadius: CGFloat = 0
+    public var fileMessageIconBorderRadius: CGFloat = 0
     
     // 文件消息的类型图标背景色
-    public var fileMessageTypeBackgroundColor = UIColor.clear
+    public var fileMessageIconBackgroundColor = UIColor.clear
     
     // 文件消息类型
-    public var fileMessageTypeWord = UIImage(named: "message_list_file_word")
-    public var fileMessageTypeExcel = UIImage(named: "message_list_file_excel")
-    public var fileMessageTypePpt = UIImage(named: "message_list_file_ppt")
-    public var fileMessageTypePdf = UIImage(named: "message_list_file_pdf")
-    public var fileMessageTypeTxt = UIImage(named: "message_list_file_txt")
+    public var fileMessageIconWord = UIImage(named: "message_list_file_word")
+    public var fileMessageIconExcel = UIImage(named: "message_list_file_excel")
+    public var fileMessageIconPpt = UIImage(named: "message_list_file_ppt")
+    public var fileMessageIconPdf = UIImage(named: "message_list_file_pdf")
+    public var fileMessageIconTxt = UIImage(named: "message_list_file_txt")
     
     
     

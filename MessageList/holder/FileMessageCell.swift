@@ -11,7 +11,7 @@ class FileMessageCell: MessageCell {
     
     var bubbleView = InteractiveButton()
     
-    var typeView = UIImageView()
+    var iconView = UIImageView()
     var titleView = UILabel()
     var descView = UILabel()
     
@@ -38,13 +38,13 @@ class FileMessageCell: MessageCell {
         contentView.addSubview(bubbleView)
         
         // 文件类型图标
-        if configuration.fileMessageTypeBorderRadius > 0 {
-            typeView.clipsToBounds = true
-            typeView.layer.cornerRadius = configuration.fileMessageTypeBorderRadius
+        if configuration.fileMessageIconBorderRadius > 0 {
+            iconView.clipsToBounds = true
+            iconView.layer.cornerRadius = configuration.fileMessageIconBorderRadius
         }
-        typeView.backgroundColor = configuration.fileMessageTypeBackgroundColor
-        typeView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(typeView)
+        iconView.backgroundColor = configuration.fileMessageIconBackgroundColor
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(iconView)
         
         // 文件名称
         titleView.numberOfLines = 2
@@ -94,21 +94,21 @@ class FileMessageCell: MessageCell {
         nameView.text = message.user.name
         nameView.sizeToFit()
         
-        switch fileMessage.type {
+        switch fileMessage.icon {
         case .word:
-            typeView.image = configuration.fileMessageTypeWord
+            iconView.image = configuration.fileMessageIconWord
             break
         case .excel:
-            typeView.image = configuration.fileMessageTypeExcel
+            iconView.image = configuration.fileMessageIconExcel
             break
         case .ppt:
-            typeView.image = configuration.fileMessageTypePpt
+            iconView.image = configuration.fileMessageIconPpt
             break
         case .pdf:
-            typeView.image = configuration.fileMessageTypePdf
+            iconView.image = configuration.fileMessageIconPdf
             break
         default:
-            typeView.image = configuration.fileMessageTypeTxt
+            iconView.image = configuration.fileMessageIconTxt
             break
         }
         

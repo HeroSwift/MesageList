@@ -19,6 +19,7 @@
 		9D12A61D219E9FFF00D5E5B4 /* VideoMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12A61C219E9FFF00D5E5B4 /* VideoMessageCell.swift */; };
 		9D12A667219EAAA100D5E5B4 /* LeftVideoMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12A666219EAAA100D5E5B4 /* LeftVideoMessageCell.swift */; };
 		9D12A669219EB1BD00D5E5B4 /* RightVideoMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12A668219EB1BD00D5E5B4 /* RightVideoMessageCell.swift */; };
+		9D37293D222BA6D5005878A7 /* FileIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D37293C222BA6D5005878A7 /* FileIcon.swift */; };
 		9D42CC84222A6B7C00C91AB4 /* LeftFileMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D42CC83222A6B7C00C91AB4 /* LeftFileMessageCell.swift */; };
 		9D42CC86222A6B8800C91AB4 /* RightFileMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D42CC85222A6B8800C91AB4 /* RightFileMessageCell.swift */; };
 		9D4350C92186E21200084889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350C82186E21200084889 /* AppDelegate.swift */; };
@@ -36,7 +37,6 @@
 		9D4350EE2186FBF400084889 /* MessageListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350ED2186FBF400084889 /* MessageListConfiguration.swift */; };
 		9D4350F02187098700084889 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4350EF2187098700084889 /* MessageCell.swift */; };
 		9D4F2A85222A5E2200BC1D3F /* FileMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F2A84222A5E2200BC1D3F /* FileMessage.swift */; };
-		9D4F2A87222A5F0C00BC1D3F /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F2A86222A5F0C00BC1D3F /* FileType.swift */; };
 		9D4F2A89222A5F5900BC1D3F /* FileMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F2A88222A5F5900BC1D3F /* FileMessageCell.swift */; };
 		9D6C53CD219ABA7F000DD119 /* TextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */; };
 		9D8AE8B521BA611300BA2EF2 /* InteractiveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AE8B421BA611300BA2EF2 /* InteractiveImageView.swift */; };
@@ -99,6 +99,7 @@
 		9D12A61C219E9FFF00D5E5B4 /* VideoMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMessageCell.swift; sourceTree = "<group>"; };
 		9D12A666219EAAA100D5E5B4 /* LeftVideoMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftVideoMessageCell.swift; sourceTree = "<group>"; };
 		9D12A668219EB1BD00D5E5B4 /* RightVideoMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightVideoMessageCell.swift; sourceTree = "<group>"; };
+		9D37293C222BA6D5005878A7 /* FileIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileIcon.swift; sourceTree = "<group>"; };
 		9D42CC83222A6B7C00C91AB4 /* LeftFileMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftFileMessageCell.swift; sourceTree = "<group>"; };
 		9D42CC85222A6B8800C91AB4 /* RightFileMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightFileMessageCell.swift; sourceTree = "<group>"; };
 		9D4350B72186E20000084889 /* MessageList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MessageList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +121,6 @@
 		9D4350ED2186FBF400084889 /* MessageListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListConfiguration.swift; sourceTree = "<group>"; };
 		9D4350EF2187098700084889 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		9D4F2A84222A5E2200BC1D3F /* FileMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMessage.swift; sourceTree = "<group>"; };
-		9D4F2A86222A5F0C00BC1D3F /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		9D4F2A88222A5F5900BC1D3F /* FileMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMessageCell.swift; sourceTree = "<group>"; };
 		9D6C53CC219ABA7F000DD119 /* TextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageCell.swift; sourceTree = "<group>"; };
 		9D8AE8B421BA611300BA2EF2 /* InteractiveImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveImageView.swift; sourceTree = "<group>"; };
@@ -232,9 +232,9 @@
 		9D4350DD2186E35D00084889 /* enum */ = {
 			isa = PBXGroup;
 			children = (
+				9D37293C222BA6D5005878A7 /* FileIcon.swift */,
 				9D4350DE2186E37200084889 /* MessageStatus.swift */,
 				9D4350E02186E42600084889 /* SoundMode.swift */,
-				9D4F2A86222A5F0C00BC1D3F /* FileType.swift */,
 			);
 			path = enum;
 			sourceTree = "<group>";
@@ -459,11 +459,11 @@
 				9D08B666219D23F3006904E5 /* LeftImageMessageCell.swift in Sources */,
 				9D42CC86222A6B8800C91AB4 /* RightFileMessageCell.swift in Sources */,
 				9D08B66E219D4B99006904E5 /* LeftAudioMessageCell.swift in Sources */,
-				9D4F2A87222A5F0C00BC1D3F /* FileType.swift in Sources */,
 				9DAC6E53219C619300F693B9 /* RightTextMessageCell.swift in Sources */,
 				9D4350DC2186E30500084889 /* Message.swift in Sources */,
 				9D08B66C219D43F3006904E5 /* AudioMessageCell.swift in Sources */,
 				9D9B4E2621A52C13006110EE /* MessageListDelegate.swift in Sources */,
+				9D37293D222BA6D5005878A7 /* FileIcon.swift in Sources */,
 				9D08B670219DBDE5006904E5 /* RightAudioMessageCell.swift in Sources */,
 				9D4350DF2186E37200084889 /* MessageStatus.swift in Sources */,
 				9D9B4E1B21A3DC20006110EE /* LeftPostMessageCell.swift in Sources */,
