@@ -11,5 +11,7 @@ import Foundation
     
     case pdf;
     
+    case txt;
+    
 }
 

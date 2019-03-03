@@ -743,6 +743,7 @@ open class MessageListConfiguration {
     public var fileMessageTypeExcel = UIImage(named: "message_list_file_excel")
     public var fileMessageTypePpt = UIImage(named: "message_list_file_ppt")
     public var fileMessageTypePdf = UIImage(named: "message_list_file_pdf")
+    public var fileMessageTypeTxt = UIImage(named: "message_list_file_txt")
     
     
     

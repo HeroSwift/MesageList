@@ -104,8 +104,11 @@ class FileMessageCell: MessageCell {
         case .ppt:
             typeView.image = configuration.fileMessageTypePpt
             break
-        default:
+        case .pdf:
             typeView.image = configuration.fileMessageTypePdf
+            break
+        default:
+            typeView.image = configuration.fileMessageTypeTxt
             break
         }
         
